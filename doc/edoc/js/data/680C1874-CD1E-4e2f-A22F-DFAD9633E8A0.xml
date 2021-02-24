@@ -1,0 +1,13 @@
+tocTab[tocTab.length] = new Array("1.7.1.1:1", "", "Remote", "EARoot/EA1/EA7/EA1/EA1/EA377.htm", "175.png", "44", "0", "", "Logical diagram0","{A20E8DA0-74CE-4e65-9150-2BE4E0842D3F}");
+tocTab[tocTab.length] = new Array("1.7.1.1:2", "", "AdmRemoteImpBESA", "EARoot/EA1/EA7/EA1/EA1/EA379.htm", "5.png", "238", "0", "", "Class0","{B1B5504C-5682-485c-9412-8E1EF9446037}");
+tocTab[tocTab.length] = new Array("1.7.1.1:3", "", "«interface» AdmRemoteInterfaceBESA", "EARoot/EA1/EA7/EA1/EA1/EA380.htm", "8.png", "239", "0", "", "Interface0","{80B9A92C-DCFE-4201-B64A-4E8DF41D1D90}");
+tocTab[tocTab.length] = new Array("1.7.1.1:4", "", "DistributedExceptionBESA", "EARoot/EA1/EA7/EA1/EA1/EA382.htm", "5.png", "240", "0", "", "Class0","{85E26D0A-7ED7-4116-B28C-EECB95F32E38}");
+tocTab[tocTab.length] = new Array("1.7.1.1:5", "", "DistributedInitBESA", "EARoot/EA1/EA7/EA1/EA1/EA383.htm", "5.png", "241", "0", "", "Class0","{C941148B-8CBC-44f8-BC2A-18FBA4FD438E}");
+tocTab[tocTab.length] = new Array("1.7.1.1:6", "", "PingSocketThread", "EARoot/EA1/EA7/EA1/EA1/EA384.htm", "5.png", "242", "0", "", "Class0","{D6140360-6A4F-402b-8CEB-FC26B78639FD}");
+tocTab[tocTab.length] = new Array("1.7.1.1:7", "", "PingThread", "EARoot/EA1/EA7/EA1/EA1/EA385.htm", "5.png", "243", "0", "", "Class0","{CF179A9B-54E3-44f3-83DF-63318269DDB8}");
+tocTab[tocTab.length] = new Array("1.7.1.1:8", "", "PongSocketThread", "EARoot/EA1/EA7/EA1/EA1/EA386.htm", "5.png", "244", "0", "", "Class0","{8C399AD0-A22E-4cd1-B56D-E09F4EE9D46B}");
+tocTab[tocTab.length] = new Array("1.7.1.1:9", "", "PongThread", "EARoot/EA1/EA7/EA1/EA1/EA387.htm", "5.png", "245", "0", "", "Class0","{0D68EBD8-5D8B-46b4-8A0A-94E2F43660A2}");
+tocTab[tocTab.length] = new Array("1.7.1.1:10", "", "RemoteAdmBESA", "EARoot/EA1/EA7/EA1/EA1/EA388.htm", "5.png", "246", "0", "", "Class0","{2BAD847B-E682-49b3-BA7D-091635A2D4CB}");
+tocTab[tocTab.length] = new Array("1.7.1.1:11", "", "SocketServer", "EARoot/EA1/EA7/EA1/EA1/EA389.htm", "5.png", "247", "0", "", "Class0","{49B684F7-1A8F-4da9-B932-7F90D9789CFF}");
+tocTab[tocTab.length] = new Array("1.7.1.1:12", "", "SocketServerThread", "EARoot/EA1/EA7/EA1/EA1/EA390.htm", "5.png", "248", "0", "", "Class0","{5AD3B6B4-A0CD-4c19-A84C-FB301E8E4B30}");
+tocTab[tocTab.length] = new Array("1.7.1.1.1", "1", "Directory", "EARoot/EA1/EA7/EA1/EA1/EA381.htm", "4.png", "", "", "{C74C1B75-7750-4a2b-AF8E-EAAC19FE04FE}", "Package");

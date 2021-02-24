@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <container alias = "ASMA_B" password = "0.91" ipaddress= "127.0.0.1">
+        <environment seneventattemps = "10" sendeventtimeout = "999" rmitimeout = "1000">
+            <mobile rmiport = "1098" mcaddress = "230.0.0.2" mcport = "2223" bapport = "7002" baplocatoradd = "127.0.0.1"  bloport="8081" bpoport="8083"/>
+        </environment>
+    </container>
+</config>

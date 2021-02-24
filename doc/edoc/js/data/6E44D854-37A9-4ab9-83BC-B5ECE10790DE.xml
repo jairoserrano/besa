@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.1.1.2:1", "", "Guards", "EARoot/EA1/EA2/EA1/EA1/EA1/EA1/EA2/EA79.htm", "175.png", "58", "0", "", "Logical diagram0","{029620F8-7503-4405-9A13-AA82F9FC14DB}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1.1.2:2", "", "ChangeCommunicationChannelGuardBPO", "EARoot/EA1/EA2/EA1/EA1/EA1/EA1/EA2/EA81.htm", "5.png", "298", "0", "", "Class0","{BC9B239E-8701-428f-ABC9-895AF0304759}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1.1.2:3", "", "InterpretMessageGuardBPO", "EARoot/EA1/EA2/EA1/EA1/EA1/EA1/EA2/EA82.htm", "5.png", "299", "0", "", "Class0","{04185D4E-9530-4823-97D8-FBFFDB40C7F7}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1.1.2:4", "", "MessageTimedOutGuardBPO", "EARoot/EA1/EA2/EA1/EA1/EA1/EA1/EA2/EA83.htm", "5.png", "300", "0", "", "Class0","{0A1FA4D1-EF7D-452f-97B6-86B87B42F26D}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1.1.2:5", "", "SendMessageGuardBPO", "EARoot/EA1/EA2/EA1/EA1/EA1/EA1/EA2/EA84.htm", "5.png", "301", "0", "", "Class0","{F19D5858-C452-4124-A553-596E85BE844D}");

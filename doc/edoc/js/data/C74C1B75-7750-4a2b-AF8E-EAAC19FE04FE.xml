@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("1.7.1.1.1:1", "", "Directory", "EARoot/EA1/EA7/EA1/EA1/EA1/EA391.htm", "175.png", "45", "0", "", "Logical diagram0","{FB94D6A8-11BB-4161-AD47-C5C947A2584B}");
+tocTab[tocTab.length] = new Array("1.7.1.1.1:2", "", "AgRemoteHandlerBESA", "EARoot/EA1/EA7/EA1/EA1/EA1/EA393.htm", "5.png", "234", "0", "", "Class0","{BEA54476-B698-4eb3-9A4A-B5D66B3F9808}");
+tocTab[tocTab.length] = new Array("1.7.1.1.1:3", "", "DistributedDirectoryExceptionBESA", "EARoot/EA1/EA7/EA1/EA1/EA1/EA394.htm", "5.png", "235", "0", "", "Class0","{3FC8DF17-CDC4-4a91-80E1-D762809483A2}");
+tocTab[tocTab.length] = new Array("1.7.1.1.1:4", "", "RemoteAdmHandlerBESA", "EARoot/EA1/EA7/EA1/EA1/EA1/EA395.htm", "5.png", "236", "0", "", "Class0","{2CED0A70-27C8-4437-9ABD-D010056342AD}");
+tocTab[tocTab.length] = new Array("1.7.1.1.1:5", "", "RemoteDirectoryBESA", "EARoot/EA1/EA7/EA1/EA1/EA1/EA396.htm", "5.png", "237", "0", "", "Class0","{0C0417E8-AD46-45a3-8F34-B7B106422C08}");

@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("1.4.1.4:1", "", "Log", "EARoot/EA1/EA4/EA1/EA4/EA328.htm", "175.png", "36", "0", "", "Logical diagram0","{AC6F130C-6557-4dd1-90CF-3EC06C507E47}");
+tocTab[tocTab.length] = new Array("1.4.1.4:2", "", "«enumeration» BLevel", "EARoot/EA1/EA4/EA1/EA4/EA330.htm", "5.png", "205", "0", "", "Class0","{6FA881DE-023A-46fc-80A1-BA672F18DE0E}");
+tocTab[tocTab.length] = new Array("1.4.1.4:3", "", "BlogClient", "EARoot/EA1/EA4/EA1/EA4/EA331.htm", "5.png", "206", "0", "", "Class0","{3B6A33CD-81E5-4d92-9DAE-ADEF5C83BC83}");
+tocTab[tocTab.length] = new Array("1.4.1.4:4", "", "BLogServer", "EARoot/EA1/EA4/EA1/EA4/EA332.htm", "5.png", "207", "0", "", "Class0","{68375332-50AC-40a6-83BA-B4E642D442AC}");
+tocTab[tocTab.length] = new Array("1.4.1.4:5", "", "ConfigLog", "EARoot/EA1/EA4/EA1/EA4/EA333.htm", "5.png", "208", "0", "", "Class0","{6DA0CE53-6108-41cb-8537-CC84B81E6164}");
+tocTab[tocTab.length] = new Array("1.4.1.4:6", "", "GUIReportBESA", "EARoot/EA1/EA4/EA1/EA4/EA334.htm", "5.png", "209", "0", "", "Class0","{E3016C5D-2170-4b08-84EA-56EA25294616}");
+tocTab[tocTab.length] = new Array("1.4.1.4:7", "", "LogConfig", "EARoot/EA1/EA4/EA1/EA4/EA335.htm", "5.png", "210", "0", "", "Class0","{8829C13F-2920-49d0-9E04-1B710678464B}");
+tocTab[tocTab.length] = new Array("1.4.1.4:8", "", "Message", "EARoot/EA1/EA4/EA1/EA4/EA336.htm", "5.png", "211", "0", "", "Class0","{395820FE-2271-4b2d-BC4C-8A10CA71E875}");
+tocTab[tocTab.length] = new Array("1.4.1.4:9", "", "ReportBESA", "EARoot/EA1/EA4/EA1/EA4/EA337.htm", "5.png", "212", "0", "", "Class0","{59D44F0F-64F0-4a4b-8730-157878A1DC24}");
+tocTab[tocTab.length] = new Array("1.4.1.4:10", "", "TerminalReportBESA", "EARoot/EA1/EA4/EA1/EA4/EA338.htm", "5.png", "213", "0", "", "Class0","{A3CE9ADB-F552-4edb-90F3-A18B3D658836}");
+tocTab[tocTab.length] = new Array("1.4.1.4:11", "", "XMLLogConfig", "EARoot/EA1/EA4/EA1/EA4/EA339.htm", "5.png", "214", "0", "", "Class0","{5BE77DF8-F370-4267-BBA6-8A1AD8B316B3}");

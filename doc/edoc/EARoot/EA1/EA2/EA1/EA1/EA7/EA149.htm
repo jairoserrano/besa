@@ -1,0 +1,949 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Message::MessageFactoryBPO</title>
+<link href="../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">MessageFactoryBPO  : public   clase</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">19/06/2012 10:30:18</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">19/06/2012 10:30:18</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">Andrea Barraza</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Propuesto</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Fácil</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{E68667EF-354B-475e-A12E-27278B8CBF0D}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA138.htm">Message</a></td>
+		</tr>
+	</table>
+	
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Atributos</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operaciones</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Attribute</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow" valign="top"><i>private static int</i><br /><strong>&nbsp;&nbsp;cont</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes666" onclick="parent.toggleDiv('detailsDIVAttributes666','DetailsImageAttributes666')" />Details:
+						<div id="detailsDIVAttributes666" class="DetailsDiv" >
+						<i><i>Initial:</i> 1<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			public static String getId() { return UUID.randomUUID().toString(); } REVISAR-BORRAR
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createAddServiceMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{355DAF14-91DA-4276-B1C5-6BC23457BA1E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{355DAF14-91DA-4276-B1C5-6BC23457BA1E}" border="0" />serviceId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{355DAF14-91DA-4276-B1C5-6BC23457BA1E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{355DAF14-91DA-4276-B1C5-6BC23457BA1E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{355DAF14-91DA-4276-B1C5-6BC23457BA1E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{355DAF14-91DA-4276-B1C5-6BC23457BA1E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations667" onclick="parent.toggleDiv('detailsDIVOperations667','DetailsImageOperations667')" />Details:
+						<div id="detailsDIVOperations667" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createAddServiceMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{B145A716-0E8A-4d20-B0E9-2CE40D278880}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{B145A716-0E8A-4d20-B0E9-2CE40D278880}" border="0" />serviceId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B145A716-0E8A-4d20-B0E9-2CE40D278880}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B145A716-0E8A-4d20-B0E9-2CE40D278880}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B145A716-0E8A-4d20-B0E9-2CE40D278880}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B145A716-0E8A-4d20-B0E9-2CE40D278880}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C9BC1840-D8BA-4d1d-B438-863DBAD24BB3}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{C9BC1840-D8BA-4d1d-B438-863DBAD24BB3}" border="0" />descriptors: ArrayList<String></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C9BC1840-D8BA-4d1d-B438-863DBAD24BB3}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C9BC1840-D8BA-4d1d-B438-863DBAD24BB3}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C9BC1840-D8BA-4d1d-B438-863DBAD24BB3}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C9BC1840-D8BA-4d1d-B438-863DBAD24BB3}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations668" onclick="parent.toggleDiv('detailsDIVOperations668','DetailsImageOperations668')" />Details:
+						<div id="detailsDIVOperations668" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createAgentCreatedMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{1DE7B890-2EA0-44ae-8231-66537E62550C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{1DE7B890-2EA0-44ae-8231-66537E62550C}" border="0" />newAgID: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1DE7B890-2EA0-44ae-8231-66537E62550C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1DE7B890-2EA0-44ae-8231-66537E62550C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1DE7B890-2EA0-44ae-8231-66537E62550C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1DE7B890-2EA0-44ae-8231-66537E62550C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8C7F8356-F770-485c-990E-7D87EC17D8BA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{8C7F8356-F770-485c-990E-7D87EC17D8BA}" border="0" />newAgAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8C7F8356-F770-485c-990E-7D87EC17D8BA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8C7F8356-F770-485c-990E-7D87EC17D8BA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8C7F8356-F770-485c-990E-7D87EC17D8BA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8C7F8356-F770-485c-990E-7D87EC17D8BA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations669" onclick="parent.toggleDiv('detailsDIVOperations669','DetailsImageOperations669')" />Details:
+						<div id="detailsDIVOperations669" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Administrative
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createAgentKilledMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{11A4F015-C3BC-4a85-A708-E80390E57F22}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{11A4F015-C3BC-4a85-A708-E80390E57F22}" border="0" />deletedAgID: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{11A4F015-C3BC-4a85-A708-E80390E57F22}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{11A4F015-C3BC-4a85-A708-E80390E57F22}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{11A4F015-C3BC-4a85-A708-E80390E57F22}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{11A4F015-C3BC-4a85-A708-E80390E57F22}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{AC4C296A-D54A-4b3f-A1D1-94D230EF4D24}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{AC4C296A-D54A-4b3f-A1D1-94D230EF4D24}" border="0" />deleteAgPassword: double</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AC4C296A-D54A-4b3f-A1D1-94D230EF4D24}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AC4C296A-D54A-4b3f-A1D1-94D230EF4D24}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AC4C296A-D54A-4b3f-A1D1-94D230EF4D24}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AC4C296A-D54A-4b3f-A1D1-94D230EF4D24}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations670" onclick="parent.toggleDiv('detailsDIVOperations670','DetailsImageOperations670')" />Details:
+						<div id="detailsDIVOperations670" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createAgentMovedMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{15EF2FEB-5A8E-4274-A906-13A3B350DBC8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{15EF2FEB-5A8E-4274-A906-13A3B350DBC8}" border="0" />movedAgID: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{15EF2FEB-5A8E-4274-A906-13A3B350DBC8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{15EF2FEB-5A8E-4274-A906-13A3B350DBC8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{15EF2FEB-5A8E-4274-A906-13A3B350DBC8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{15EF2FEB-5A8E-4274-A906-13A3B350DBC8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{A69E08F4-FBEC-47f7-8C5D-5D00B3310920}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{A69E08F4-FBEC-47f7-8C5D-5D00B3310920}" border="0" />movedAgAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A69E08F4-FBEC-47f7-8C5D-5D00B3310920}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A69E08F4-FBEC-47f7-8C5D-5D00B3310920}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A69E08F4-FBEC-47f7-8C5D-5D00B3310920}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A69E08F4-FBEC-47f7-8C5D-5D00B3310920}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E5D52701-EB74-4be6-B93C-90F059F4919D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{E5D52701-EB74-4be6-B93C-90F059F4919D}" border="0" />newDestination: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E5D52701-EB74-4be6-B93C-90F059F4919D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E5D52701-EB74-4be6-B93C-90F059F4919D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E5D52701-EB74-4be6-B93C-90F059F4919D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E5D52701-EB74-4be6-B93C-90F059F4919D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FE9B097B-853B-4075-A631-0EB593C15760}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{FE9B097B-853B-4075-A631-0EB593C15760}" border="0" />movedAgPassword: double</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FE9B097B-853B-4075-A631-0EB593C15760}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FE9B097B-853B-4075-A631-0EB593C15760}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FE9B097B-853B-4075-A631-0EB593C15760}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FE9B097B-853B-4075-A631-0EB593C15760}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations671" onclick="parent.toggleDiv('detailsDIVOperations671','DetailsImageOperations671')" />Details:
+						<div id="detailsDIVOperations671" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createBindServiceMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{275241FE-18F8-4aa4-8E2E-51B56E0AFAF0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{275241FE-18F8-4aa4-8E2E-51B56E0AFAF0}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{275241FE-18F8-4aa4-8E2E-51B56E0AFAF0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{275241FE-18F8-4aa4-8E2E-51B56E0AFAF0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{275241FE-18F8-4aa4-8E2E-51B56E0AFAF0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{275241FE-18F8-4aa4-8E2E-51B56E0AFAF0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8C8CBD1B-16CA-4683-8420-1CA23AD4A939}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{8C8CBD1B-16CA-4683-8420-1CA23AD4A939}" border="0" />serviceId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8C8CBD1B-16CA-4683-8420-1CA23AD4A939}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8C8CBD1B-16CA-4683-8420-1CA23AD4A939}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8C8CBD1B-16CA-4683-8420-1CA23AD4A939}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8C8CBD1B-16CA-4683-8420-1CA23AD4A939}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations672" onclick="parent.toggleDiv('detailsDIVOperations672','DetailsImageOperations672')" />Details:
+						<div id="detailsDIVOperations672" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createBindSPServiceInDirectoryMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{374B5485-6269-41f0-9555-134FB20A8461}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{374B5485-6269-41f0-9555-134FB20A8461}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{374B5485-6269-41f0-9555-134FB20A8461}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{374B5485-6269-41f0-9555-134FB20A8461}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{374B5485-6269-41f0-9555-134FB20A8461}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{374B5485-6269-41f0-9555-134FB20A8461}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C691D4F8-BB1C-40ee-A3CB-61A79DA3B91B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{C691D4F8-BB1C-40ee-A3CB-61A79DA3B91B}" border="0" />directoryServiceName: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C691D4F8-BB1C-40ee-A3CB-61A79DA3B91B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C691D4F8-BB1C-40ee-A3CB-61A79DA3B91B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C691D4F8-BB1C-40ee-A3CB-61A79DA3B91B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C691D4F8-BB1C-40ee-A3CB-61A79DA3B91B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations673" onclick="parent.toggleDiv('detailsDIVOperations673','DetailsImageOperations673')" />Details:
+						<div id="detailsDIVOperations673" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createCommunicationChannelMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{1463FEDE-CCB0-4295-B090-24882AA9A05B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{1463FEDE-CCB0-4295-B090-24882AA9A05B}" border="0" />messageString: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1463FEDE-CCB0-4295-B090-24882AA9A05B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1463FEDE-CCB0-4295-B090-24882AA9A05B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1463FEDE-CCB0-4295-B090-24882AA9A05B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1463FEDE-CCB0-4295-B090-24882AA9A05B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA144.htm">CommunicationChannelMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations674" onclick="parent.toggleDiv('detailsDIVOperations674','DetailsImageOperations674')" />Details:
+						<div id="detailsDIVOperations674" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			COMMUNICATIONCHANNEL
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createDoesAgentExistMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{7E37BBC7-5DD8-4af1-916D-890DA026BFAE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{7E37BBC7-5DD8-4af1-916D-890DA026BFAE}" border="0" />newAgID: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7E37BBC7-5DD8-4af1-916D-890DA026BFAE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7E37BBC7-5DD8-4af1-916D-890DA026BFAE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7E37BBC7-5DD8-4af1-916D-890DA026BFAE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7E37BBC7-5DD8-4af1-916D-890DA026BFAE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{0D1156D4-18D9-47e5-89AE-54168C641CC7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{0D1156D4-18D9-47e5-89AE-54168C641CC7}" border="0" />newAgAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0D1156D4-18D9-47e5-89AE-54168C641CC7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0D1156D4-18D9-47e5-89AE-54168C641CC7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0D1156D4-18D9-47e5-89AE-54168C641CC7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0D1156D4-18D9-47e5-89AE-54168C641CC7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA142.htm">AdministrativeMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations675" onclick="parent.toggleDiv('detailsDIVOperations675','DetailsImageOperations675')" />Details:
+						<div id="detailsDIVOperations675" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createEventMessage</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{B77BE4BB-4CAE-4b5d-9BE7-6BBF6BE4C0B8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{B77BE4BB-4CAE-4b5d-9BE7-6BBF6BE4C0B8}" border="0" />event: <a href="../../../../EA4/EA1/EA3/EA1/EA1/EA271.htm">EventBESA</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B77BE4BB-4CAE-4b5d-9BE7-6BBF6BE4C0B8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B77BE4BB-4CAE-4b5d-9BE7-6BBF6BE4C0B8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B77BE4BB-4CAE-4b5d-9BE7-6BBF6BE4C0B8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B77BE4BB-4CAE-4b5d-9BE7-6BBF6BE4C0B8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{35608659-1BA2-4d58-8873-7BD15C095012}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{35608659-1BA2-4d58-8873-7BD15C095012}" border="0" />agIdReceiver: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{35608659-1BA2-4d58-8873-7BD15C095012}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{35608659-1BA2-4d58-8873-7BD15C095012}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{35608659-1BA2-4d58-8873-7BD15C095012}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{35608659-1BA2-4d58-8873-7BD15C095012}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FDE8CECB-C90D-4bbf-91F5-C24D78C3A3C0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{FDE8CECB-C90D-4bbf-91F5-C24D78C3A3C0}" border="0" />agAliasReceiver: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FDE8CECB-C90D-4bbf-91F5-C24D78C3A3C0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FDE8CECB-C90D-4bbf-91F5-C24D78C3A3C0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FDE8CECB-C90D-4bbf-91F5-C24D78C3A3C0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FDE8CECB-C90D-4bbf-91F5-C24D78C3A3C0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA146.htm">EventMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations676" onclick="parent.toggleDiv('detailsDIVOperations676','DetailsImageOperations676')" />Details:
+						<div id="detailsDIVOperations676" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			EVENT
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createNegativeACK</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{DDE4EE9B-DCE4-49a6-B9C1-66D3E0528445}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{DDE4EE9B-DCE4-49a6-B9C1-66D3E0528445}" border="0" />idMessage: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DDE4EE9B-DCE4-49a6-B9C1-66D3E0528445}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DDE4EE9B-DCE4-49a6-B9C1-66D3E0528445}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DDE4EE9B-DCE4-49a6-B9C1-66D3E0528445}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DDE4EE9B-DCE4-49a6-B9C1-66D3E0528445}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{339CAFCD-1654-4b89-BB7D-10260D5201B5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{339CAFCD-1654-4b89-BB7D-10260D5201B5}" border="0" />exceptionMessage: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{339CAFCD-1654-4b89-BB7D-10260D5201B5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{339CAFCD-1654-4b89-BB7D-10260D5201B5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{339CAFCD-1654-4b89-BB7D-10260D5201B5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{339CAFCD-1654-4b89-BB7D-10260D5201B5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA141.htm">ACKMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations677" onclick="parent.toggleDiv('detailsDIVOperations677','DetailsImageOperations677')" />Details:
+						<div id="detailsDIVOperations677" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>createPositiveACK</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{D6024097-9BE4-4b5c-AE92-EE78C13478B1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{D6024097-9BE4-4b5c-AE92-EE78C13478B1}" border="0" />idMessage: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D6024097-9BE4-4b5c-AE92-EE78C13478B1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D6024097-9BE4-4b5c-AE92-EE78C13478B1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D6024097-9BE4-4b5c-AE92-EE78C13478B1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D6024097-9BE4-4b5c-AE92-EE78C13478B1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA141.htm">ACKMessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations678" onclick="parent.toggleDiv('detailsDIVOperations678','DetailsImageOperations678')" />Details:
+						<div id="detailsDIVOperations678" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			ACK
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>getId</strong>():String
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations679" onclick="parent.toggleDiv('detailsDIVOperations679','DetailsImageOperations679')" />Details:
+						<div id="detailsDIVOperations679" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public static</i><br />
+					<strong>rebuildMessageFromString</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{E161CD4B-C4F3-4aad-B8DC-AE1724653A71}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="param{E161CD4B-C4F3-4aad-B8DC-AE1724653A71}" border="0" />messageString: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E161CD4B-C4F3-4aad-B8DC-AE1724653A71}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E161CD4B-C4F3-4aad-B8DC-AE1724653A71}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E161CD4B-C4F3-4aad-B8DC-AE1724653A71}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E161CD4B-C4F3-4aad-B8DC-AE1724653A71}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA148.htm">MessageBPO</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations680" onclick="parent.toggleDiv('detailsDIVOperations680','DetailsImageOperations680')" />Details:
+						<div id="detailsDIVOperations680" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=ExceptionBESAMessageInterpreterFailedBPO<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

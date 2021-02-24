@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.3.2.1:1", "", "Socket", "EARoot/EA1/EA2/EA1/EA1/EA3/EA2/EA1/EA114.htm", "175.png", "64", "0", "", "Logical diagram0","{7ABDB0F0-6AC4-4752-A08B-E63B721E6D9F}");
+tocTab[tocTab.length] = new Array("1.2.1.1.3.2.1:2", "", "ClientSocketBPO", "EARoot/EA1/EA2/EA1/EA1/EA3/EA2/EA1/EA116.htm", "5.png", "321", "0", "", "Class0","{80564BE9-7661-44a3-A346-E04164BCEDAD}");
+tocTab[tocTab.length] = new Array("1.2.1.1.3.2.1:3", "", "ServerSocketBPO", "EARoot/EA1/EA2/EA1/EA1/EA3/EA2/EA1/EA117.htm", "5.png", "322", "0", "", "Class0","{EBD9A28C-DD0B-424b-9295-56347E649420}");
+tocTab[tocTab.length] = new Array("1.2.1.1.3.2.1:4", "", "SocketCommunicationChannelBuilderBPO", "EARoot/EA1/EA2/EA1/EA1/EA3/EA2/EA1/EA118.htm", "5.png", "323", "0", "", "Class0","{FC98A8A3-D8B3-4968-96D2-FA8D9DD56D42}");

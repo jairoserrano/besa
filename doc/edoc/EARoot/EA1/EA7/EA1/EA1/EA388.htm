@@ -1,0 +1,2449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Remote::RemoteAdmBESA</title>
+<link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">RemoteAdmBESA  : public   clase</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">19/06/2012 10:26:20</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">19/06/2012 10:26:20</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">User</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Propuesto</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Fácil</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{2BAD847B-E682-49b3-BA7D-091635A2D4CB}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA377.htm">Remote</a></td>
+		</tr>
+	</table>
+	
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Atributos</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operaciones</li>
+			<li onClick="parent.toggleItem('AssociationsHasta');" id="AssociationsHastaTitle">Asociaciones Hasta</li>
+			<li onClick="parent.toggleItem('AssociationsDesde');" id="AssociationsDesdeTitle">Asociaciones Desde</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Otros vínculos</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Attribute</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_ADM_ALIVE</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2312" onclick="parent.toggleDiv('detailsDIVAttributes2312','DetailsImageAttributes2312')" />Details:
+						<div id="detailsDIVAttributes2312" class="DetailsDiv" >
+						<i><i>Initial:</i> "ALIVE"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type ALIVE container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_ADM_KILL</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2313" onclick="parent.toggleDiv('detailsDIVAttributes2313','DetailsImageAttributes2313')" />Details:
+						<div id="detailsDIVAttributes2313" class="DetailsDiv" >
+						<i><i>Initial:</i> "KILL"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type KILL container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_AGENT_CREATE</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2314" onclick="parent.toggleDiv('detailsDIVAttributes2314','DetailsImageAttributes2314')" />Details:
+						<div id="detailsDIVAttributes2314" class="DetailsDiv" >
+						<i><i>Initial:</i> "CREATE"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type CREATE container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_AGENT_DESTROY</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2315" onclick="parent.toggleDiv('detailsDIVAttributes2315','DetailsImageAttributes2315')" />Details:
+						<div id="detailsDIVAttributes2315" class="DetailsDiv" >
+						<i><i>Initial:</i> "DESTROY"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type DESTROY container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_AGENT_MOVE</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2316" onclick="parent.toggleDiv('detailsDIVAttributes2316','DetailsImageAttributes2316')" />Details:
+						<div id="detailsDIVAttributes2316" class="DetailsDiv" >
+						<i><i>Initial:</i> "MOVE"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type MOVE container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_SET_STATE_AGENT_ALIVE</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2317" onclick="parent.toggleDiv('detailsDIVAttributes2317','DetailsImageAttributes2317')" />Details:
+						<div id="detailsDIVAttributes2317" class="DetailsDiv" >
+						<i><i>Initial:</i> "SET_STATE_ALIVE"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type SET_STATE_ALIVE container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MSG_MULTICAST_SET_STATE_AGENT_MOVE</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2318" onclick="parent.toggleDiv('detailsDIVAttributes2318','DetailsImageAttributes2318')" />Details:
+						<div id="detailsDIVAttributes2318" class="DetailsDiv" >
+						<i><i>Initial:</i> "SET_STATE_MOVE"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to define the type SET_STATE_MOVE container at a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public static const String</i><br /><strong>&nbsp;&nbsp;MULTICAST_DELIMITER</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2319" onclick="parent.toggleDiv('detailsDIVAttributes2319','DetailsImageAttributes2319')" />Details:
+						<div id="detailsDIVAttributes2319" class="DetailsDiv" >
+						<i><i>Initial:</i> "%"<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Constant to separate data in a multicast message.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected InetAddress</i><br /><strong>&nbsp;&nbsp;multicastInetAddr</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2320" onclick="parent.toggleDiv('detailsDIVAttributes2320','DetailsImageAttributes2320')" />Details:
+						<div id="detailsDIVAttributes2320" class="DetailsDiv" >
+						<i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Inet address for multicast.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected int</i><br /><strong>&nbsp;&nbsp;multicastPort</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2321" onclick="parent.toggleDiv('detailsDIVAttributes2321','DetailsImageAttributes2321')" />Details:
+						<div id="detailsDIVAttributes2321" class="DetailsDiv" >
+						<i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Port for multicast socket.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected MulticastSocket</i><br /><strong>&nbsp;&nbsp;multicastSocket</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2322" onclick="parent.toggleDiv('detailsDIVAttributes2322','DetailsImageAttributes2322')" />Details:
+						<div id="detailsDIVAttributes2322" class="DetailsDiv" >
+						<i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Multicast socket.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected <a href="EA385.htm">PingThread</a></i><br /><strong>&nbsp;&nbsp;ping</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2323" onclick="parent.toggleDiv('detailsDIVAttributes2323','DetailsImageAttributes2323')" />Details:
+						<div id="detailsDIVAttributes2323" class="DetailsDiv" >
+						<i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Multicast port.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected <a href="EA387.htm">PongThread</a></i><br /><strong>&nbsp;&nbsp;pong</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2324" onclick="parent.toggleDiv('detailsDIVAttributes2324','DetailsImageAttributes2324')" />Details:
+						<div id="detailsDIVAttributes2324" class="DetailsDiv" >
+						<i></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Managing the reception and processing of multicast messages.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected <a href="./EA1/EA396.htm">RemoteDirectoryBESA</a></i><br /><strong>&nbsp;&nbsp;remoteDirectory</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2325" onclick="parent.toggleDiv('detailsDIVAttributes2325','DetailsImageAttributes2325')" />Details:
+						<div id="detailsDIVAttributes2325" class="DetailsDiv" >
+						<i></i>&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>protected Socket</i><br /><strong>&nbsp;&nbsp;socketPingPong</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2326" onclick="parent.toggleDiv('detailsDIVAttributes2326','DetailsImageAttributes2326')" />Details:
+						<div id="detailsDIVAttributes2326" class="DetailsDiv" >
+						<i><i>Initial:</i> null<br></i><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Socket ping-pong.
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>geLocalDirectoryList</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{71E64F50-0037-4c43-B8DA-774D41C7555C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{71E64F50-0037-4c43-B8DA-774D41C7555C}" border="0" />idList: ArrayList<String></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{71E64F50-0037-4c43-B8DA-774D41C7555C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{71E64F50-0037-4c43-B8DA-774D41C7555C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{71E64F50-0037-4c43-B8DA-774D41C7555C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{71E64F50-0037-4c43-B8DA-774D41C7555C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{9E2B694E-0021-4543-8DE8-10D3B2114387}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{9E2B694E-0021-4543-8DE8-10D3B2114387}" border="0" />aliasList: ArrayList<String></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9E2B694E-0021-4543-8DE8-10D3B2114387}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E2B694E-0021-4543-8DE8-10D3B2114387}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9E2B694E-0021-4543-8DE8-10D3B2114387}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E2B694E-0021-4543-8DE8-10D3B2114387}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">aliasList</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2327" onclick="parent.toggleDiv('detailsDIVOperations2327','DetailsImageOperations2327')" />Details:
+						<div id="detailsDIVOperations2327" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getAdmAliasList</strong>():Enumeration<String>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2328" onclick="parent.toggleDiv('detailsDIVOperations2328','DetailsImageOperations2328')" />Details:
+						<div id="detailsDIVOperations2328" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getAdmByAlias</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{A296F634-4BC0-4711-8D31-516751FBECBB}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{A296F634-4BC0-4711-8D31-516751FBECBB}" border="0" />admAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A296F634-4BC0-4711-8D31-516751FBECBB}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A296F634-4BC0-4711-8D31-516751FBECBB}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A296F634-4BC0-4711-8D31-516751FBECBB}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A296F634-4BC0-4711-8D31-516751FBECBB}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Alias/name of the admnistrador.</div>
+</td>
+						</tr>
+					</table>
+):<a href="../../../EA4/EA1/EA3/EA3/EA1/EA324.htm">AdmHandlerBESA</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2329" onclick="parent.toggleDiv('detailsDIVOperations2329','DetailsImageOperations2329')" />Details:
+						<div id="detailsDIVOperations2329" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Registering a remote administrator present in another JVM - if not registered, is created handler and lookup. &lt;br /&gt;@return null if this is a problem -&gt; exception in lookup || there is already a local administrator with the same alias and a different name RMI (possible ambiguity by the same names).
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getAdmById</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{7B86E113-F0DB-41b5-A778-A992F0299672}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{7B86E113-F0DB-41b5-A778-A992F0299672}" border="0" />admId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7B86E113-F0DB-41b5-A778-A992F0299672}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7B86E113-F0DB-41b5-A778-A992F0299672}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7B86E113-F0DB-41b5-A778-A992F0299672}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7B86E113-F0DB-41b5-A778-A992F0299672}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Administrator ID.</div>
+</td>
+						</tr>
+					</table>
+):<a href="../../../EA4/EA1/EA3/EA3/EA1/EA324.htm">AdmHandlerBESA</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2330" onclick="parent.toggleDiv('detailsDIVOperations2330','DetailsImageOperations2330')" />Details:
+						<div id="detailsDIVOperations2330" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Registering a remote administrator present in another JVM - if not registered, is created handler and lookup. &lt;br /&gt;@return null if this is a problem -&gt; exception in lookup || there is already a local administrator with the same alias and a different name RMI (possible ambiguity by the same names).
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getAliasAdmById</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{C89BAC4C-DC73-4c43-BB6E-8EFBE23C943C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{C89BAC4C-DC73-4c43-BB6E-8EFBE23C943C}" border="0" />admId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C89BAC4C-DC73-4c43-BB6E-8EFBE23C943C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C89BAC4C-DC73-4c43-BB6E-8EFBE23C943C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C89BAC4C-DC73-4c43-BB6E-8EFBE23C943C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C89BAC4C-DC73-4c43-BB6E-8EFBE23C943C}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Administrator ID.</div>
+</td>
+						</tr>
+					</table>
+):String
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2331" onclick="parent.toggleDiv('detailsDIVOperations2331','DetailsImageOperations2331')" />Details:
+						<div id="detailsDIVOperations2331" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Gets alias Adm by ID. &lt;br /&gt;@return Adm alias.
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getMulticastInetAddr</strong>():InetAddress
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2332" onclick="parent.toggleDiv('detailsDIVOperations2332','DetailsImageOperations2332')" />Details:
+						<div id="detailsDIVOperations2332" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			@return
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getMulticastPort</strong>():int
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2333" onclick="parent.toggleDiv('detailsDIVOperations2333','DetailsImageOperations2333')" />Details:
+						<div id="detailsDIVOperations2333" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			@return
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getMulticastSocket</strong>():MulticastSocket
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2334" onclick="parent.toggleDiv('detailsDIVOperations2334','DetailsImageOperations2334')" />Details:
+						<div id="detailsDIVOperations2334" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			@return
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getPing</strong>():<a href="EA385.htm">PingThread</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2335" onclick="parent.toggleDiv('detailsDIVOperations2335','DetailsImageOperations2335')" />Details:
+						<div id="detailsDIVOperations2335" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18&nbsp;<WBR> - Ene - 2006&lt;br /&gt;@return
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getPong</strong>():<a href="EA387.htm">PongThread</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2336" onclick="parent.toggleDiv('detailsDIVOperations2336','DetailsImageOperations2336')" />Details:
+						<div id="detailsDIVOperations2336" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18&nbsp;<WBR> - Ene - 2006&lt;br /&gt;@return
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>getSocketPingPong</strong>():Socket
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2337" onclick="parent.toggleDiv('detailsDIVOperations2337','DetailsImageOperations2337')" />Details:
+						<div id="detailsDIVOperations2337" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			@return
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>importAgentDirectory</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{F8119D27-172F-4e35-85D9-64CEF636A9E5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{F8119D27-172F-4e35-85D9-64CEF636A9E5}" border="0" />adIdList: ArrayList<String></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F8119D27-172F-4e35-85D9-64CEF636A9E5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F8119D27-172F-4e35-85D9-64CEF636A9E5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F8119D27-172F-4e35-85D9-64CEF636A9E5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F8119D27-172F-4e35-85D9-64CEF636A9E5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{447EDA1F-D0E0-45e7-B3F5-CFCE07119E3B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{447EDA1F-D0E0-45e7-B3F5-CFCE07119E3B}" border="0" />aliasList: ArrayList<String></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{447EDA1F-D0E0-45e7-B3F5-CFCE07119E3B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{447EDA1F-D0E0-45e7-B3F5-CFCE07119E3B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{447EDA1F-D0E0-45e7-B3F5-CFCE07119E3B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{447EDA1F-D0E0-45e7-B3F5-CFCE07119E3B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2338" onclick="parent.toggleDiv('detailsDIVOperations2338','DetailsImageOperations2338')" />Details:
+						<div id="detailsDIVOperations2338" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=RemoteException<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>kill</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{D55F1F17-D97B-438a-8E23-CAF03FC09EA4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{D55F1F17-D97B-438a-8E23-CAF03FC09EA4}" border="0" />containerPassword: double</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D55F1F17-D97B-438a-8E23-CAF03FC09EA4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D55F1F17-D97B-438a-8E23-CAF03FC09EA4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D55F1F17-D97B-438a-8E23-CAF03FC09EA4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D55F1F17-D97B-438a-8E23-CAF03FC09EA4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2339" onclick="parent.toggleDiv('detailsDIVOperations2339','DetailsImageOperations2339')" />Details:
+						<div id="detailsDIVOperations2339" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/>throws=ExceptionBESA<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>killAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{3033C2EF-CA8F-4c58-8662-8E8548B71CB7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{3033C2EF-CA8F-4c58-8662-8E8548B71CB7}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3033C2EF-CA8F-4c58-8662-8E8548B71CB7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3033C2EF-CA8F-4c58-8662-8E8548B71CB7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3033C2EF-CA8F-4c58-8662-8E8548B71CB7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3033C2EF-CA8F-4c58-8662-8E8548B71CB7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{268EBE95-80CF-4730-8409-C776CD0F6ABD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{268EBE95-80CF-4730-8409-C776CD0F6ABD}" border="0" />agentPassword: double</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{268EBE95-80CF-4730-8409-C776CD0F6ABD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{268EBE95-80CF-4730-8409-C776CD0F6ABD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{268EBE95-80CF-4730-8409-C776CD0F6ABD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{268EBE95-80CF-4730-8409-C776CD0F6ABD}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2340" onclick="parent.toggleDiv('detailsDIVOperations2340','DetailsImageOperations2340')" />Details:
+						<div id="detailsDIVOperations2340" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/>throws=ExceptionBESA<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>moveAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{D2F4626D-FB9E-47db-BE54-AA1D74F09E26}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{D2F4626D-FB9E-47db-BE54-AA1D74F09E26}" border="0" />alias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D2F4626D-FB9E-47db-BE54-AA1D74F09E26}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D2F4626D-FB9E-47db-BE54-AA1D74F09E26}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D2F4626D-FB9E-47db-BE54-AA1D74F09E26}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D2F4626D-FB9E-47db-BE54-AA1D74F09E26}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{63385F39-B0A2-4115-BFA7-3374648EA479}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{63385F39-B0A2-4115-BFA7-3374648EA479}" border="0" />aliasDestinationAdmBESA: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{63385F39-B0A2-4115-BFA7-3374648EA479}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{63385F39-B0A2-4115-BFA7-3374648EA479}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{63385F39-B0A2-4115-BFA7-3374648EA479}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{63385F39-B0A2-4115-BFA7-3374648EA479}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Destination alias.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D5D18E36-8363-4282-8028-47A5D8A7B98F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{D5D18E36-8363-4282-8028-47A5D8A7B98F}" border="0" />passwdAgent: double</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D5D18E36-8363-4282-8028-47A5D8A7B98F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D5D18E36-8363-4282-8028-47A5D8A7B98F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D5D18E36-8363-4282-8028-47A5D8A7B98F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D5D18E36-8363-4282-8028-47A5D8A7B98F}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Agent password.</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2341" onclick="parent.toggleDiv('detailsDIVOperations2341','DetailsImageOperations2341')" />Details:
+						<div id="detailsDIVOperations2341" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/>throws=ExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Moves the agent of a container to another container. &lt;br /&gt;@param agId agent ID.
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>publicagent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{30EDEBEA-2B6A-4bca-A778-5B998965144A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{30EDEBEA-2B6A-4bca-A778-5B998965144A}" border="0" />alias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{30EDEBEA-2B6A-4bca-A778-5B998965144A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{30EDEBEA-2B6A-4bca-A778-5B998965144A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{30EDEBEA-2B6A-4bca-A778-5B998965144A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{30EDEBEA-2B6A-4bca-A778-5B998965144A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{4084F63B-278B-4d9d-87AF-96FBC291B03A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{4084F63B-278B-4d9d-87AF-96FBC291B03A}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4084F63B-278B-4d9d-87AF-96FBC291B03A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4084F63B-278B-4d9d-87AF-96FBC291B03A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4084F63B-278B-4d9d-87AF-96FBC291B03A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4084F63B-278B-4d9d-87AF-96FBC291B03A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2342" onclick="parent.toggleDiv('detailsDIVOperations2342','DetailsImageOperations2342')" />Details:
+						<div id="detailsDIVOperations2342" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/>throws=SystemExceptionBESA<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>registerAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{96BB9FF2-B585-4c49-A927-79E39F35B243}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{96BB9FF2-B585-4c49-A927-79E39F35B243}" border="0" />ag: <a href="../../../EA4/EA1/EA3/EA1/EA244.htm">AgentBESA</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{96BB9FF2-B585-4c49-A927-79E39F35B243}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{96BB9FF2-B585-4c49-A927-79E39F35B243}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{96BB9FF2-B585-4c49-A927-79E39F35B243}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{96BB9FF2-B585-4c49-A927-79E39F35B243}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{0EFC8B87-3A5C-480a-9BC2-88925DF73D31}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{0EFC8B87-3A5C-480a-9BC2-88925DF73D31}" border="0" />id: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0EFC8B87-3A5C-480a-9BC2-88925DF73D31}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0EFC8B87-3A5C-480a-9BC2-88925DF73D31}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0EFC8B87-3A5C-480a-9BC2-88925DF73D31}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0EFC8B87-3A5C-480a-9BC2-88925DF73D31}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{CDD127D1-0FB7-4fe9-93F7-29D2EAB39715}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{CDD127D1-0FB7-4fe9-93F7-29D2EAB39715}" border="0" />alias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CDD127D1-0FB7-4fe9-93F7-29D2EAB39715}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CDD127D1-0FB7-4fe9-93F7-29D2EAB39715}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CDD127D1-0FB7-4fe9-93F7-29D2EAB39715}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CDD127D1-0FB7-4fe9-93F7-29D2EAB39715}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):String
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2343" onclick="parent.toggleDiv('detailsDIVOperations2343','DetailsImageOperations2343')" />Details:
+						<div id="detailsDIVOperations2343" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>registerRemoteAdm</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{97FD94F6-7654-422c-A212-9C3145F5F10C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{97FD94F6-7654-422c-A212-9C3145F5F10C}" border="0" />admId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{97FD94F6-7654-422c-A212-9C3145F5F10C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{97FD94F6-7654-422c-A212-9C3145F5F10C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{97FD94F6-7654-422c-A212-9C3145F5F10C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{97FD94F6-7654-422c-A212-9C3145F5F10C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6849AC66-CD37-4f5b-ACED-EEF52C0C1F03}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{6849AC66-CD37-4f5b-ACED-EEF52C0C1F03}" border="0" />admAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6849AC66-CD37-4f5b-ACED-EEF52C0C1F03}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6849AC66-CD37-4f5b-ACED-EEF52C0C1F03}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6849AC66-CD37-4f5b-ACED-EEF52C0C1F03}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6849AC66-CD37-4f5b-ACED-EEF52C0C1F03}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Alias/name of the admnistrador.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{DB10AEF4-9718-49bd-8200-E838B1B630DD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{DB10AEF4-9718-49bd-8200-E838B1B630DD}" border="0" />ipRmiRegistry: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DB10AEF4-9718-49bd-8200-E838B1B630DD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB10AEF4-9718-49bd-8200-E838B1B630DD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DB10AEF4-9718-49bd-8200-E838B1B630DD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB10AEF4-9718-49bd-8200-E838B1B630DD}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">The IP address of the machine that contains the administrator to be registered.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{279D6CB7-3CAE-4e9e-AE14-7686D8EAA707}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{279D6CB7-3CAE-4e9e-AE14-7686D8EAA707}" border="0" />portRmiRegistry: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{279D6CB7-3CAE-4e9e-AE14-7686D8EAA707}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{279D6CB7-3CAE-4e9e-AE14-7686D8EAA707}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{279D6CB7-3CAE-4e9e-AE14-7686D8EAA707}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{279D6CB7-3CAE-4e9e-AE14-7686D8EAA707}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">The port of the machine that contains the administrator to be registered.</div>
+</td>
+						</tr>
+					</table>
+):<a href="./EA1/EA395.htm">RemoteAdmHandlerBESA</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2344" onclick="parent.toggleDiv('detailsDIVOperations2344','DetailsImageOperations2344')" />Details:
+						<div id="detailsDIVOperations2344" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=SystemExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This registers a remote administrator in another JVM - if not registered is created handler and the lookup. &lt;br /&gt;@param passwd Security key, it is necessary to be able to create or destroy the administrator.&lt;br /&gt;@return Adm remote handler BESA.
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>registerRemoteAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{B1F9D50E-D7BA-44bf-AA6F-F180B1DD47F9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{B1F9D50E-D7BA-44bf-AA6F-F180B1DD47F9}" border="0" />agAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B1F9D50E-D7BA-44bf-AA6F-F180B1DD47F9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1F9D50E-D7BA-44bf-AA6F-F180B1DD47F9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B1F9D50E-D7BA-44bf-AA6F-F180B1DD47F9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1F9D50E-D7BA-44bf-AA6F-F180B1DD47F9}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Agent alias.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{F52802E4-696B-40cd-8AC4-3F78B831F706}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{F52802E4-696B-40cd-8AC4-3F78B831F706}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F52802E4-696B-40cd-8AC4-3F78B831F706}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F52802E4-696B-40cd-8AC4-3F78B831F706}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F52802E4-696B-40cd-8AC4-3F78B831F706}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F52802E4-696B-40cd-8AC4-3F78B831F706}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Agent ID.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{47D3C95E-D55A-47a1-8C6B-3185CA5BEA6D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{47D3C95E-D55A-47a1-8C6B-3185CA5BEA6D}" border="0" />admId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{47D3C95E-D55A-47a1-8C6B-3185CA5BEA6D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{47D3C95E-D55A-47a1-8C6B-3185CA5BEA6D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{47D3C95E-D55A-47a1-8C6B-3185CA5BEA6D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{47D3C95E-D55A-47a1-8C6B-3185CA5BEA6D}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">ID of System Administrator.</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2345" onclick="parent.toggleDiv('detailsDIVOperations2345','DetailsImageOperations2345')" />Details:
+						<div id="detailsDIVOperations2345" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=DistributedDirectoryExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Registers remote agent. 
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>RemoteAdmBESA</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{D728AD3F-0487-4551-B06C-6CDC6E34479D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{D728AD3F-0487-4551-B06C-6CDC6E34479D}" border="0" />admAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D728AD3F-0487-4551-B06C-6CDC6E34479D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D728AD3F-0487-4551-B06C-6CDC6E34479D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D728AD3F-0487-4551-B06C-6CDC6E34479D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D728AD3F-0487-4551-B06C-6CDC6E34479D}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Alias/name of the admnistrador.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{7E96BAFC-0BCB-46bf-9D2D-1C1BD6F591CA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{7E96BAFC-0BCB-46bf-9D2D-1C1BD6F591CA}" border="0" />passwd: double</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7E96BAFC-0BCB-46bf-9D2D-1C1BD6F591CA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7E96BAFC-0BCB-46bf-9D2D-1C1BD6F591CA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7E96BAFC-0BCB-46bf-9D2D-1C1BD6F591CA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7E96BAFC-0BCB-46bf-9D2D-1C1BD6F591CA}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Security key,  it is necessary to be able to create or destroy the administrator.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{9E50CBB6-CD6C-4b2d-A22B-06584516E3BA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{9E50CBB6-CD6C-4b2d-A22B-06584516E3BA}" border="0" />ipRmiRegistry: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9E50CBB6-CD6C-4b2d-A22B-06584516E3BA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E50CBB6-CD6C-4b2d-A22B-06584516E3BA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9E50CBB6-CD6C-4b2d-A22B-06584516E3BA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E50CBB6-CD6C-4b2d-A22B-06584516E3BA}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">The IP address of the machine that contains the administrator to be registered.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{353DF04F-15B2-433b-B1EF-9A50195CF2A4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{353DF04F-15B2-433b-B1EF-9A50195CF2A4}" border="0" />portRmiRegistry: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{353DF04F-15B2-433b-B1EF-9A50195CF2A4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{353DF04F-15B2-433b-B1EF-9A50195CF2A4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{353DF04F-15B2-433b-B1EF-9A50195CF2A4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{353DF04F-15B2-433b-B1EF-9A50195CF2A4}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">The port of the machine that contains the administrator to be registered.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{75E13D14-8C31-43f3-9D9F-3E32978B6563}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{75E13D14-8C31-43f3-9D9F-3E32978B6563}" border="0" />multicastAddr: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{75E13D14-8C31-43f3-9D9F-3E32978B6563}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{75E13D14-8C31-43f3-9D9F-3E32978B6563}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{75E13D14-8C31-43f3-9D9F-3E32978B6563}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{75E13D14-8C31-43f3-9D9F-3E32978B6563}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Multicast address used by the administrators in the same SMA.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{99C28E2B-39E7-468c-AE6D-08A3B521BAA8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{99C28E2B-39E7-468c-AE6D-08A3B521BAA8}" border="0" />multicastPort: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{99C28E2B-39E7-468c-AE6D-08A3B521BAA8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{99C28E2B-39E7-468c-AE6D-08A3B521BAA8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{99C28E2B-39E7-468c-AE6D-08A3B521BAA8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{99C28E2B-39E7-468c-AE6D-08A3B521BAA8}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Multicast port used by the administrators in the same SMA.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{B51C82EE-28EA-4da6-B322-630798D6162F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{B51C82EE-28EA-4da6-B322-630798D6162F}" border="0" />centralized: boolean</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B51C82EE-28EA-4da6-B322-630798D6162F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B51C82EE-28EA-4da6-B322-630798D6162F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B51C82EE-28EA-4da6-B322-630798D6162F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B51C82EE-28EA-4da6-B322-630798D6162F}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Indicates if the container is going to be executed in a single machine or if it is going to be used in a distributed way.</div>
+</td>
+						</tr>
+					</table>
+):
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2346" onclick="parent.toggleDiv('detailsDIVOperations2346','DetailsImageOperations2346')" />Details:
+						<div id="detailsDIVOperations2346" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=ExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Creates a unique instance for un distributed administrator. &lt;br /&gt;@return Reference to the unique/singleton instance of the local administrator.
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>RemoteAdmBESA</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{F245B324-7050-44fd-931A-1B6D17694D8D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{F245B324-7050-44fd-931A-1B6D17694D8D}" border="0" />configBESA: <a href="../../../EA4/EA1/EA2/EA228.htm">ConfigBESA</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F245B324-7050-44fd-931A-1B6D17694D8D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F245B324-7050-44fd-931A-1B6D17694D8D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F245B324-7050-44fd-931A-1B6D17694D8D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F245B324-7050-44fd-931A-1B6D17694D8D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2347" onclick="parent.toggleDiv('detailsDIVOperations2347','DetailsImageOperations2347')" />Details:
+						<div id="detailsDIVOperations2347" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=DistributedExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Creates a unique instance for the local administrator in a JVM. &lt;br /&gt;@param admAlias Alias/name of the admnistrador.&lt;br /&gt;@param passwd Security key, it is necessary to be able to create or destroy the administrator.&lt;br /&gt;@param ipAddress The IP address of the machine that contains the administrator to be registered.&lt;br /&gt;@param rmiPort The port of the machine that contains the administrator to be registered.&lt;br /&gt;@param multicastAddr Multicast address used by the administrators in the same SMA.&lt;br /&gt;@param multicastPort Multicast port used by the administrators in the same SMA.&lt;br /&gt;@param centralized Indicates if the container is going to be executed in a single machine or if it is going to be used in a distributed way.&lt;br /&gt;@return Reference to the unique/singleton instance of the local administrator.
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>setMulticastInetAddr</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{9E5AD9C4-E1A0-49a1-909B-D376D7477C7D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{9E5AD9C4-E1A0-49a1-909B-D376D7477C7D}" border="0" />addr: InetAddress</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9E5AD9C4-E1A0-49a1-909B-D376D7477C7D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E5AD9C4-E1A0-49a1-909B-D376D7477C7D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9E5AD9C4-E1A0-49a1-909B-D376D7477C7D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E5AD9C4-E1A0-49a1-909B-D376D7477C7D}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">addr</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2348" onclick="parent.toggleDiv('detailsDIVOperations2348','DetailsImageOperations2348')" />Details:
+						<div id="detailsDIVOperations2348" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18 - Ene - 2006
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>setMulticastPort</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{416C3A4B-5D23-4bd3-B290-1B4CC606E45E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{416C3A4B-5D23-4bd3-B290-1B4CC606E45E}" border="0" />port: int</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{416C3A4B-5D23-4bd3-B290-1B4CC606E45E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{416C3A4B-5D23-4bd3-B290-1B4CC606E45E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{416C3A4B-5D23-4bd3-B290-1B4CC606E45E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{416C3A4B-5D23-4bd3-B290-1B4CC606E45E}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">port</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2349" onclick="parent.toggleDiv('detailsDIVOperations2349','DetailsImageOperations2349')" />Details:
+						<div id="detailsDIVOperations2349" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18 - Ene - 2006
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>setMulticastSocket</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{5D58FDE5-6197-4e52-8AB8-67427676D496}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{5D58FDE5-6197-4e52-8AB8-67427676D496}" border="0" />ms: MulticastSocket</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{5D58FDE5-6197-4e52-8AB8-67427676D496}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5D58FDE5-6197-4e52-8AB8-67427676D496}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{5D58FDE5-6197-4e52-8AB8-67427676D496}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5D58FDE5-6197-4e52-8AB8-67427676D496}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">ms</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2350" onclick="parent.toggleDiv('detailsDIVOperations2350','DetailsImageOperations2350')" />Details:
+						<div id="detailsDIVOperations2350" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18&nbsp;<WBR> - Ene - 2006
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>setPing</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{C67F1702-DF1E-4a64-A787-263357799187}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{C67F1702-DF1E-4a64-A787-263357799187}" border="0" />ping: <a href="EA385.htm">PingThread</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C67F1702-DF1E-4a64-A787-263357799187}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C67F1702-DF1E-4a64-A787-263357799187}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C67F1702-DF1E-4a64-A787-263357799187}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C67F1702-DF1E-4a64-A787-263357799187}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">ping</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2351" onclick="parent.toggleDiv('detailsDIVOperations2351','DetailsImageOperations2351')" />Details:
+						<div id="detailsDIVOperations2351" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18&nbsp;<WBR> - Ene - 2006
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>setPong</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{EF7F76A9-D4BF-465f-A375-DF5F2C77978C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{EF7F76A9-D4BF-465f-A375-DF5F2C77978C}" border="0" />pong: <a href="EA387.htm">PongThread</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EF7F76A9-D4BF-465f-A375-DF5F2C77978C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EF7F76A9-D4BF-465f-A375-DF5F2C77978C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EF7F76A9-D4BF-465f-A375-DF5F2C77978C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EF7F76A9-D4BF-465f-A375-DF5F2C77978C}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">pong</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2352" onclick="parent.toggleDiv('detailsDIVOperations2352','DetailsImageOperations2352')" />Details:
+						<div id="detailsDIVOperations2352" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			18&nbsp;<WBR> - Ene - 2006
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>setSocketPingPong</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{2464C39E-FE72-49ad-BBDF-3E42114BAF14}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{2464C39E-FE72-49ad-BBDF-3E42114BAF14}" border="0" />socketPingPong: Socket</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2464C39E-FE72-49ad-BBDF-3E42114BAF14}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2464C39E-FE72-49ad-BBDF-3E42114BAF14}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2464C39E-FE72-49ad-BBDF-3E42114BAF14}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2464C39E-FE72-49ad-BBDF-3E42114BAF14}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">socketPingPong</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2353" onclick="parent.toggleDiv('detailsDIVOperations2353','DetailsImageOperations2353')" />Details:
+						<div id="detailsDIVOperations2353" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>unregisterAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{557A9E5D-4633-440f-BECE-A24B21641CDB}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{557A9E5D-4633-440f-BECE-A24B21641CDB}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{557A9E5D-4633-440f-BECE-A24B21641CDB}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{557A9E5D-4633-440f-BECE-A24B21641CDB}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{557A9E5D-4633-440f-BECE-A24B21641CDB}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{557A9E5D-4633-440f-BECE-A24B21641CDB}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2354" onclick="parent.toggleDiv('detailsDIVOperations2354','DetailsImageOperations2354')" />Details:
+						<div id="detailsDIVOperations2354" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>annotations=@Override<br/>throws=SystemExceptionBESA<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>unregisterRemoteAdm</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{0F8CA882-1B8C-4d0f-822B-5C0262906F68}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{0F8CA882-1B8C-4d0f-822B-5C0262906F68}" border="0" />admAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0F8CA882-1B8C-4d0f-822B-5C0262906F68}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0F8CA882-1B8C-4d0f-822B-5C0262906F68}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0F8CA882-1B8C-4d0f-822B-5C0262906F68}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0F8CA882-1B8C-4d0f-822B-5C0262906F68}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Adm alias.</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2355" onclick="parent.toggleDiv('detailsDIVOperations2355','DetailsImageOperations2355')" />Details:
+						<div id="detailsDIVOperations2355" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=SystemExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Unregister remote Adm from serv Id Table.
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>updateAgentDirectory</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{82D6F88E-6C4E-4065-B1B6-83BAAA037379}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{82D6F88E-6C4E-4065-B1B6-83BAAA037379}" border="0" />admId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{82D6F88E-6C4E-4065-B1B6-83BAAA037379}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{82D6F88E-6C4E-4065-B1B6-83BAAA037379}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{82D6F88E-6C4E-4065-B1B6-83BAAA037379}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{82D6F88E-6C4E-4065-B1B6-83BAAA037379}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Administrator ID of the remote invoquer.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{596D1FAE-1ABC-425c-9049-489F88B2E1A6}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{596D1FAE-1ABC-425c-9049-489F88B2E1A6}" border="0" />agIdList: ArrayList</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{596D1FAE-1ABC-425c-9049-489F88B2E1A6}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{596D1FAE-1ABC-425c-9049-489F88B2E1A6}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{596D1FAE-1ABC-425c-9049-489F88B2E1A6}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{596D1FAE-1ABC-425c-9049-489F88B2E1A6}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Remote agent ID list.</div>
+</td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{52D19E2D-B69F-4e30-BDF3-BDAFE523B633}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{52D19E2D-B69F-4e30-BDF3-BDAFE523B633}" border="0" />aliasList: ArrayList</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{52D19E2D-B69F-4e30-BDF3-BDAFE523B633}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{52D19E2D-B69F-4e30-BDF3-BDAFE523B633}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{52D19E2D-B69F-4e30-BDF3-BDAFE523B633}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{52D19E2D-B69F-4e30-BDF3-BDAFE523B633}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">Remote alias list.</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2356" onclick="parent.toggleDiv('detailsDIVOperations2356','DetailsImageOperations2356')" />Details:
+						<div id="detailsDIVOperations2356" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=DistributedDirectoryExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Updates the agent dictory. This method is call the remote way. 
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>updateStateAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{FB94D3A7-8C01-49dd-BF56-ED8D112CD440}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{FB94D3A7-8C01-49dd-BF56-ED8D112CD440}" border="0" />msgType: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FB94D3A7-8C01-49dd-BF56-ED8D112CD440}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FB94D3A7-8C01-49dd-BF56-ED8D112CD440}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FB94D3A7-8C01-49dd-BF56-ED8D112CD440}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FB94D3A7-8C01-49dd-BF56-ED8D112CD440}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{F7BB9A2C-4931-47a4-97DE-63C27D2F85C4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{F7BB9A2C-4931-47a4-97DE-63C27D2F85C4}" border="0" />agId: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F7BB9A2C-4931-47a4-97DE-63C27D2F85C4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F7BB9A2C-4931-47a4-97DE-63C27D2F85C4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F7BB9A2C-4931-47a4-97DE-63C27D2F85C4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F7BB9A2C-4931-47a4-97DE-63C27D2F85C4}03" style="display: none;">
+							<td width="50"></td>
+							<td><div class="ObjectDetailsNotes">agId</div>
+</td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2357" onclick="parent.toggleDiv('detailsDIVOperations2357','DetailsImageOperations2357')" />Details:
+						<div id="detailsDIVOperations2357" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=SystemExceptionBESA<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>public</i><br />
+					<strong>updateUnregisterRemoteAgent</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{28C226FA-CB1D-4f3e-B188-BA313F9ED59C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{28C226FA-CB1D-4f3e-B188-BA313F9ED59C}" border="0" />agAlias: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{28C226FA-CB1D-4f3e-B188-BA313F9ED59C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{28C226FA-CB1D-4f3e-B188-BA313F9ED59C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{28C226FA-CB1D-4f3e-B188-BA313F9ED59C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{28C226FA-CB1D-4f3e-B188-BA313F9ED59C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{B1A43E4C-CD49-4ddf-BC9F-45BEE0159CE8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../images/plus03.gif" align="absmiddle" id="param{B1A43E4C-CD49-4ddf-BC9F-45BEE0159CE8}" border="0" />aliasAdmRemote: String</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B1A43E4C-CD49-4ddf-BC9F-45BEE0159CE8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1A43E4C-CD49-4ddf-BC9F-45BEE0159CE8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B1A43E4C-CD49-4ddf-BC9F-45BEE0159CE8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1A43E4C-CD49-4ddf-BC9F-45BEE0159CE8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations2358" onclick="parent.toggleDiv('detailsDIVOperations2358','DetailsImageOperations2358')" />Details:
+						<div id="detailsDIVOperations2358" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>throws=SystemExceptionBESA<br/></td>
+						</tr>
+					</table>
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notas: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			public void updateUnregisterRemoteAgent(String agId, AdmRemoteHandler admRH) {
+		</td>
+	</tr>
+</table></div>
+						
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="AssociationsHastaTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA385.htm">PingThread</a><br />
+						Clase &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> ping<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2361" onclick="parent.toggleDiv('detailsDIVLink2361','DetailsImageLink2361')" />Details:
+							<div id="detailsDIVLink2361" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA387.htm">PongThread</a><br />
+						Clase &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> pong<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2362" onclick="parent.toggleDiv('detailsDIVLink2362','DetailsImageLink2362')" />Details:
+							<div id="detailsDIVLink2362" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="./EA1/EA396.htm">RemoteDirectoryBESA</a><br />
+						Clase &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> remoteDirectory<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2363" onclick="parent.toggleDiv('detailsDIVLink2363','DetailsImageLink2363')" />Details:
+							<div id="detailsDIVLink2363" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="AssociationsDesdeTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA385.htm">PingThread</a><br />
+						Clase &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> admLocal<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2364" onclick="parent.toggleDiv('detailsDIVLink2364','DetailsImageLink2364')" />Details:
+							<div id="detailsDIVLink2364" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA387.htm">PongThread</a><br />
+						Clase &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> admLocal<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2365" onclick="parent.toggleDiv('detailsDIVLink2365','DetailsImageLink2365')" />Details:
+							<div id="detailsDIVLink2365" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="15%" class="TableHeading">Type</td>
+					<td width="15%" class="TableHeading">Connection</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../EA5/EA1/EA1/EA356.htm">LocalAdmBESA</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalización</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../EA3/EA1/EA1/EA171.htm">ExternAdmBESA</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalización</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

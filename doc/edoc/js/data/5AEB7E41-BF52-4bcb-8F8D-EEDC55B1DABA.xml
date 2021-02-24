@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("1.3.1.1.2:1", "", "InputBAP", "EARoot/EA1/EA3/EA1/EA1/EA2/EA196.htm", "175.png", "50", "0", "", "Logical diagram0","{35C72871-6041-407e-A304-2256B7E40CA8}");
+tocTab[tocTab.length] = new Array("1.3.1.1.2:2", "", "ExternInputExceptionBESA", "EARoot/EA1/EA3/EA1/EA1/EA2/EA198.htm", "5.png", "256", "0", "", "Class0","{663011DF-F8E5-4353-9E51-801B76007435}");
+tocTab[tocTab.length] = new Array("1.3.1.1.2:3", "", "SocketBAP", "EARoot/EA1/EA3/EA1/EA1/EA2/EA199.htm", "5.png", "257", "0", "", "Class0","{56CEFE18-7C56-4ebe-B377-C805535CCD04}");
+tocTab[tocTab.length] = new Array("1.3.1.1.2:4", "", "SocketServerBAP", "EARoot/EA1/EA3/EA1/EA1/EA2/EA200.htm", "5.png", "258", "0", "", "Class0","{C90A01BA-228F-4c2a-AF1D-CCE883762D47}");

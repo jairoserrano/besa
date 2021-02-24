@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("1.5.1.1:1", "", "Local", "EARoot/EA1/EA5/EA1/EA1/EA353.htm", "175.png", "40", "0", "", "Logical diagram0","{8D17A598-17DC-4bee-9147-A5AEEAF7F6A7}");
+tocTab[tocTab.length] = new Array("1.5.1.1:2", "", "LocalAdmBESA", "EARoot/EA1/EA5/EA1/EA1/EA356.htm", "5.png", "229", "0", "", "Class0","{FEC4A119-A2E3-4b77-B6F6-F9E22BE00F3A}");
+tocTab[tocTab.length] = new Array("1.5.1.1.1", "1", "Directory", "EARoot/EA1/EA5/EA1/EA1/EA355.htm", "4.png", "", "", "{100524EA-3A8E-4093-94DC-FE424B06780F}", "Package");

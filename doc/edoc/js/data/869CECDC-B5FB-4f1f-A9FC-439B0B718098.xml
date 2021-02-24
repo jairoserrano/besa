@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.7.2:1", "", "Interpreter", "EARoot/EA1/EA2/EA1/EA1/EA7/EA2/EA157.htm", "175.png", "70", "0", "", "Logical diagram0","{F88BC7DB-27FE-41ae-89A6-ED66FB47EB06}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7.2:2", "", "MessageInterpreterBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA2/EA159.htm", "5.png", "350", "0", "", "Class0","{7C19E44F-9A55-47ea-8952-5C8AFB151478}");

@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("1:1", "", "Vista lógica", "EARoot/EA1/EA2.htm", "175.png", "1", "0", "", "Logical diagram0","{9D412EC9-B63B-4b09-80C7-A4A22801DF8E}");
+tocTab[tocTab.length] = new Array("1.1", "1", "BAPLocator", "EARoot/EA1/EA4.htm", "4.png", "", "", "{0B36A167-F7F0-4818-BB2F-A21FF02A33EB}", "Package");
+tocTab[tocTab.length] = new Array("1.2", "1", "BPOBESA", "EARoot/EA1/EA5.htm", "4.png", "", "", "{9D78E15B-03E3-4024-B958-301B956D1B36}", "Package");
+tocTab[tocTab.length] = new Array("1.3", "1", "ExternBESA", "EARoot/EA1/EA6.htm", "4.png", "", "", "{2AFD0749-D51D-4103-92CC-E5FF110213DC}", "Package");
+tocTab[tocTab.length] = new Array("1.4", "1", "KernelBESA", "EARoot/EA1/EA7.htm", "4.png", "", "", "{14D8EB5B-143A-470a-8951-2A61980FF3B9}", "Package");
+tocTab[tocTab.length] = new Array("1.5", "1", "LocalBESA", "EARoot/EA1/EA8.htm", "4.png", "", "", "{50D9AB4F-31A1-44f8-AC28-D1C9FA140C97}", "Package");
+tocTab[tocTab.length] = new Array("1.6", "1", "MobileBESA", "EARoot/EA1/EA9.htm", "4.png", "", "", "{2F924070-7219-459c-A4D0-0E415F162243}", "Package");
+tocTab[tocTab.length] = new Array("1.7", "1", "RemoteBESA", "EARoot/EA1/EA10.htm", "4.png", "", "", "{4CFC447B-AB7F-449a-8A44-C5C189C13653}", "Package");

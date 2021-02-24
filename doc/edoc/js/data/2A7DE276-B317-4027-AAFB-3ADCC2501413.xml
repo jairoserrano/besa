@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("1.5.1:1", "", "BESA", "EARoot/EA1/EA5/EA1/EA350.htm", "175.png", "39", "0", "", "Logical diagram0","{DFBC1FF4-A11B-4352-BF94-14DAD9C04F5A}");
+tocTab[tocTab.length] = new Array("1.5.1.1", "1", "Local", "EARoot/EA1/EA5/EA1/EA352.htm", "4.png", "", "", "{68F52A2C-379C-4d26-B2DB-E55F6FC06886}", "Package");

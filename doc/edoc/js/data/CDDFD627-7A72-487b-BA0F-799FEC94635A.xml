@@ -1,0 +1,13 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.7:1", "", "Message", "EARoot/EA1/EA2/EA1/EA1/EA7/EA138.htm", "175.png", "68", "0", "", "Logical diagram0","{C93C0DBD-FEE9-46a4-8E17-4DDEB652CA9A}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:2", "", "ACKMessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA141.htm", "5.png", "351", "0", "", "Class0","{0A629213-1A4C-4f33-BEC7-8BBA03539554}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:3", "", "AdministrativeMessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA142.htm", "5.png", "353", "0", "", "Class0","{03ADAA71-488B-4c4c-87C8-516F14E5D7C8}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:4", "", "BlockingMessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA143.htm", "5.png", "354", "0", "", "Class0","{093CA433-BE26-4656-8187-9C6991B93C09}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:5", "", "CommunicationChannelMessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA144.htm", "5.png", "355", "0", "", "Class0","{0D0B612D-D8C8-473f-9298-AFB46268587D}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:6", "", "DirectedMessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA145.htm", "5.png", "356", "0", "", "Class0","{B95EC887-68CC-4c3a-8C4A-3FE24DEBAF3D}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:7", "", "EventMessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA146.htm", "5.png", "357", "0", "", "Class0","{E9DD6C0D-685D-448f-BF04-1CA79C0FE5FA}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:8", "", "MessageBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA148.htm", "5.png", "359", "0", "", "Class0","{C6AD9FE3-8200-41f3-8F1D-8B90815996F6}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:9", "", "MessageFactoryBPO", "EARoot/EA1/EA2/EA1/EA1/EA7/EA149.htm", "5.png", "360", "0", "", "Class0","{E68667EF-354B-475e-A12E-27278B8CBF0D}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:10", "", "«static» Action", "EARoot/EA1/EA2/EA1/EA1/EA7/EA150.htm", "5.png", "352", "353", "", "Class0","{7D24810F-E67C-46c3-8D75-998FD228C207}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7:11", "", "«static» Type", "EARoot/EA1/EA2/EA1/EA1/EA7/EA151.htm", "5.png", "358", "359", "", "Class0","{C35905B2-DAAA-40dc-BDCD-261D23A95A84}");
+tocTab[tocTab.length] = new Array("1.2.1.1.7.1", "1", "ACKAttachedResponse", "EARoot/EA1/EA2/EA1/EA1/EA7/EA140.htm", "4.png", "", "", "{CC6D3746-F7B6-4496-B257-AA6E6CCB9A2F}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.7.2", "1", "Interpreter", "EARoot/EA1/EA2/EA1/EA1/EA7/EA147.htm", "4.png", "", "", "{869CECDC-B5FB-4f1f-A9FC-439B0B718098}", "Package");

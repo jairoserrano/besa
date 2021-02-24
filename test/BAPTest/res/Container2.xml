@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <container alias = "MAS_2" password = "0.91" ipaddress= "127.0.0.1">
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000">
+            <interop rmiport = "1098" mcaddress = "230.0.0.2" mcport = "2223" bapport = "7001" bpoport = "7005" bloport="8081" baplocatoradd = "127.0.0.1"/>
+        </environment>
+    </container>
+</config>

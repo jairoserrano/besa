@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.2:1", "", "BAPLocator", "EARoot/EA1/EA2/EA1/EA1/EA2/EA91.htm", "175.png", "60", "0", "", "Logical diagram0","{F1B41C1A-3B57-4b0c-8B70-BF40533D3E52}");
+tocTab[tocTab.length] = new Array("1.2.1.1.2:2", "", "BAPLocator", "EARoot/EA1/EA2/EA1/EA1/EA2/EA93.htm", "5.png", "309", "0", "", "Class0","{9FEA121B-2E80-42e8-9512-98D42613A6EF}");
+tocTab[tocTab.length] = new Array("1.2.1.1.2:3", "", "GetMasterLocation", "EARoot/EA1/EA2/EA1/EA1/EA2/EA94.htm", "5.png", "310", "0", "", "Class0","{DF7B5065-20D3-4645-8C68-2859DDE0D659}");
+tocTab[tocTab.length] = new Array("1.2.1.1.2:4", "", "GetMasterLocationResponse", "EARoot/EA1/EA2/EA1/EA1/EA2/EA95.htm", "5.png", "311", "0", "", "Class0","{674BF86F-DC28-4918-B725-92AA29F715A1}");
+tocTab[tocTab.length] = new Array("1.2.1.1.2:5", "", "«interface» IBAPLocator", "EARoot/EA1/EA2/EA1/EA1/EA2/EA96.htm", "8.png", "312", "0", "", "Interface0","{B1AB44B3-E224-42f9-A570-2F885ACDB96A}");
+tocTab[tocTab.length] = new Array("1.2.1.1.2:6", "", "ObjectFactory", "EARoot/EA1/EA2/EA1/EA1/EA2/EA97.htm", "5.png", "313", "0", "", "Class0","{83884DE2-C1DD-495e-9082-4BD46FA88AC7}");

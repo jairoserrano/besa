@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("1.5.1.1.1:1", "", "Directory", "EARoot/EA1/EA5/EA1/EA1/EA1/EA357.htm", "175.png", "41", "0", "", "Logical diagram0","{814E1209-00AD-4e97-8E7A-DBAD355035A4}");
+tocTab[tocTab.length] = new Array("1.5.1.1.1:2", "", "AgLocalHandlerBESA", "EARoot/EA1/EA5/EA1/EA1/EA1/EA359.htm", "5.png", "226", "0", "", "Class0","{322FF3C4-2D1A-40a6-8D36-1758EC7E6CAE}");
+tocTab[tocTab.length] = new Array("1.5.1.1.1:3", "", "LocalAdmHandlerBESA", "EARoot/EA1/EA5/EA1/EA1/EA1/EA360.htm", "5.png", "227", "0", "", "Class0","{6273EFAF-12D4-4165-B7EF-A0DD89322CF4}");
+tocTab[tocTab.length] = new Array("1.5.1.1.1:4", "", "LocalDirectoryBESA", "EARoot/EA1/EA5/EA1/EA1/EA1/EA361.htm", "5.png", "228", "0", "", "Class0","{0A58DEB4-04EA-4fc6-9692-F6865599BC5B}");

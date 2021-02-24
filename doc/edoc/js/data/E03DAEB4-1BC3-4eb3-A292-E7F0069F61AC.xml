@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("1.1.2.1:1", "", "Extern", "EARoot/EA1/EA1/EA2/EA1/EA21.htm", "175.png", "77", "0", "", "Logical diagram0","{857A6250-FA60-4aa4-B7C3-B7F5D65B48D1}");
+tocTab[tocTab.length] = new Array("1.1.2.1:2", "", "BAPLocator", "EARoot/EA1/EA1/EA2/EA1/EA23.htm", "5.png", "391", "0", "", "Class0","{E610687A-4454-42af-A7AB-B7DF9D90B0B4}");
+tocTab[tocTab.length] = new Array("1.1.2.1:3", "", "«interface» IBAPLocator", "EARoot/EA1/EA1/EA2/EA1/EA24.htm", "8.png", "392", "0", "", "Interface0","{98401EB3-867C-4f16-A084-8DA4F55A478B}");
+tocTab[tocTab.length] = new Array("1.1.2.1:4", "", "Tree", "EARoot/EA1/EA1/EA2/EA1/EA26.htm", "5.png", "393", "0", "", "Class0","{31B9A857-81CF-4a47-906A-AF281B9FDB18}");
+tocTab[tocTab.length] = new Array("1.1.2.1:5", "", "WSPublisher", "EARoot/EA1/EA1/EA2/EA1/EA27.htm", "5.png", "394", "0", "", "Class0","{DF41C372-5013-4568-9324-C28DC82AE187}");
+tocTab[tocTab.length] = new Array("1.1.2.1.1", "1", "jaxws", "EARoot/EA1/EA1/EA2/EA1/EA25.htm", "4.png", "", "", "{66AA0C40-45C5-4198-9F15-CED876E6B26E}", "Package");

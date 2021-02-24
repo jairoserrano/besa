@@ -1,0 +1,15 @@
+BESA.Mobile
+BESA.Mobile.Agents.PostMan
+BESA.Mobile.Agents.PostMan.Data
+BESA.Mobile.Agents.PostMan.Guards
+BESA.Mobile.Agents.PostMan.State
+BESA.Mobile.BAPLocator
+BESA.Mobile.CommunicationChannel
+BESA.Mobile.CommunicationChannel.BaseClasses
+BESA.Mobile.CommunicationChannel.Types.Socket
+BESA.Mobile.ConnectionsAdministrator
+BESA.Mobile.Directory
+BESA.Mobile.Exceptions
+BESA.Mobile.Message
+BESA.Mobile.Message.ACKAttachedResponse
+BESA.Mobile.Message.Interpreter

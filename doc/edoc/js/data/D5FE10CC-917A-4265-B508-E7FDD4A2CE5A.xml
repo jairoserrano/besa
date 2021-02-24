@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("1.4.1.2:1", "", "Config", "EARoot/EA1/EA4/EA1/EA2/EA225.htm", "175.png", "25", "0", "", "Logical diagram0","{5A487E2D-A567-48c5-BBB0-414FDDC7DF23}");
+tocTab[tocTab.length] = new Array("1.4.1.2:2", "", "CE", "EARoot/EA1/EA4/EA1/EA2/EA227.htm", "5.png", "122", "0", "", "Class0","{8DBDA14B-FA39-43f0-B5C0-0028A75A5954}");
+tocTab[tocTab.length] = new Array("1.4.1.2:3", "", "ConfigBESA", "EARoot/EA1/EA4/EA1/EA2/EA228.htm", "5.png", "123", "0", "", "Class0","{55BF37B1-379E-4286-8884-88F1CC0E6A97}");
+tocTab[tocTab.length] = new Array("1.4.1.2:4", "", "ConfigExceptionBESA", "EARoot/EA1/EA4/EA1/EA2/EA229.htm", "5.png", "124", "0", "", "Class0","{6003AE29-0776-4bc7-9553-C0B00755E4C2}");
+tocTab[tocTab.length] = new Array("1.4.1.2:5", "", "Container", "EARoot/EA1/EA4/EA1/EA2/EA230.htm", "5.png", "125", "0", "", "Class0","{B5739038-65E8-4f09-AFFD-B245CE762EBB}");
+tocTab[tocTab.length] = new Array("1.4.1.2:6", "", "Environment", "EARoot/EA1/EA4/EA1/EA2/EA231.htm", "5.png", "126", "0", "", "Class0","{010F969A-22C1-41c6-B8E2-B7670F91B778}");
+tocTab[tocTab.length] = new Array("1.4.1.2:7", "", "«enumeration» EnvironmentCase", "EARoot/EA1/EA4/EA1/EA2/EA232.htm", "5.png", "127", "0", "", "Class0","{F6E49B0B-1E69-420e-805A-FFB34111892C}");
+tocTab[tocTab.length] = new Array("1.4.1.2:8", "", "Interop", "EARoot/EA1/EA4/EA1/EA2/EA233.htm", "5.png", "128", "0", "", "Class0","{DF0BDA46-FE91-45a1-84C7-D7A7364A82BE}");
+tocTab[tocTab.length] = new Array("1.4.1.2:9", "", "Mobile", "EARoot/EA1/EA4/EA1/EA2/EA234.htm", "5.png", "129", "0", "", "Class0","{F6D97956-754C-4eae-82BA-047E6F195EC7}");
+tocTab[tocTab.length] = new Array("1.4.1.2:10", "", "Remote", "EARoot/EA1/EA4/EA1/EA2/EA235.htm", "5.png", "130", "0", "", "Class0","{0C084AF7-2533-4e0c-ABC1-961811309B98}");
+tocTab[tocTab.length] = new Array("1.4.1.2:11", "", "XMLConfig", "EARoot/EA1/EA4/EA1/EA2/EA236.htm", "5.png", "131", "0", "", "Class0","{D606F93A-6471-403d-B32C-6C80BB681908}");

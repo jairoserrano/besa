@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:1", "", "protocol", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA279.htm", "175.png", "30", "0", "", "Logical diagram0","{8418F993-E91D-4af5-8358-EA0212F4E9F7}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:2", "", "InitStageProtocolBESA", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA281.htm", "5.png", "164", "0", "", "Class0","{8C5C4999-A621-41b7-A4B6-C4D884A9DA3C}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:3", "", "InvitationDataBESA", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA282.htm", "5.png", "165", "0", "", "Class0","{3697E202-154B-4cf4-858E-35023E0BDF66}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:4", "", "ProtocolBehavior", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA283.htm", "5.png", "166", "0", "", "Class0","{AFE8C97D-DFF9-489f-9053-6AE78F98A8D6}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:5", "", "ProtocolBESA", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA284.htm", "5.png", "167", "0", "", "Class0","{83FC8DE4-9312-4294-81F7-4C8651611D5D}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:6", "", "ProtocolStackBESA", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA285.htm", "5.png", "168", "0", "", "Class0","{555D0901-4F5B-44d2-8A7B-6238B7822E7D}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:7", "", "ProtocolStage", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA286.htm", "5.png", "169", "0", "", "Class0","{4EAAB10E-A322-42ba-B351-723F7E3D1FE0}");
+tocTab[tocTab.length] = new Array("1.4.1.3.2.1:8", "", "StageDataBESA", "EARoot/EA1/EA4/EA1/EA3/EA2/EA1/EA287.htm", "5.png", "170", "0", "", "Class0","{99A342E1-7875-4cb3-8F2D-5AD994B49812}");

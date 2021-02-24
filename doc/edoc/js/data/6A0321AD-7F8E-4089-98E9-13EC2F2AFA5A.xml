@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("1.4.1.3.3:1", "", "System", "EARoot/EA1/EA4/EA1/EA3/EA3/EA316.htm", "175.png", "34", "0", "", "Logical diagram0","{E26A36F4-3CD3-4cfc-B803-9AFE688F6560}");
+tocTab[tocTab.length] = new Array("1.4.1.3.3:2", "", "AdmBESA", "EARoot/EA1/EA4/EA1/EA3/EA3/EA318.htm", "5.png", "201", "0", "", "Class0","{D729C36F-9A43-4d7c-A255-351E0BF21186}");
+tocTab[tocTab.length] = new Array("1.4.1.3.3:3", "", "SystemExceptionBESA", "EARoot/EA1/EA4/EA1/EA3/EA3/EA320.htm", "5.png", "202", "0", "", "Class0","{7159DD31-C069-4310-8693-876DF3D30DF2}");
+tocTab[tocTab.length] = new Array("1.4.1.3.3:4", "", "SystemFactoryBESA", "EARoot/EA1/EA4/EA1/EA3/EA3/EA321.htm", "5.png", "203", "0", "", "Class0","{A3459B2E-A3CC-432a-B40D-279367625F8F}");
+tocTab[tocTab.length] = new Array("1.4.1.3.3.1", "1", "Directory", "EARoot/EA1/EA4/EA1/EA3/EA3/EA319.htm", "4.png", "", "", "{25FE5201-8C0E-4d4f-B9B2-E6C1FACAC7E9}", "Package");

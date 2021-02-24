@@ -1,0 +1,14 @@
+tocTab[tocTab.length] = new Array("1.2.1.1:1", "", "Mobile", "EARoot/EA1/EA2/EA1/EA1/EA50.htm", "175.png", "54", "0", "", "Logical diagram0","{7F403441-894C-465f-8012-AC4D8BB1BF7E}");
+tocTab[tocTab.length] = new Array("1.2.1.1:2", "", "CompactAdmBESA", "EARoot/EA1/EA2/EA1/EA1/EA55.htm", "5.png", "362", "0", "", "Class0","{B0013D45-0E7B-45ec-A154-E286BD08EB18}");
+tocTab[tocTab.length] = new Array("1.2.1.1:3", "", "«interface» IAdmBPO", "EARoot/EA1/EA2/EA1/EA1/EA59.htm", "8.png", "363", "0", "", "Interface0","{A816F47D-85CE-4a33-9DC9-5461B26B5C5A}");
+tocTab[tocTab.length] = new Array("1.2.1.1:4", "", "«interface» IPostOfficeBPO", "EARoot/EA1/EA2/EA1/EA1/EA60.htm", "8.png", "364", "0", "", "Interface0","{F03E7320-3C69-427e-B9E5-B24271B33F73}");
+tocTab[tocTab.length] = new Array("1.2.1.1:5", "", "PostOfficeBPO", "EARoot/EA1/EA2/EA1/EA1/EA62.htm", "5.png", "365", "0", "", "Class0","{85FF931D-729F-4f9e-8769-4477E2CB5C3F}");
+tocTab[tocTab.length] = new Array("1.2.1.1:6", "", "PostOfficeBPOCE", "EARoot/EA1/EA2/EA1/EA1/EA63.htm", "5.png", "366", "0", "", "Class0","{3FA0FEE7-BBE9-4a58-B283-28EDED31D177}");
+tocTab[tocTab.length] = new Array("1.2.1.1:7", "", "HandlerCache", "EARoot/EA1/EA2/EA1/EA1/EA64.htm", "5.png", "361", "362", "", "Class0","{36FCF633-E2FF-45ab-9F61-BD10C1A94364}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1", "1", "Agents", "EARoot/EA1/EA2/EA1/EA1/EA52.htm", "4.png", "", "", "{998B5D1F-F699-4bf5-8FD9-F0415462BA0E}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.2", "1", "BAPLocator", "EARoot/EA1/EA2/EA1/EA1/EA53.htm", "4.png", "", "", "{494FB341-B918-4054-A6E2-FA8B82585B87}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.3", "1", "CommunicationChannel", "EARoot/EA1/EA2/EA1/EA1/EA54.htm", "4.png", "", "", "{BC07CEA5-02B9-420d-B312-18F8C4F926E3}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.4", "1", "ConnectionsAdministrator", "EARoot/EA1/EA2/EA1/EA1/EA56.htm", "4.png", "", "", "{055654AA-2196-4616-9BCA-70F327C5551E}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.5", "1", "Directory", "EARoot/EA1/EA2/EA1/EA1/EA57.htm", "4.png", "", "", "{13E8C4E4-1AC2-4da5-BCE2-79F87312AAFF}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.6", "1", "Exceptions", "EARoot/EA1/EA2/EA1/EA1/EA58.htm", "4.png", "", "", "{2E7E5714-FE6D-44ef-8366-40140678D9EA}", "Package");
+tocTab[tocTab.length] = new Array("1.2.1.1.7", "1", "Message", "EARoot/EA1/EA2/EA1/EA1/EA61.htm", "4.png", "", "", "{CDDFD627-7A72-487b-BA0F-799FEC94635A}", "Package");

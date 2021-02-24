@@ -1,0 +1,13 @@
+BESA
+BESA.Adapter
+BESA.Config
+BESA.Kernel.Agent
+BESA.Kernel.Agent.Event
+BESA.Kernel.Social
+BESA.Kernel.Social.ServiceProvider.agent
+BESA.Kernel.Social.ServiceProvider.sensorbesa
+BESA.Kernel.Social.protocol
+BESA.Kernel.System
+BESA.Kernel.System.Directory
+BESA.Log
+BESA.Util

@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.4:1", "", "ConnectionsAdministrator", "EARoot/EA1/EA2/EA1/EA1/EA4/EA119.htm", "175.png", "65", "0", "", "Logical diagram0","{DE947EEA-DF71-4072-B385-F78635841214}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:2", "", "CommunicationChannelDirectoryBPO", "EARoot/EA1/EA2/EA1/EA1/EA4/EA121.htm", "5.png", "330", "0", "", "Class0","{160C39D5-4D7A-4935-BCAA-63E569355BC4}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:3", "", "ConnectionsAdministratorBPO", "EARoot/EA1/EA2/EA1/EA1/EA4/EA122.htm", "5.png", "331", "0", "", "Class0","{DAE81600-436F-4a44-A680-904068198DA2}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:4", "", "ContainerConnectionInformationBPO", "EARoot/EA1/EA2/EA1/EA1/EA4/EA123.htm", "5.png", "332", "0", "", "Class0","{70BB2EC7-85E7-4435-9ECD-BBEAF81DC98F}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:5", "", "EstablishConnectionBPO", "EARoot/EA1/EA2/EA1/EA1/EA4/EA124.htm", "5.png", "333", "0", "", "Class0","{B5A85430-2BE6-4871-85C8-770049586F29}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:6", "", "SetUpCommunicationChannelServiceBPO", "EARoot/EA1/EA2/EA1/EA1/EA4/EA125.htm", "5.png", "334", "0", "", "Class0","{3E839953-AE34-4c1b-AF9A-3A03DE0F2C23}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:7", "", "WaitForSetupInfoBPO", "EARoot/EA1/EA2/EA1/EA1/EA4/EA126.htm", "5.png", "335", "0", "", "Class0","{C9CF2339-F4E7-434f-8DB5-F4FD5F085F1F}");
+tocTab[tocTab.length] = new Array("1.2.1.1.4:8", "", "CommunicationChannelsForContainer", "EARoot/EA1/EA2/EA1/EA1/EA4/EA127.htm", "5.png", "329", "330", "", "Class0","{CDE6F173-46C4-4754-B05A-200207C578D2}");

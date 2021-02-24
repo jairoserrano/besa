@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:1", "", "Event", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA266.htm", "175.png", "28", "0", "", "Logical diagram0","{0C379395-3C72-4cb4-8138-870FBCC848D4}");
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:2", "", "ACLBESA", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA268.htm", "5.png", "135", "0", "", "Class0","{11B832D1-1B1B-40bb-A5F7-43ED1F8F38AC}");
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:3", "", "DataBESA", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA269.htm", "5.png", "136", "0", "", "Class0","{44F903A1-E1A6-40f5-93DF-4615BADDD9DE}");
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:4", "", "DataMultiGuardBESA", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA270.htm", "5.png", "137", "0", "", "Class0","{87719C46-9123-4171-87E4-A8CB780B54DA}");
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:5", "", "EventBESA", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA271.htm", "5.png", "138", "0", "", "Class0","{24E22D93-D886-4f1a-A66F-745FD844B6B3}");
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:6", "", "EventStampBESA", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA272.htm", "5.png", "139", "0", "", "Class0","{1D00A28F-2E6F-49e2-BF4E-47FFE443AECD}");
+tocTab[tocTab.length] = new Array("1.4.1.3.1.1:7", "", "KernellAgentEventExceptionBESA", "EARoot/EA1/EA4/EA1/EA3/EA1/EA1/EA273.htm", "5.png", "140", "0", "", "Class0","{BB58CCE7-AB28-4e6c-A2CC-046E35DCDA8A}");

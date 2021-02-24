@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.6:1", "", "Exceptions", "EARoot/EA1/EA2/EA1/EA1/EA6/EA131.htm", "175.png", "67", "0", "", "Logical diagram0","{8690FAE7-CE5F-4c31-9C2F-A56CBE1B229F}");
+tocTab[tocTab.length] = new Array("1.2.1.1.6:2", "", "ExceptionBESACommunicationChannelFailedBPO", "EARoot/EA1/EA2/EA1/EA1/EA6/EA133.htm", "5.png", "339", "0", "", "Class0","{22B96480-2915-4112-B881-A606DD363892}");
+tocTab[tocTab.length] = new Array("1.2.1.1.6:3", "", "ExceptionBESAConnectionsDirectoryFailedBPO", "EARoot/EA1/EA2/EA1/EA1/EA6/EA134.htm", "5.png", "340", "0", "", "Class0","{FD1E694F-8D7D-4f14-B018-A8D53841AD0A}");
+tocTab[tocTab.length] = new Array("1.2.1.1.6:4", "", "ExceptionBESAMailBoxFailedBPO", "EARoot/EA1/EA2/EA1/EA1/EA6/EA135.htm", "5.png", "341", "0", "", "Class0","{50E55A78-5EFD-422a-A184-97591D7EF355}");
+tocTab[tocTab.length] = new Array("1.2.1.1.6:5", "", "ExceptionBESAMailingServiceFailedBPO", "EARoot/EA1/EA2/EA1/EA1/EA6/EA136.htm", "5.png", "342", "0", "", "Class0","{7AC4B890-B246-4ba3-A512-B63DB95FF587}");
+tocTab[tocTab.length] = new Array("1.2.1.1.6:6", "", "ExceptionBESAMessageInterpreterFailedBPO", "EARoot/EA1/EA2/EA1/EA1/EA6/EA137.htm", "5.png", "343", "0", "", "Class0","{18BB6633-9F81-4379-8AA5-E5B808840644}");
