@@ -41,14 +41,14 @@ public class FibonacciContainer_00 {
 
             BenchmarkAgentReceiverState estadoReceiver = new BenchmarkAgentReceiverState();
             StructBESA StructReceiver = new StructBESA();
-            StructSender.bindGuard(BenchmarkAgentReceiverGuard.class);
+            StructReceiver.bindGuard(BenchmarkAgentReceiverGuard.class);
             BenchmarkAgentReceiver AgentReceiver = new BenchmarkAgentReceiver("AgentReceiver", estadoReceiver, StructReceiver, 0.91);
             AgentReceiver.start();
             adminBesa.registerAgent(AgentReceiver, "AgentReceiver", "AgentReceiver");
 
             AgHandlerBESA ah;
             try {
-                ah = adminBesa.getHandlerByAid("AgentSender");
+                ah = adminBesa.getHandlerByAlias("AgentSender");
                 EventBESA msj = new EventBESA(
                         BenchmarkAgentSenderGuard.class.getName(),
                         new BenchmarkAgentSenderMessage(5,10)

@@ -26,22 +26,23 @@ public class FibonacciAgentGuard extends GuardBESA {
     @Override
     public void funcExecGuard(EventBESA event) {
         FibonacciAgentMessage mensaje = (FibonacciAgentMessage) event.getData();
-        //ReportBESA.info("Se calculará el fib de " + mensaje.getContent());
-        //
+        ReportBESA.info("Mensaje recibido en " + this.agent.getAlias() + ", Se calculará el fib de " + mensaje.getContent());
+
+        String fibo = String.valueOf(
+                fib(
+                        Double.parseDouble(
+                                mensaje.getContent()
+                        )
+                )
+        );
+        ReportBESA.info("Enviando " + fibo);
+
         AgHandlerBESA ah;
         try {
-            ah = this.agent.getAdmLocal().getHandlerByAid("AgentReceiver");
+            ah = this.agent.getAdmLocal().getHandlerByAlias("AgentReceiver");
             EventBESA msj = new EventBESA(
                     BenchmarkAgentReceiverGuard.class.getName(),
-                    new BenchmarkAgentReceiverMessage(
-                            String.valueOf(
-                                    fib(
-                                            Double.parseDouble(
-                                                    mensaje.getContent()
-                                            )
-                                    )
-                            )
-                    )
+                    new BenchmarkAgentReceiverMessage(fibo)
             );
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {

@@ -27,22 +27,23 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
         ReportBESA.info("Contenedores " + message.getNumberOfContainers() + " - Agentes por contenedor " + message.getNumberOfAgentsPerContainer());
 
         AgHandlerBESA ah;
-        try {
-            for (int i = 1; i <= message.getNumberOfContainers(); i++) {
-                for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
-                    ah = this.agent.getAdmLocal().getHandlerByAlias("FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
-                    ReportBESA.info("Enviando mensaje a FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
+
+        for (int i = 1; i <= message.getNumberOfContainers(); i++) {
+            for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
+                try {
+                    ah = this.agent.getAdmLocal().getHandlerByAlias("FiboAgente_0" + String.valueOf(i) + "_" + String.valueOf(j));
+                    ReportBESA.info("Enviando mensaje a FiboAgente_0" + String.valueOf(i) + "_" + String.valueOf(j));
                     EventBESA msj = new EventBESA(
                             FibonacciAgentGuard.class.getName(),
                             new FibonacciAgentMessage("5")
                     );
                     ah.sendEvent(msj);
+                } catch (ExceptionBESA ex) {
+                    Logger.getLogger(BenchmarkAgentSenderGuard.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-
-        } catch (ExceptionBESA ex) {
-            Logger.getLogger(BenchmarkAgentSenderGuard.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
 }
