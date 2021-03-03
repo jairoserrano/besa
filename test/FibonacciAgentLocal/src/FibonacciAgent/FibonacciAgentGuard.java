@@ -8,6 +8,7 @@ package FibonacciAgent;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Log.ReportBESA;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -19,10 +20,10 @@ public class FibonacciAgentGuard extends GuardBESA {
     public void funcExecGuard(EventBESA event) {
         FibonacciAgentMessage mensaje = (FibonacciAgentMessage) event.getData();
         ReportBESA.info("Se calculará el fib de " + mensaje.getContent());
-        ReportBESA.info(fib(Integer.parseInt(mensaje.getContent())));
+        ReportBESA.info("Fibonacci de " + mensaje.getContent() + " es " + new DecimalFormat("#").format(fib(Double.parseDouble(mensaje.getContent()))));
     }
 
-    static int fib(int n) {
+    static double fib(double n) {
         if (n <= 1) {
             return n;
         }

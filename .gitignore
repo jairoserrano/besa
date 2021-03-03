@@ -15,3 +15,7 @@ nb-configuration.xml
 *.war
 *.ear
 
+/test/FibonacciAgent/nbproject/private/
+/test/FibonacciAgentLocal/nbproject/private/
+/test/FibonacciAgentLocal (copy)/nbproject/private/
+/test/FibonacciAgentRemote/nbproject/private/
