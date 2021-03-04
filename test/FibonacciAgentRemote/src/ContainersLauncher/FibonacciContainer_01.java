@@ -25,8 +25,7 @@ public class FibonacciContainer_01 {
      */
     public static void main(String[] args) {
 
-        int NumberOfAgents = 10;
-
+        BenchmarkConfig config = new BenchmarkConfig();
         ArrayList<FibonacciAgent> Agents = new ArrayList<>();
 
         try {
@@ -38,7 +37,7 @@ public class FibonacciContainer_01 {
             StructBESA Struct = new StructBESA();
             Struct.bindGuard(FibonacciAgentGuard.class);
 
-            for (int i = 0; i < NumberOfAgents; i++) {
+            for (int i = 0; i < config.getNumberOfAgentsPerContainer(); i++) {
                 Agents.add(
                         new FibonacciAgent(
                                 "FiboAgente_01_" + String.valueOf(i),
@@ -48,7 +47,10 @@ public class FibonacciContainer_01 {
                         )
                 );
                 Agents.get(i).start();
-                adminBesa.registerAgent(Agents.get(i), "FiboAgente_01_" + String.valueOf(i), "FiboAgente_01_" + String.valueOf(i));
+                adminBesa.registerAgent(
+                        Agents.get(i), "FiboAgente_01_" + String.valueOf(i),
+                        "FiboAgente_01_" + String.valueOf(i)
+                );
             }
 
         } catch (ExceptionBESA ex) {

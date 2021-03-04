@@ -29,6 +29,7 @@ public class FibonacciContainer_00 {
 
         ReportBESA.info("Lanzando config/Container_00.xml");
         AdmBESA adminBesa = AdmBESA.getInstance("config/Container_00.xml");
+        BenchmarkConfig config = new BenchmarkConfig();
 
         try {
 
@@ -51,7 +52,10 @@ public class FibonacciContainer_00 {
                 ah = adminBesa.getHandlerByAlias("AgentSender");
                 EventBESA msj = new EventBESA(
                         BenchmarkAgentSenderGuard.class.getName(),
-                        new BenchmarkAgentSenderMessage(5,10)
+                        new BenchmarkAgentSenderMessage(
+                                config.getNumberOfContainers(),
+                                config.getNumberOfAgentsPerContainer()
+                        )
                 );
                 ah.sendEvent(msj);
             } catch (ExceptionBESA ex) {

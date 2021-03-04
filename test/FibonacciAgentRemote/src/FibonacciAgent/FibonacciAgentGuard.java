@@ -42,7 +42,7 @@ public class FibonacciAgentGuard extends GuardBESA {
             ah = this.agent.getAdmLocal().getHandlerByAlias("AgentReceiver");
             EventBESA msj = new EventBESA(
                     BenchmarkAgentReceiverGuard.class.getName(),
-                    new BenchmarkAgentReceiverMessage(fibo)
+                    new BenchmarkAgentReceiverMessage("Mensaje recibido en " + this.agent.getAlias() + " " +fibo)
             );
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {

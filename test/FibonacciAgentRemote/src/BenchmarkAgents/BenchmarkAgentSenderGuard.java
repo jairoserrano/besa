@@ -11,15 +11,17 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import ContainersLauncher.BenchmarkConfig;
 
 /**
  *
  * @author jairo
  */
 public class BenchmarkAgentSenderGuard extends GuardBESA {
+    
+    BenchmarkConfig config = new BenchmarkConfig();
 
     @Override
     public void funcExecGuard(EventBESA event) {
@@ -35,7 +37,9 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
                     ReportBESA.info("Enviando mensaje a FiboAgente_0" + String.valueOf(i) + "_" + String.valueOf(j));
                     EventBESA msj = new EventBESA(
                             FibonacciAgentGuard.class.getName(),
-                            new FibonacciAgentMessage("5")
+                            new FibonacciAgentMessage(
+                                    this.config.getFiboToCalculate()
+                            )
                     );
                     ah.sendEvent(msj);
                 } catch (ExceptionBESA ex) {
