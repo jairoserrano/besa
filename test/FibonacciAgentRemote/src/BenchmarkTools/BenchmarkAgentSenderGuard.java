@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgents;
+package BenchmarkTools;
 
 import BESA.ExceptionBESA;
 import FibonacciAgent.*;
@@ -25,7 +25,7 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
-        BenchmarkAgentSenderMessage message = (BenchmarkAgentSenderMessage) event.getData();
+        BenchmarkAgentMessage message = (BenchmarkAgentMessage) event.getData();
         ReportBESA.info("Contenedores " + message.getNumberOfContainers() + " - Agentes por contenedor " + message.getNumberOfAgentsPerContainer());
 
         AgHandlerBESA ah;
@@ -33,8 +33,8 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
         for (int i = 1; i <= message.getNumberOfContainers(); i++) {
             for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
                 try {
-                    ah = this.agent.getAdmLocal().getHandlerByAlias("FiboAgente_0" + String.valueOf(i) + "_" + String.valueOf(j));
-                    ReportBESA.info("Enviando mensaje a FiboAgente_0" + String.valueOf(i) + "_" + String.valueOf(j));
+                    ah = this.agent.getAdmLocal().getHandlerByAlias("FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
+                    ReportBESA.info("Enviando mensaje a FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
                     EventBESA msj = new EventBESA(
                             FibonacciAgentGuard.class.getName(),
                             new FibonacciAgentMessage(

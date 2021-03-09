@@ -48,7 +48,10 @@ public class FibonacciContainer_03 {
                         )
                 );
                 Agents.get(i).start();
-                adminBesa.registerAgent(Agents.get(i), "FiboAgente_03_" + String.valueOf(i), "FiboAgente_03_" + String.valueOf(i));
+                adminBesa.registerAgent(Agents.get(i),
+                        "FiboAgente_3_" + String.valueOf(i),
+                        "FiboAgente_3_" + String.valueOf(i)
+                );
             }
 
         } catch (ExceptionBESA ex) {

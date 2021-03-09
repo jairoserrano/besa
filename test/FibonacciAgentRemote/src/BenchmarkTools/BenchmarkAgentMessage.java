@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgents;
+package BenchmarkTools;
 
 import BESA.Kernel.Agent.Event.DataBESA;
 
@@ -11,12 +11,12 @@ import BESA.Kernel.Agent.Event.DataBESA;
  *
  * @author jairo
  */
-public class BenchmarkAgentSenderMessage extends DataBESA {
+public class BenchmarkAgentMessage extends DataBESA {
 
     private int NumberOfContainers = 0;
     private int NumberOfAgentsPerContainer = 0;
 
-    public BenchmarkAgentSenderMessage(int nc, int na) {
+    public BenchmarkAgentMessage(int nc, int na) {
         this.NumberOfContainers = nc;
         this.NumberOfAgentsPerContainer = na;
     }

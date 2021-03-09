@@ -5,13 +5,17 @@
  */
 package ContainersLauncher;
 
+import BenchmarkTools.BenchmarkAgentReceiverGuard;
+import BenchmarkTools.BenchmarkAgentMessage;
+import BenchmarkTools.BenchmarkAgentState;
+import BenchmarkTools.BenchmarkAgent;
+import BenchmarkTools.BenchmarkAgentSenderGuard;
 import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.StructBESA;
 import BESA.Kernel.System.AdmBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import BenchmarkAgents.*;
 import FibonacciAgent.FibonacciAgentGuard;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,29 +34,25 @@ public class FibonacciContainer_00 {
         ReportBESA.info("Lanzando config/Container_00.xml");
         AdmBESA adminBesa = AdmBESA.getInstance("config/Container_00.xml");
         BenchmarkConfig config = new BenchmarkConfig();
-
+        
         try {
 
-            BenchmarkAgentSenderState estadoSender = new BenchmarkAgentSenderState();
+            BenchmarkAgentState BenchmarkState = new BenchmarkAgentState();
             StructBESA StructSender = new StructBESA();
             StructSender.bindGuard(BenchmarkAgentSenderGuard.class);
-            BenchmarkAgentSender AgentSender = new BenchmarkAgentSender("AgentSender", estadoSender, StructSender, 0.91);
+            StructSender.bindGuard(BenchmarkAgentReceiverGuard.class);
+            BenchmarkAgent AgentSender = new BenchmarkAgent("BenchmarkAgent", BenchmarkState, StructSender, 0.91);
             AgentSender.start();
-            adminBesa.registerAgent(AgentSender, "AgentSender", "AgentSender");
+            adminBesa.registerAgent(AgentSender, "BenchmarkAgent", "BenchmarkAgent");
 
-            BenchmarkAgentReceiverState estadoReceiver = new BenchmarkAgentReceiverState();
-            StructBESA StructReceiver = new StructBESA();
-            StructReceiver.bindGuard(BenchmarkAgentReceiverGuard.class);
-            BenchmarkAgentReceiver AgentReceiver = new BenchmarkAgentReceiver("AgentReceiver", estadoReceiver, StructReceiver, 0.91);
-            AgentReceiver.start();
-            adminBesa.registerAgent(AgentReceiver, "AgentReceiver", "AgentReceiver");
-
+            AgentSender.checkReady();            
+            
             AgHandlerBESA ah;
             try {
-                ah = adminBesa.getHandlerByAlias("AgentSender");
+                ah = adminBesa.getHandlerByAlias("BenchmarkAgent");
                 EventBESA msj = new EventBESA(
                         BenchmarkAgentSenderGuard.class.getName(),
-                        new BenchmarkAgentSenderMessage(
+                        new BenchmarkAgentMessage(
                                 config.getNumberOfContainers(),
                                 config.getNumberOfAgentsPerContainer()
                         )
@@ -66,24 +66,8 @@ public class FibonacciContainer_00 {
             ReportBESA.error(ex);
         }
 
-        /*
-        while (true) {
-            ReportBESA.info("==================================");
-            ReportBESA.info("Containers:");
-            Enumeration<String> containers = adminBesa.getInstance().getAdmAliasList();
-            while (containers.hasMoreElements()) {
-                ReportBESA.info(containers.nextElement());
-            }
-            ReportBESA.info("==================================");
-            ReportBESA.info("Agents:");
-            Enumeration<String> agents = adminBesa.getIdList();
-            while (agents.hasMoreElements()) {
-                ReportBESA.info(agents.nextElement());
-            }
-            ReportBESA.info("==================================");
-            Thread.sleep(2000);
-        }
-         */
+        
+        
     }
 
 }

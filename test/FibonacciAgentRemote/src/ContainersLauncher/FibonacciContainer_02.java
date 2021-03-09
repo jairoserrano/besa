@@ -41,14 +41,17 @@ public class FibonacciContainer_02 {
             for (int i = 0; i < config.getNumberOfAgentsPerContainer(); i++) {
                 Agents.add(
                         new FibonacciAgent(
-                                "FiboAgente_02_" + String.valueOf(i),
+                                "FiboAgente_2_" + String.valueOf(i),
                                 estado,
                                 Struct,
                                 0.91
                         )
                 );
                 Agents.get(i).start();
-                adminBesa.registerAgent(Agents.get(i), "FiboAgente_02_" + String.valueOf(i), "FiboAgente_02_" + String.valueOf(i));
+                adminBesa.registerAgent(Agents.get(i),
+                        "FiboAgente_2_" + String.valueOf(i),
+                        "FiboAgente_2_" + String.valueOf(i)
+                );
             }
 
         } catch (ExceptionBESA ex) {

@@ -5,15 +5,13 @@
  */
 package FibonacciAgent;
 
-import BenchmarkAgents.*;
+import BenchmarkTools.BenchmarkAgentReceiverGuard;
+import BenchmarkTools.BenchmarkAgentReceiverMessage;
 import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
-import BESA.Kernel.System.AdmBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import java.text.DecimalFormat;
-import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,10 +37,10 @@ public class FibonacciAgentGuard extends GuardBESA {
 
         AgHandlerBESA ah;
         try {
-            ah = this.agent.getAdmLocal().getHandlerByAlias("AgentReceiver");
+            ah = this.agent.getAdmLocal().getHandlerByAlias("BenchmarkAgent");
             EventBESA msj = new EventBESA(
                     BenchmarkAgentReceiverGuard.class.getName(),
-                    new BenchmarkAgentReceiverMessage("Mensaje recibido en " + this.agent.getAlias() + " " +fibo)
+                    new BenchmarkAgentReceiverMessage("Cálculo recibido en " + this.agent.getAlias() + " " +fibo)
             );
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {

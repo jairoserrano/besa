@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgents;
+package BenchmarkTools;
 
-import BenchmarkAgents.*;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Log.ReportBESA;
@@ -14,12 +13,11 @@ import BESA.Log.ReportBESA;
  *
  * @author jairo
  */
-public class BenchmarkAgentReceiverGuard extends GuardBESA {
+public class BenchmarkAgentPingGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
-        BenchmarkAgentReceiverMessage mensaje = (BenchmarkAgentReceiverMessage) event.getData();
-        ReportBESA.info("Cálculo recibido " + mensaje.getContent());
+        ReportBESA.info("Ready " +  this.agent.getAlias());
     }
 
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <container>
+        <numberofcontainers>5</numberofcontainers>
+        <fibotocalculate>25</fibotocalculate>
+        <numberofagentspercontainer>3000</numberofagentspercontainer>
+    </container>
+</config>

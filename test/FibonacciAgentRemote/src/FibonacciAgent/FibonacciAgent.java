@@ -16,7 +16,7 @@ import BESA.Log.ReportBESA;
  * @author jairo
  */
 public class FibonacciAgent extends AgentBESA {
-    
+
     public FibonacciAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
     }
@@ -29,5 +29,5 @@ public class FibonacciAgent extends AgentBESA {
     @Override
     public void shutdownAgent() {
     }
-    
+
 }
