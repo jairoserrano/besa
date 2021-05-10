@@ -47,6 +47,11 @@ public class BenchmarkAgent extends AgentBESA {
         while (!ready) {
             ReportBESA.info("Checkeando agentes");
             try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(BenchmarkAgent.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
                 for (int i = 1; i <= config.getNumberOfContainers(); i++) {
                     for (int j = 0; j < config.getNumberOfAgentsPerContainer(); j++) {
                         ah = this.getAdmLocal().getHandlerByAlias("FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));

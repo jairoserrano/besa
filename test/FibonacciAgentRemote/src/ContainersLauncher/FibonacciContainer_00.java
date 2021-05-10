@@ -45,7 +45,7 @@ public class FibonacciContainer_00 {
             AgentSender.start();
             adminBesa.registerAgent(AgentSender, "BenchmarkAgent", "BenchmarkAgent");
 
-            AgentSender.checkReady();            
+            AgentSender.checkReady();
             
             AgHandlerBESA ah;
             try {

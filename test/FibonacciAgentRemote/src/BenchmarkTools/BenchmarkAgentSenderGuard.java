@@ -34,7 +34,7 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
             for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
                 try {
                     ah = this.agent.getAdmLocal().getHandlerByAlias("FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
-                    ReportBESA.info("Enviando mensaje a FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
+                    ReportBESA.info("Enviando mensaje a FiboAgente_0" + String.valueOf(i) + "_" + String.valueOf(j) + " " + this.config.getFiboToCalculate());
                     EventBESA msj = new EventBESA(
                             FibonacciAgentGuard.class.getName(),
                             new FibonacciAgentMessage(

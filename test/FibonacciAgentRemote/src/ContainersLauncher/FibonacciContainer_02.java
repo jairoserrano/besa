@@ -41,7 +41,7 @@ public class FibonacciContainer_02 {
             for (int i = 0; i < config.getNumberOfAgentsPerContainer(); i++) {
                 Agents.add(
                         new FibonacciAgent(
-                                "FiboAgente_2_" + String.valueOf(i),
+                                "FiboAgente_02_" + String.valueOf(i),
                                 estado,
                                 Struct,
                                 0.91

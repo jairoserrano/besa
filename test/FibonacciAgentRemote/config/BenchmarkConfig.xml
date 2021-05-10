@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <container>
-        <numberofcontainers>5</numberofcontainers>
-        <fibotocalculate>25</fibotocalculate>
-        <numberofagentspercontainer>3000</numberofagentspercontainer>
+        <!--De número de agentes comienza desde 0-->
+        <numberofcontainers>4</numberofcontainers>
+        <fibotocalculate>50</fibotocalculate>
+        <numberofagentspercontainer>30</numberofagentspercontainer>
     </container>
 </config>

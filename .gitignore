@@ -19,3 +19,4 @@ nb-configuration.xml
 /test/FibonacciAgentLocal/nbproject/private/
 /test/FibonacciAgentLocal (copy)/nbproject/private/
 /test/FibonacciAgentRemote/nbproject/private/
+/test/LoadBenchAgentRemote/nbproject/private/
