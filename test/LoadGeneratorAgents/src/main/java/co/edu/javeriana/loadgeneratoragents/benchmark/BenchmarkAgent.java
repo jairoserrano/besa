@@ -14,8 +14,8 @@ import BESA.Kernel.Agent.StructBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
 import ContainersLauncher.BenchmarkConfig;
-import WorkAgent.WorkAgentGuard;
-import WorkAgent.WorkAgentMessage;
+import FibonacciAgent.FibonacciAgentGuard;
+import FibonacciAgent.FibonacciAgentMessage;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +54,7 @@ public class BenchmarkAgent extends AgentBESA {
             try {
                 for (int i = 1; i <= config.getNumberOfContainers(); i++) {
                     for (int j = 0; j < config.getNumberOfAgentsPerContainer(); j++) {
-                        ah = this.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j));
+                        ah = this.getAdmLocal().getHandlerByAlias("FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
                         EventBESA msj = new EventBESA(
                                 BenchmarkAgentPingMessage.class.getName(),
                                 null

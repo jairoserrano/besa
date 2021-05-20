@@ -2,8 +2,8 @@
 <config>
     <container>
         <!--De número de agentes comienza desde 0-->
-        <numberofcontainers>4</numberofcontainers>
-        <fibotocalculate>50</fibotocalculate>
-        <numberofagentspercontainer>10</numberofagentspercontainer>
+        <numberofcontainers>2</numberofcontainers>
+        <photo_20>foto_04.png</photo_20>
+        <numberofagentspercontainer>6</numberofagentspercontainer>
     </container>
 </config>

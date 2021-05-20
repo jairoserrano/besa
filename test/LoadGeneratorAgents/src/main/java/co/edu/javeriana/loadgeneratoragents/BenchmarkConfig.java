@@ -25,16 +25,8 @@ import org.xml.sax.SAXException;
 public final class BenchmarkConfig {
 
     private int NumberOfAgentsPerContainer;
+    private int FiboToCalculate;
     private int NumberOfContainers;
-    private String photo_20;
-
-    public String getPhoto_20() {
-        return photo_20;
-    }
-
-    public void setPhoto_20(String photo_20) {
-        this.photo_20 = photo_20;
-    }
 
     public BenchmarkConfig() {
 
@@ -55,7 +47,7 @@ public final class BenchmarkConfig {
                     Element eElement = (Element) node;
                     // Configuración inicial desde el archivo XML
                     this.setNumberOfContainers(Integer.valueOf(eElement.getElementsByTagName("numberofcontainers").item(0).getTextContent()));
-                    this.setPhoto_20(eElement.getElementsByTagName("photo_20").item(0).getTextContent());
+                    this.setFiboToCalculate(Integer.valueOf(eElement.getElementsByTagName("fibotocalculate").item(0).getTextContent()));
                     this.setNumberOfAgentsPerContainer(Integer.valueOf(eElement.getElementsByTagName("numberofagentspercontainer").item(0).getTextContent()));
                 }
             }
@@ -71,6 +63,14 @@ public final class BenchmarkConfig {
 
     public void setNumberOfContainers(int NumberOfContainers) {
         this.NumberOfContainers = NumberOfContainers;
+    }
+
+    public String getFiboToCalculate() {
+        return String.valueOf(FiboToCalculate);
+    }
+
+    public void setFiboToCalculate(int FiboToCalculate) {
+        this.FiboToCalculate = FiboToCalculate;
     }
 
     public int getNumberOfAgentsPerContainer() {

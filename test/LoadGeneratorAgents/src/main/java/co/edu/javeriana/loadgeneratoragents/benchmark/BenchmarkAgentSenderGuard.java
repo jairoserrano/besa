@@ -6,7 +6,7 @@
 package BenchmarkTools;
 
 import BESA.ExceptionBESA;
-import WorkAgent.*;
+import FibonacciAgent.*;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
@@ -33,12 +33,12 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
         for (int i = 1; i <= message.getNumberOfContainers(); i++) {
             for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
                 try {
-                    ah = this.agent.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j));
-                    ReportBESA.info("Enviando mensaje a WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j) + " " + this.config.getPhoto_20());
+                    ah = this.agent.getAdmLocal().getHandlerByAlias("FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j));
+                    ReportBESA.info("Enviando mensaje a FiboAgente_" + String.valueOf(i) + "_" + String.valueOf(j) + " " + this.config.getFiboToCalculate());
                     EventBESA msj = new EventBESA(
-                            WorkAgentGuard.class.getName(),
-                            new WorkAgentMessage(
-                                    this.config.getPhoto_20()
+                            FibonacciAgentGuard.class.getName(),
+                            new FibonacciAgentMessage(
+                                    this.config.getFiboToCalculate()
                             )
                     );
                     ah.sendEvent(msj);
