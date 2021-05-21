@@ -12,13 +12,14 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
+import com.martensigwart.fakeload.FakeLoad;
+import com.martensigwart.fakeload.FakeLoadExecutor;
+import com.martensigwart.fakeload.FakeLoadExecutors;
+import com.martensigwart.fakeload.FakeLoads;
+import com.martensigwart.fakeload.MemoryUnit;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.core.Size;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 
 /**
  *
@@ -30,24 +31,18 @@ public class WorkAgentGuard extends GuardBESA {
     public void funcExecGuard(EventBESA event) {
         WorkAgentMessage mensaje = (WorkAgentMessage) event.getData();
         ReportBESA.info("Mensaje recibido en " + this.agent.getAlias() + ", procesando " + mensaje.getContent());
+
         
-        int mult = 3;
-
+        // @TODO: maximos CPU y RAM
         try {
-            System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+            ReportBESA.info(100 / 400);
+            FakeLoad fakeload = FakeLoads.create().
+                    lasting(20, TimeUnit.SECONDS).
+                    withCpu(100 / 400).
+                    withMemory(20, MemoryUnit.MB);
 
-            String image_location = "./lib/data/" + mensaje.getContent();
-            Mat src = Imgcodecs.imread(image_location);
-            Mat dst = new Mat();
-            Imgproc.resize(
-                    src, dst, 
-                    new Size(8000*mult, 8000*mult), 
-                    0.1, 0.1, Imgproc.INTER_LANCZOS4
-            );
-            src = null;
-            dst = null;            
-            System.gc();
-            //Imgcodecs.imwrite("./lib/res_99_" + mensaje.getContent(), dst);
+            FakeLoadExecutor executor = FakeLoadExecutors.newDefaultExecutor();
+            executor.execute(fakeload);
 
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
@@ -59,7 +54,7 @@ public class WorkAgentGuard extends GuardBESA {
             ah = this.agent.getAdmLocal().getHandlerByAlias("BenchmarkAgent");
             EventBESA msj = new EventBESA(
                     BenchmarkAgentReceiverGuard.class.getName(),
-                    new BenchmarkAgentReceiverMessage("Cálculo recibido en " + this.agent.getAlias())
+                    new BenchmarkAgentReceiverMessage("Cálculo recibido en " + this.agent.getAlias() + " " + mensaje.getContent())
             );
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {

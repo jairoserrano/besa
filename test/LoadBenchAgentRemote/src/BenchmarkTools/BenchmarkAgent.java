@@ -14,9 +14,6 @@ import BESA.Kernel.Agent.StructBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
 import ContainersLauncher.BenchmarkConfig;
-import WorkAgent.WorkAgentGuard;
-import WorkAgent.WorkAgentMessage;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,8 +23,12 @@ import java.util.logging.Logger;
  */
 public class BenchmarkAgent extends AgentBESA {
 
+    BenchmarkConfig config = new BenchmarkConfig();
+    long startTime;
+
     public BenchmarkAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
+         startTime = System.nanoTime();
     }
 
     @Override
@@ -36,12 +37,14 @@ public class BenchmarkAgent extends AgentBESA {
 
     @Override
     public void shutdownAgent() {
+        ReportBESA.info("Tiempo de ejecución total: " + (System.nanoTime() - this.startTime)/1000000000);
+        System.exit(0);
     }
 
     public void checkReady() {
 
         boolean ready = false;
-        BenchmarkConfig config = new BenchmarkConfig();
+
         AgHandlerBESA ah;
 
         while (!ready) {

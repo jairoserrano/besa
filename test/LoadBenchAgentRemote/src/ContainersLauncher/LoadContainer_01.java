@@ -40,7 +40,7 @@ public class LoadContainer_01 {
             for (int i = 0; i < config.getNumberOfAgentsPerContainer(); i++) {
                 Agents.add(
                         new WorkAgent(
-                                "WorkAgent_01_" + String.valueOf(i),
+                                "WorkAgent_1_" + String.valueOf(i),
                                 estado,
                                 Struct,
                                 0.91

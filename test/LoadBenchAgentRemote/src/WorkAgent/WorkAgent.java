@@ -5,7 +5,6 @@
  */
 package WorkAgent;
 
-import WorkAgent.*;
 import BESA.Kernel.Agent.AgentBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
 import BESA.Kernel.Agent.StateBESA;
@@ -29,6 +28,7 @@ public class WorkAgent extends AgentBESA {
 
     @Override
     public void shutdownAgent() {
+        System.exit(0);
     }
 
 }

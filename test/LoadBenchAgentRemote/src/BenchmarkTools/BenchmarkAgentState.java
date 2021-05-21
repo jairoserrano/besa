@@ -13,16 +13,54 @@ import java.io.Serializable;
  *
  * @author jairo
  */
-public class BenchmarkAgentState extends StateBESA implements Serializable {
+public final class BenchmarkAgentState extends StateBESA implements Serializable {
 
-    BenchmarkConfig config = new BenchmarkConfig();
+    BenchmarkConfig config;
+    int counter;
 
     public BenchmarkAgentState() {
         super();
+        config = new BenchmarkConfig();
+        this.setCounter(
+                config.getNumberOfAgentsPerContainer()
+                * config.getNumberOfContainers()
+        );
     }
 
     public synchronized void initState() {
 
+    }
+
+    /**
+     * Initializes counter state.
+     *
+     * @param n number of total agents
+     */
+    public synchronized void setCounter(int n) {
+        counter = n;
+    }
+
+    /**
+     * Initializes counter state.
+     *
+     * @return int Counter
+     */
+    public synchronized int getCounter() {
+        return counter;
+    }
+    
+    /**
+     * Increments the counter.
+     */
+    public synchronized void incrementCounter() {
+        this.counter++;
+    }
+
+    /**
+     * Decrements the counter.
+     */
+    public synchronized void decrementCounter() {
+        this.counter--;
     }
 
 }
