@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <!--
     <container alias="MAS_00" password = "0.91" ipaddress= "10.195.20.22">
         <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
     </container>
@@ -16,7 +15,7 @@
     <container alias="MAS_04" password = "0.91" ipaddress= "10.195.20.42">
         <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
     </container>
-    -->
+        <!--
     <container alias="MAS_00" password = "0.91" ipaddress= "127.0.0.1">
         <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
     </container>
@@ -31,5 +30,5 @@
     </container>
     <container alias="MAS_04" password = "0.91" ipaddress= "127.0.0.1">
         <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
-    </container>
+    </container>-->
 </config>

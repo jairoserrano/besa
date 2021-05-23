@@ -25,7 +25,7 @@ public class LoadContainer_03 {
      */
     public static void main(String[] args) {
 
-        BenchmarkConfig config = new BenchmarkConfig();
+        BenchmarkConfig config = BenchmarkConfig.getConfig(args);
         ArrayList<WorkAgent> Agents = new ArrayList<>();
 
         try {

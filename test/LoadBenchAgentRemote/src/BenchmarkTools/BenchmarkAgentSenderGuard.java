@@ -21,7 +21,7 @@ import ContainersLauncher.BenchmarkConfig;
  */
 public class BenchmarkAgentSenderGuard extends GuardBESA {
     
-    BenchmarkConfig config = new BenchmarkConfig();
+    BenchmarkConfig config = BenchmarkConfig.getConfig();
 
     @Override
     public void funcExecGuard(EventBESA event) {
@@ -34,11 +34,11 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
             for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
                 try {
                     ah = this.agent.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j));
-                    ReportBESA.info("Enviando mensaje a WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j) + " " + this.config.getPhoto_20());
+                    ReportBESA.info("Enviando mensaje a WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j) + " " + "uno");
                     EventBESA msj = new EventBESA(
                             WorkAgentGuard.class.getName(),
                             new WorkAgentMessage(
-                                    this.config.getPhoto_20()
+                                    "uno"
                             )
                     );
                     ah.sendEvent(msj);

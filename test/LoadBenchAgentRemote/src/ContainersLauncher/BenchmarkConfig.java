@@ -5,80 +5,90 @@
  */
 package ContainersLauncher;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
-import java.io.File;
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.DOMException;
-import org.xml.sax.SAXException;
-
 /**
  *
  * @author Jairo Serrano <jaserrano@javeriana.edu.co>
- * 
+ *
  */
 public final class BenchmarkConfig {
 
-    private int NumberOfAgentsPerContainer;
-    private int NumberOfContainers;
-    private String photo_20;
+    private static BenchmarkConfig instance = null;
 
-    public String getPhoto_20() {
-        return photo_20;
+    private final int NumberOfAgentsPerContainer;
+    private final int NumberOfContainers;
+    private final int SmallLoads;
+    private final int MediumLoads;
+    private final int HighLoads;
+    private final int InOrder;
+    private final int Cooperation;
+    private final int BalancerOn;
+    private final int BackupOn;
+
+    public static BenchmarkConfig getConfig() {
+        return BenchmarkConfig.instance;
     }
 
-    public void setPhoto_20(String photo_20) {
-        this.photo_20 = photo_20;
+    public static BenchmarkConfig getConfig(String args[]) {
+        BenchmarkConfig.instance = new BenchmarkConfig(args);
+        return BenchmarkConfig.instance;
     }
 
-    public BenchmarkConfig() {
+    /**
+     * Nodos,Agentes X Contenedor,Carga A,Carga B,Carga
+     * C,Orden,Cooperación,Balanceo,Backup
+     *
+     * @param args
+     */
+    private BenchmarkConfig(String args[]) {
 
-        try {
-            // https://www.javatpoint.com/how-to-read-xml-file-in-java
-            File file = new File("config/BenchmarkConfig.xml");
-            //an instance of factory that gives a document builder  
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            //an instance of builder to parse the specified xml file  
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.parse(file);
-            doc.getDocumentElement().normalize();
-            NodeList nodeList = doc.getElementsByTagName("container");
-            // nodeList is not iterable, so we are using for loop  
-            for (int itr = 0; itr < nodeList.getLength(); itr++) {
-                Node node = nodeList.item(itr);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) node;
-                    // Configuración inicial desde el archivo XML
-                    this.setNumberOfContainers(Integer.valueOf(eElement.getElementsByTagName("numberofcontainers").item(0).getTextContent()));
-                    this.setPhoto_20(eElement.getElementsByTagName("photo_20").item(0).getTextContent());
-                    this.setNumberOfAgentsPerContainer(Integer.valueOf(eElement.getElementsByTagName("numberofagentspercontainer").item(0).getTextContent()));
-                }
-            }
-        } catch (IOException | NumberFormatException | ParserConfigurationException | DOMException | SAXException e) {
-            e.printStackTrace();
-        }
+        String[] config = args[0].split(",");
 
+        this.NumberOfContainers = Integer.parseInt(config[0]);
+        this.NumberOfAgentsPerContainer = Integer.parseInt(config[1]);
+        this.SmallLoads = Integer.parseInt(config[2]);
+        this.MediumLoads = Integer.parseInt(config[3]);
+        this.HighLoads = Integer.parseInt(config[4]);
+        this.InOrder = Integer.parseInt(config[5]);
+        this.Cooperation = Integer.parseInt(config[6]);
+        this.BalancerOn = Integer.parseInt(config[7]);
+        this.BackupOn = Integer.parseInt(config[8]);
+
+    }
+
+    public int getSmallLoads() {
+        return SmallLoads;
+    }
+
+    public int getMediumLoads() {
+        return MediumLoads;
+    }
+
+    public int getHighLoads() {
+        return HighLoads;
+    }
+
+    public int getInOrder() {
+        return InOrder;
+    }
+
+    public int getCooperation() {
+        return Cooperation;
+    }
+
+    public int getBalancerOn() {
+        return BalancerOn;
+    }
+
+    public int getBackupOn() {
+        return BackupOn;
     }
 
     public int getNumberOfContainers() {
         return NumberOfContainers;
     }
 
-    public void setNumberOfContainers(int NumberOfContainers) {
-        this.NumberOfContainers = NumberOfContainers;
-    }
-
     public int getNumberOfAgentsPerContainer() {
         return NumberOfAgentsPerContainer;
-    }
-
-    public void setNumberOfAgentsPerContainer(int NumberOfAgentsPerContainer) {
-        this.NumberOfAgentsPerContainer = NumberOfAgentsPerContainer;
     }
 
 }

@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class BenchmarkAgent extends AgentBESA {
 
-    BenchmarkConfig config = new BenchmarkConfig();
+    BenchmarkConfig config = BenchmarkConfig.getConfig();
     long startTime;
 
     public BenchmarkAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {

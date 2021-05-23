@@ -31,14 +31,13 @@ public class WorkAgentGuard extends GuardBESA {
     public void funcExecGuard(EventBESA event) {
         WorkAgentMessage mensaje = (WorkAgentMessage) event.getData();
         ReportBESA.info("Mensaje recibido en " + this.agent.getAlias() + ", procesando " + mensaje.getContent());
-
         
         // @TODO: maximos CPU y RAM
         try {
             ReportBESA.info(100 / 400);
             FakeLoad fakeload = FakeLoads.create().
                     lasting(20, TimeUnit.SECONDS).
-                    withCpu(100 / 400).
+                    withCpu(1).
                     withMemory(20, MemoryUnit.MB);
 
             FakeLoadExecutor executor = FakeLoadExecutors.newDefaultExecutor();

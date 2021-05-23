@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class BenchmarkAgentReceiverGuard extends GuardBESA {
 
-    BenchmarkConfig config = new BenchmarkConfig();
+    BenchmarkConfig config = BenchmarkConfig.getConfig();
 
     @Override
     public void funcExecGuard(EventBESA event) {
