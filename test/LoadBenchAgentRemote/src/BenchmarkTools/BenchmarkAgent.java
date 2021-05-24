@@ -37,7 +37,7 @@ public class BenchmarkAgent extends AgentBESA {
 
     @Override
     public void shutdownAgent() {
-        ReportBESA.info("Tiempo de ejecución total: " + (System.nanoTime() - this.startTime)/1000000000);
+        ReportBESA.info("Tiempo de ejecución total: " + (System.nanoTime() - this.startTime)/1000000);
         System.exit(0);
     }
 
@@ -48,7 +48,7 @@ public class BenchmarkAgent extends AgentBESA {
         AgHandlerBESA ah;
 
         while (!ready) {
-            ReportBESA.info("Checkeando agentes");
+            ReportBESA.debug("Checkeando agentes");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
@@ -67,10 +67,10 @@ public class BenchmarkAgent extends AgentBESA {
                 }
                 ready = true;
             } catch (ExceptionBESA ex) {
-                ReportBESA.info("Checkeo fallido");
+                ReportBESA.debug("Checkeo fallido");
             }
         }
-        ReportBESA.info("Checkeo exitoso");
+        ReportBESA.debug("Checkeo exitoso");
     }
 
 }

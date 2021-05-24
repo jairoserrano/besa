@@ -30,7 +30,7 @@ public class LoadContainer_03 {
 
         try {
 
-            ReportBESA.info("Lanzando config/Container_03.xml");
+            ReportBESA.debug("Lanzando config/Container_03.xml");
 
             AdmBESA adminBesa = AdmBESA.getInstance("config/Container_03.xml");
 

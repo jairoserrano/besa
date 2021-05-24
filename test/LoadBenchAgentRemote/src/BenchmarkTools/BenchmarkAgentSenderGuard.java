@@ -26,7 +26,7 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
     @Override
     public void funcExecGuard(EventBESA event) {
         BenchmarkAgentMessage message = (BenchmarkAgentMessage) event.getData();
-        ReportBESA.info("Contenedores " + message.getNumberOfContainers() + " - Agentes por contenedor " + message.getNumberOfAgentsPerContainer());
+        ReportBESA.debug("Contenedores " + message.getNumberOfContainers() + " - Agentes por contenedor " + message.getNumberOfAgentsPerContainer());
 
         AgHandlerBESA ah;
 
@@ -34,7 +34,7 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
             for (int j = 0; j < message.getNumberOfAgentsPerContainer(); j++) {
                 try {
                     ah = this.agent.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j));
-                    ReportBESA.info("Enviando mensaje a WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j) + " " + "uno");
+                    ReportBESA.debug("Enviando mensaje a WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j) + " " + "uno");
                     EventBESA msj = new EventBESA(
                             WorkAgentGuard.class.getName(),
                             new WorkAgentMessage(

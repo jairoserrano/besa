@@ -31,7 +31,7 @@ public class LoadContainer_01 {
         try {
 
             AdmBESA adminBesa = AdmBESA.getInstance("config/Container_01.xml");
-            ReportBESA.info("Lanzando config/Container_01.xml");
+            ReportBESA.debug("Lanzando config/Container_01.xml");
 
             WorkAgentState estado = new WorkAgentState();
             StructBESA Struct = new StructBESA();

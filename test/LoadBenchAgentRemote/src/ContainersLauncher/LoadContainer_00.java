@@ -31,7 +31,7 @@ public class LoadContainer_00 {
      */
     public static void main(String[] args) {
 
-        ReportBESA.info("Lanzando config/Container_00.xml");
+        ReportBESA.debug("Lanzando config/Container_00.xml");
         AdmBESA adminBesa = AdmBESA.getInstance("config/Container_00.xml");
         BenchmarkConfig config = BenchmarkConfig.getConfig(args);
         

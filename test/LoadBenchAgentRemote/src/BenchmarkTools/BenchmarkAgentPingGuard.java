@@ -17,7 +17,7 @@ public class BenchmarkAgentPingGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
-        ReportBESA.info("Ready " +  this.agent.getAlias());
+        ReportBESA.debug("Ready " +  this.agent.getAlias());
     }
 
 }

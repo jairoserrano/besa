@@ -30,7 +30,7 @@ public class WorkAgentGuard extends GuardBESA {
     @Override
     public void funcExecGuard(EventBESA event) {
         WorkAgentMessage mensaje = (WorkAgentMessage) event.getData();
-        ReportBESA.info("Mensaje recibido en " + this.agent.getAlias() + ", procesando " + mensaje.getContent());
+        ReportBESA.debug("Mensaje recibido en " + this.agent.getAlias() + ", procesando " + mensaje.getContent());
         
         // @TODO: maximos CPU y RAM
         try {
@@ -46,7 +46,7 @@ public class WorkAgentGuard extends GuardBESA {
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
         }
-        ReportBESA.info("Terminada " + this.agent.getAlias() + " " + mensaje.getContent());
+        ReportBESA.debug("Terminada " + this.agent.getAlias() + " " + mensaje.getContent());
 
         AgHandlerBESA ah;
         try {

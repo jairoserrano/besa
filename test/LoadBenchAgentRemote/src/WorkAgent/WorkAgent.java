@@ -23,7 +23,7 @@ public class WorkAgent extends AgentBESA {
 
     @Override
     public void setupAgent() {
-        ReportBESA.info("Lanzado Agente " + this.getAlias());
+        ReportBESA.debug("Lanzado Agente " + this.getAlias());
     }
 
     @Override
