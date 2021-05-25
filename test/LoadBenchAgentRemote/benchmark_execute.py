@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 import subprocess
 import threading
+import os
+import shutil
 
 import sys
 
 # Cantidad de parametros
-if len(sys.argv) != 3:
+if len(sys.argv) != 2:
     print("Error al ejecutar, debes usar la siguiente forma:")
-    print("./execute_benchmark.py NODOS ArchivoBenchmark")
+    print("./execute_benchmark.py ArchivoBenchmark")
     exit(1)
 
 # Servidores para ejecución
@@ -16,8 +18,7 @@ server = {"00": "sistemas@10.195.20.22", "01": "sistemas@10.195.20.27",
 
 command = "java -cp LoadBenchAgentRemote.jar:lib/* ContainersLauncher.LoadContainer_"
 
-filename = sys.argv[2]
-nodos = sys.argv[1]
+filename = sys.argv[1]
 
 # Función de lanzamiento del server
 
@@ -28,8 +29,16 @@ def launch_server(server_id, parametros):
     p = subprocess.Popen(["ssh", server[server_id], "cd /home/sistemas/dist/;" + command +
                          server_id + ' ' + parametros], stdout=subprocess.PIPE)
     out = p.stdout.read()
-    #print("Resultado", out)
-    file2write = open(parametros + "-" + server_id + ".txt", 'wb')
+    
+    results_folder = "./results/"
+    try:
+        os.mkdir(results_folder)
+        print("Results folder created")
+    except OSError:
+        pass
+
+    file2write = open(results_folder + parametros +
+                      "-" + server_id + ".txt", 'wb')
     file2write.write(out)
     file2write.close()
 
