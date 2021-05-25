@@ -45,16 +45,17 @@ public class LoadContainer_00 {
             AgentSender.start();
             adminBesa.registerAgent(AgentSender, "BenchmarkAgent", "BenchmarkAgent");
 
-            AgentSender.checkReady();            
-            
+            if(config.IsCooperationOn()) {
+                AgentSender.checkReady();
+            }
+
             AgHandlerBESA ah;
             try {
                 ah = adminBesa.getHandlerByAlias("BenchmarkAgent");
                 EventBESA msj = new EventBESA(
                         BenchmarkAgentSenderGuard.class.getName(),
                         new BenchmarkAgentMessage(
-                                config.getNumberOfContainers(),
-                                config.getNumberOfAgentsPerContainer()
+                                config.getNumberOfAgents()
                         )
                 );
                 ah.sendEvent(msj);

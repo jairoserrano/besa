@@ -22,23 +22,26 @@ public class BenchmarkAgentReceiverGuard extends GuardBESA {
     BenchmarkConfig config = BenchmarkConfig.getConfig();
 
     @Override
-    public void funcExecGuard(EventBESA event) {
+    public synchronized void funcExecGuard(EventBESA event) {
         BenchmarkAgentReceiverMessage mensaje = (BenchmarkAgentReceiverMessage) event.getData();
-        ReportBESA.info(mensaje.getContent());
+        ReportBESA.info("Cálculo recibido de " + mensaje.getContent());
 
-        BenchmarkAgentState AgentState = (BenchmarkAgentState) getAgent().getState();
+        /**
+         * Captura el estado y actualiza
+         */
+        BenchmarkAgentState AgentState = (BenchmarkAgentState) this.agent.getState();
         AgentState.decrementCounter();
         ReportBESA.debug("Contador va: " + AgentState.getCounter());
+        /**
+         * Si el contador de tareas llega a cero, cierra todos los agentes.
+         */
         if (AgentState.getCounter() == 0) {
 
-            for (int i = 1; i <= config.getNumberOfContainers(); i++) {
-                for (int j = 0; j < config.getNumberOfAgentsPerContainer(); j++) {
-                    try {
-                        this.agent.getAdmLocal().killAgent("WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j), 0.91);
-                    } catch (ExceptionBESA ex) {
-                        Logger.getLogger(BenchmarkAgentReceiverGuard.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-
+            for (int i = 1; i <= config.getNumberOfAgents(); i++) {
+                try {
+                    this.agent.getAdmLocal().killAgent("WorkAgent_" + String.valueOf(i), 0.91);
+                } catch (ExceptionBESA ex) {
+                    Logger.getLogger(BenchmarkAgentReceiverGuard.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             try {
@@ -46,7 +49,6 @@ public class BenchmarkAgentReceiverGuard extends GuardBESA {
             } catch (ExceptionBESA ex) {
                 Logger.getLogger(BenchmarkAgentReceiverGuard.class.getName()).log(Level.SEVERE, null, ex);
             }
-            //System.exit(0);
         }
     }
 

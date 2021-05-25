@@ -28,7 +28,7 @@ public class BenchmarkAgent extends AgentBESA {
 
     public BenchmarkAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
-         startTime = System.nanoTime();
+        startTime = System.nanoTime();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class BenchmarkAgent extends AgentBESA {
 
     @Override
     public void shutdownAgent() {
-        ReportBESA.info("Tiempo de ejecución total: " + (System.nanoTime() - this.startTime)/1000000);
+        ReportBESA.info("Tiempo de ejecución total: " + (System.nanoTime() - this.startTime) / 1000000);
         System.exit(0);
     }
 
@@ -48,26 +48,26 @@ public class BenchmarkAgent extends AgentBESA {
         AgHandlerBESA ah;
 
         while (!ready) {
-            ReportBESA.debug("Checkeando agentes");
             try {
+                ReportBESA.debug("Checkeando agentes");
                 Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(BenchmarkAgent.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
-                for (int i = 1; i <= config.getNumberOfContainers(); i++) {
-                    for (int j = 0; j < config.getNumberOfAgentsPerContainer(); j++) {
-                        ah = this.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(i) + "_" + String.valueOf(j));
-                        EventBESA msj = new EventBESA(
-                                BenchmarkAgentPingMessage.class.getName(),
-                                null
-                        );
-                        ah.sendEvent(msj);
-                    }
+
+                for (int i = 1; i <= config.getNumberOfAgents(); i++) {
+                    //ReportBESA.debug("Buscando agente WorkAgent_" + String.valueOf(i));
+                    ah = this.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(i));
+                    EventBESA msj = new EventBESA(
+                            BenchmarkAgentPingMessage.class.getName(),
+                            null
+                    );
+                    ah.sendEvent(msj);
                 }
                 ready = true;
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(BenchmarkAgent.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ExceptionBESA ex) {
                 ReportBESA.debug("Checkeo fallido");
+                ReportBESA.debug(ex.toString());
             }
         }
         ReportBESA.debug("Checkeo exitoso");

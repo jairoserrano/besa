@@ -12,12 +12,6 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import com.martensigwart.fakeload.FakeLoad;
-import com.martensigwart.fakeload.FakeLoadExecutor;
-import com.martensigwart.fakeload.FakeLoadExecutors;
-import com.martensigwart.fakeload.FakeLoads;
-import com.martensigwart.fakeload.MemoryUnit;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,36 +24,36 @@ public class WorkAgentGuard extends GuardBESA {
     @Override
     public void funcExecGuard(EventBESA event) {
         WorkAgentMessage mensaje = (WorkAgentMessage) event.getData();
-        ReportBESA.debug("Mensaje recibido en " + this.agent.getAlias() + ", procesando " + mensaje.getContent());
-        
+        ReportBESA.debug("Carga " + mensaje.getKindOfWork() + ", recibida en " + this.agent.getAlias());
+
         // @TODO: maximos CPU y RAM
-        try {
-            ReportBESA.info(100 / 400);
-            FakeLoad fakeload = FakeLoads.create().
-                    lasting(20, TimeUnit.SECONDS).
-                    withCpu(1).
-                    withMemory(20, MemoryUnit.MB);
-
-            FakeLoadExecutor executor = FakeLoadExecutors.newDefaultExecutor();
-            executor.execute(fakeload);
-
-        } catch (Exception e) {
-            System.out.println("Error:" + e.getMessage());
+        if ("Small".equals(mensaje.getKindOfWork())) {
+            for (int i = 0; i < 5000; i++) {
+                int b = i * 2;
+            }
         }
-        ReportBESA.debug("Terminada " + this.agent.getAlias() + " " + mensaje.getContent());
+        if ("Medium".equals(mensaje.getKindOfWork())) {
+            for (int i = 0; i < 35000; i++) {
+                int b = i * 2;
+            }
+        }
+        if ("High".equals(mensaje.getKindOfWork())) {
+            for (int i = 0; i < 70000; i++) {
+                int b = i * 2;
+            }
+        }
 
-        AgHandlerBESA ah;
         try {
-            ah = this.agent.getAdmLocal().getHandlerByAlias("BenchmarkAgent");
+            AgHandlerBESA ah = this.agent.getAdmLocal().getHandlerByAlias("BenchmarkAgent");
             EventBESA msj = new EventBESA(
                     BenchmarkAgentReceiverGuard.class.getName(),
-                    new BenchmarkAgentReceiverMessage("Cálculo recibido en " + this.agent.getAlias() + " " + mensaje.getContent())
+                    new BenchmarkAgentReceiverMessage(this.agent.getAlias() + " " + mensaje.getKindOfWork())
             );
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {
-            Logger.getLogger(WorkAgentGuard.class.getName()).log(Level.SEVERE, null, ex);
+            ReportBESA.error(ex);
         }
-
+        ReportBESA.debug("Terminada carga " + mensaje.getKindOfWork() + ", en " + this.agent.getAlias());
     }
 
 }

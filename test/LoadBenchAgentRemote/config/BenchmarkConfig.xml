@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-    <container>
-        <!--De número de agentes comienza desde 0-->
-        <numberofcontainers>2</numberofcontainers>
-        <photo_20>foto_04.png</photo_20>
-        <numberofagentspercontainer>40</numberofagentspercontainer>
-    </container>
-</config>

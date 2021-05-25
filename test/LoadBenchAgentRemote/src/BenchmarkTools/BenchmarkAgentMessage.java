@@ -13,28 +13,14 @@ import BESA.Kernel.Agent.Event.DataBESA;
  */
 public class BenchmarkAgentMessage extends DataBESA {
 
-    private int NumberOfContainers = 0;
-    private int NumberOfAgentsPerContainer = 0;
+    private int agents;
 
-    public BenchmarkAgentMessage(int nc, int na) {
-        this.NumberOfContainers = nc;
-        this.NumberOfAgentsPerContainer = na;
+    public BenchmarkAgentMessage(int agents) {
+        this.agents = agents;
     }
 
-    public int getNumberOfAgentsPerContainer() {
-        return NumberOfAgentsPerContainer;
-    }
-
-    public void setNumberOfAgentsPerContainer(int NumberOfAgentsPerContainer) {
-        this.NumberOfAgentsPerContainer = NumberOfAgentsPerContainer;
-    }
-
-    public int getNumberOfContainers() {
-        return NumberOfContainers;
-    }
-
-    public void setNumberOfContainers(int NumberOfContainers) {
-        this.NumberOfContainers = NumberOfContainers;
+    public int getNumberOfAgents() {
+        return agents;
     }
 
 }

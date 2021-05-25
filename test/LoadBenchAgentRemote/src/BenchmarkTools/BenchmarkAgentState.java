@@ -21,10 +21,7 @@ public final class BenchmarkAgentState extends StateBESA implements Serializable
     public BenchmarkAgentState() {
         super();
         config = BenchmarkConfig.getConfig();
-        this.setCounter(
-                config.getNumberOfAgentsPerContainer()
-                * config.getNumberOfContainers()
-        );
+        this.setCounter(config.getNumberOfTasks());
     }
 
     public synchronized void initState() {

@@ -23,11 +23,13 @@ nodos = sys.argv[1]
 
 
 def launch_server(server_id, parametros):
-    print("Lanzando experimento","ssh", server[server_id], "cd /home/sistemas/dist/;" + command + server_id +' '+ parametros)
-    p = subprocess.Popen(["ssh", server[server_id], "cd /home/sistemas/dist/;" + command + server_id +' '+ parametros], stdout=subprocess.PIPE)
+    print("Lanzando experimento", "ssh",
+          server[server_id], "cd /home/sistemas/dist/;" + command + server_id + ' ' + parametros)
+    p = subprocess.Popen(["ssh", server[server_id], "cd /home/sistemas/dist/;" + command +
+                         server_id + ' ' + parametros], stdout=subprocess.PIPE)
     out = p.stdout.read()
     #print("Resultado", out)
-    file2write=open(parametros+".txt",'wb')
+    file2write = open(parametros + "-" + server_id + ".txt", 'wb')
     file2write.write(out)
     file2write.close()
 

@@ -14,15 +14,15 @@ public final class BenchmarkConfig {
 
     private static BenchmarkConfig instance = null;
 
-    private final int NumberOfAgentsPerContainer;
+    private final int NumberOfAgents;
     private final int NumberOfContainers;
     private final int SmallLoads;
     private final int MediumLoads;
     private final int HighLoads;
-    private final int InOrder;
-    private final int Cooperation;
-    private final int BalancerOn;
-    private final int BackupOn;
+    private final boolean OrderOn;
+    private final boolean CooperationOn;
+    private final boolean BalancerOn;
+    private final boolean BackupOn;
 
     public static BenchmarkConfig getConfig() {
         return BenchmarkConfig.instance;
@@ -44,15 +44,23 @@ public final class BenchmarkConfig {
         String[] config = args[0].split(",");
 
         this.NumberOfContainers = Integer.parseInt(config[0]);
-        this.NumberOfAgentsPerContainer = Integer.parseInt(config[1]);
+        this.NumberOfAgents = Integer.parseInt(config[1]);
         this.SmallLoads = Integer.parseInt(config[2]);
         this.MediumLoads = Integer.parseInt(config[3]);
         this.HighLoads = Integer.parseInt(config[4]);
-        this.InOrder = Integer.parseInt(config[5]);
-        this.Cooperation = Integer.parseInt(config[6]);
-        this.BalancerOn = Integer.parseInt(config[7]);
-        this.BackupOn = Integer.parseInt(config[8]);
+        this.OrderOn = "1".equals(config[5]);
+        this.CooperationOn = "1".equals(config[6]);
+        this.BalancerOn = "1".equals(config[7]);
+        this.BackupOn = "1".equals(config[8]);
 
+    }
+    
+    public int getNumberOfTasks() {
+        return SmallLoads+MediumLoads+HighLoads;
+    }
+    
+    public int getNumberOfAgents() {
+        return NumberOfAgents;
     }
 
     public int getSmallLoads() {
@@ -67,28 +75,43 @@ public final class BenchmarkConfig {
         return HighLoads;
     }
 
-    public int getInOrder() {
-        return InOrder;
+    public boolean InOrder() {
+        return OrderOn;
     }
 
-    public int getCooperation() {
-        return Cooperation;
+    public boolean IsCooperationOn() {
+        return CooperationOn;
     }
 
-    public int getBalancerOn() {
+    public boolean IsBalancerOn() {
         return BalancerOn;
     }
 
-    public int getBackupOn() {
+    public boolean IsBackupOn() {
         return BackupOn;
     }
 
     public int getNumberOfContainers() {
         return NumberOfContainers;
     }
+    
+    public int getAgentsByContainer() {
+        return NumberOfAgents/NumberOfContainers;
+    }
 
-    public int getNumberOfAgentsPerContainer() {
-        return NumberOfAgentsPerContainer;
+    @Override
+    public String toString() {
+        return "BenchmarkConfig{"
+                + "NumberOfAgents=" + NumberOfAgents
+                + ", NumberOfContainers=" + NumberOfContainers
+                + ", SmallLoads=" + SmallLoads
+                + ", MediumLoads=" + MediumLoads
+                + ", HighLoads=" + HighLoads
+                + ", OrderOn=" + OrderOn
+                + ", CooperationOn=" + CooperationOn
+                + ", BalancerOn=" + BalancerOn
+                + ", BackupOn=" + BackupOn
+                + '}';
     }
 
 }

@@ -5,7 +5,6 @@
  */
 package WorkAgent;
 
-import WorkAgent.*;
 import BESA.Kernel.Agent.Event.DataBESA;
 
 /**
@@ -14,18 +13,14 @@ import BESA.Kernel.Agent.Event.DataBESA;
  */
 public class WorkAgentMessage extends DataBESA {
 
-    private String content;
+    private final String KindOfWork;
 
-    public WorkAgentMessage(String content) {
-        this.content = content;
+    public WorkAgentMessage(String KindOfWork) {
+        this.KindOfWork = KindOfWork;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public String getKindOfWork() {
+        return this.KindOfWork;
     }
 
 }
