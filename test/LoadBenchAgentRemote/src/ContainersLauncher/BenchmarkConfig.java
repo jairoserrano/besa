@@ -5,6 +5,8 @@
  */
 package ContainersLauncher;
 
+import BESA.Log.ReportBESA;
+
 /**
  *
  * @author Jairo Serrano <jaserrano@javeriana.edu.co>
@@ -23,6 +25,7 @@ public final class BenchmarkConfig {
     private final boolean CooperationOn;
     private final boolean BalancerOn;
     private final boolean BackupOn;
+    private final int BackupTime;
 
     public static BenchmarkConfig getConfig() {
         return BenchmarkConfig.instance;
@@ -51,8 +54,17 @@ public final class BenchmarkConfig {
         this.OrderOn = "1".equals(config[5]);
         this.CooperationOn = "1".equals(config[6]);
         this.BalancerOn = "1".equals(config[7]);
-        this.BackupOn = "1".equals(config[8]);
+        if (Integer.parseInt(config[8])>0){
+            this.BackupOn = true;
+            this.BackupTime = Integer.parseInt(config[8]);
+        }else{
+            this.BackupOn = false;
+            this.BackupTime = 0;
+        }
+    }
 
+    public int getBackupTime() {
+        return BackupTime;
     }
     
     public int getNumberOfTasks() {

@@ -5,24 +5,27 @@
  */
 package BenchmarkTools;
 
-import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Log.ReportBESA;
-import ContainersLauncher.BenchmarkConfig;
 
 /**
  *
  * @author jairo
  */
-public class BenchmarkAgentPingGuard extends GuardBESA {
-
-    BenchmarkConfig config = BenchmarkConfig.getConfig();
+public class BenchmarkAgentReadyGuard extends GuardBESA {
 
     @Override
-    public synchronized void funcExecGuard(EventBESA event) {
+    public void funcExecGuard(EventBESA event) {
+
+        /**
+         * Llega el agente y lo guarda en el listado de los preparados.
+         */
         BenchmarkAgentReceiverMessage mensaje = (BenchmarkAgentReceiverMessage) event.getData();
-        ReportBESA.info(mensaje.getContent());
+        BenchmarkAgentState AgentState = (BenchmarkAgentState) this.agent.getState();
+        AgentState.setAgentsReady(mensaje.getContent());
+        ReportBESA.debug("Agente listo: " + mensaje.getContent());
+
     }
 
 }

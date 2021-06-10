@@ -10,8 +10,6 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Log.ReportBESA;
 import ContainersLauncher.BenchmarkConfig;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,11 +21,13 @@ public class BenchmarkAgentReceiverGuard extends GuardBESA {
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
+        
+        ReportBESA.debug("Llegó a  BenchmarkAgentReceiverGuard");
         BenchmarkAgentReceiverMessage mensaje = (BenchmarkAgentReceiverMessage) event.getData();
-        ReportBESA.info("Cálculo recibido de " + mensaje.getContent());
+        ReportBESA.info(mensaje.getContent());
 
         /**
-         * Captura el estado y actualiza
+         * Captura el estado y actualiza.
          */
         BenchmarkAgentState AgentState = (BenchmarkAgentState) this.agent.getState();
         AgentState.decrementCounter();
@@ -41,13 +41,13 @@ public class BenchmarkAgentReceiverGuard extends GuardBESA {
                 try {
                     this.agent.getAdmLocal().killAgent("WorkAgent_" + String.valueOf(i), 0.91);
                 } catch (ExceptionBESA ex) {
-                    Logger.getLogger(BenchmarkAgentReceiverGuard.class.getName()).log(Level.SEVERE, null, ex);
+                    ReportBESA.error(ex.toString());
                 }
             }
             try {
                 this.agent.getAdmLocal().killAgent("BenchmarkAgent", 0.91);
             } catch (ExceptionBESA ex) {
-                Logger.getLogger(BenchmarkAgentReceiverGuard.class.getName()).log(Level.SEVERE, null, ex);
+                ReportBESA.error(ex.toString());
             }
         }
     }

@@ -11,11 +11,9 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
+import ContainersLauncher.BenchmarkConfig;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ContainersLauncher.BenchmarkConfig;
-import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  *
@@ -27,71 +25,51 @@ public class BenchmarkAgentSenderGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
-        BenchmarkAgentMessage message = (BenchmarkAgentMessage) event.getData();
+
+        AgHandlerBESA ah;
 
         /**
          * Si la cooperación está activa, se envia los mensajes a todos los
          * contenedores y agentes.
          */
         if (config.IsCooperationOn()) {
-            
-            AgHandlerBESA ah;
 
-            /**
-             * Generando lista de tareas
-             */
-            ArrayList<String> tasks = new ArrayList<>();
-            for (int i = 0; i < config.getSmallLoads(); i++) {
-                tasks.add("Small");
-            }
-            for (int i = 0; i < config.getMediumLoads();i++) {
-                tasks.add("Medium");
-            }
-            for (int i = 0; i < config.getHighLoads(); i++) {
-                tasks.add("High");
-            }
-            /**
-             * Aleatorizando la lista
-             */
-            if (!config.InOrder()) {
-                Collections.shuffle(tasks);
-            }
             /**
              * Ejecutando las tareas
              */
-            // Número del agente
-            int AgentNumber = 1;
-            int TaskID = 1;
+            String KindOfLoad;
+            String SelectedAgent;
+
             /**
              * Se recorre el listado de tareas y se envia a cada agente
              * disponible
              */
-            for (String KindOfLoad : tasks) {
-                /**
-                 * Si las tareas son mayor al número de agentes, se envian en un
-                 * ciclo
-                 */
-                if ((TaskID % config.getNumberOfAgents()) == 0) {
-                    AgentNumber = 1;
-                }
-                //ReportBESA.debug("tasks "+ tasks.size() + ", Reinicio " + (TaskID % config.getNumberOfAgents()));
+            BenchmarkAgentState AgentState = (BenchmarkAgentState) this.agent.getState();
+            ReportBESA.debug(" Tareas " + AgentState.Tasks() + ", Contador " + AgentState.getCounter());
+            while (AgentState.getCounter() > 0) {
+                // captura una tarea
+                KindOfLoad = AgentState.getTask();
+                ReportBESA.debug(KindOfLoad);
+                SelectedAgent = AgentState.getAgentReady();
+                ReportBESA.debug(SelectedAgent);
+                //ReportBESA.debug(" KindOfLoad " + KindOfLoad + " SelectedAgent " + SelectedAgent);
                 /**
                  * Seleccionado el agente y enviado el mensaje.
                  */
-                ReportBESA.debug("Task ID " + TaskID + ", AgentNumber " + AgentNumber + ", NúmeroAgentes " + config.getNumberOfAgents());
                 try {
-                    ah = this.agent.getAdmLocal().getHandlerByAlias("WorkAgent_" + String.valueOf(AgentNumber));
-                    ReportBESA.debug("Enviando mensaje a WorkAgent_" + String.valueOf(AgentNumber) + " " + KindOfLoad);
+                    ReportBESA.debug("Enviando tarea "
+                            + KindOfLoad + " a "
+                            + SelectedAgent
+                            + ", Tareas faltantes: " + AgentState.Tasks());
                     EventBESA msj = new EventBESA(
-                            WorkAgentGuard.class.getName(),
+                            WorkAgentLoadGuard.class.getName(),
                             new WorkAgentMessage(KindOfLoad)
                     );
+                    ah = this.agent.getAdmLocal().getHandlerByAlias(SelectedAgent);
                     ah.sendEvent(msj);
                 } catch (ExceptionBESA ex) {
-                    Logger.getLogger(BenchmarkAgentSenderGuard.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(BenchmarkAgentState.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                AgentNumber++;
-                TaskID++;
             }
 
         } else {
