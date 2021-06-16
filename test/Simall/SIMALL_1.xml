@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simall clusterizado="true" anclasEnEntrada="true" anchoUnidad="100" anchoSeparador="20" cantidadVertices="5" cantidadPasillosInteriores="2" cantidadClientes="100">
+
+<Servicios>
+    <Entrada nombre="Entrada" unidades="4" locales="2"/>
+    <Sanitario nombre="Sanitario" unidades="5" locales="2" minTiempo="5" avgTiempo="20" maxTiempo="60"/>
+    <PuntoInformacion nombre="PuntoInformacion" unidades="2" locales="2" minTiempo="5" avgTiempo="20" maxTiempo="60"/>
+</Servicios>
+    
+<NodoFuzzy nombre="ContribucionCompra" tipoProporcion="+">
+    <NodoFuzzy nombre="Necesidad Verdadera" tipoProporcion="+">
+        <NodoFuzzy nombre="Necesidad" tipoProporcion="+" objeto="this" metodo="getNecesidadAnalizada"/>
+        <NodoFuzzy nombre="Edad" tipoProporcion="-" objeto="this" metodo="getEdadAnalizada"/>
+    </NodoFuzzy>
+    <NodoFuzzy nombre="Gusto" tipoProporcion="+">
+        <NodoFuzzy nombre="MachGusto" tipoProporcion="+" objeto="this" metodo="getGustoAnalizado"/>
+        <NodoFuzzy nombre="Antiviabilidad" tipoProporcion="-">
+            <NodoFuzzy nombre="PoderAdquisitivo" tipoProporcion="+">
+                <NodoFuzzy nombre="Billetera" tipoProporcion="+" objeto="this" metodo="getDineroEfectivoAnaliazado"/>
+                <NodoFuzzy nombre="Precio" tipoProporcion="-" objeto="this" metodo="getPrecioAnalizado"/>
+            </NodoFuzzy>
+            <NodoFuzzy nombre="Diseño-Tiempo" tipoProporcion="-" objeto="this" metodo="getDisenoTiempoAnalizado"/>
+        </NodoFuzzy>
+    </NodoFuzzy>
+</NodoFuzzy>    
+    
+<Demografia>
+    <MercadoObjetivo>
+        <RangoEdad porcentajeMercado="1" desde="0" hasta="90"/>
+        <Genero porcentajeMercado="0.4" valor="MASCULINO"/>
+        <Genero porcentajeMercado="0.5" valor="FEMENINO"/>
+        <Genero porcentajeMercado="0.1" valor="LGBT"/>
+        <NivelSocioEconomico porcentajeMercado="0.1" valor="MUY_BAJO"/>
+        <NivelSocioEconomico porcentajeMercado="0.1" valor="BAJO"/>
+        <NivelSocioEconomico porcentajeMercado="0.2" valor="BAJO_MEDIO"/>
+        <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO"/>
+        <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO_ALTO"/>
+        <NivelSocioEconomico porcentajeMercado="0.1" valor="ALTO"/>
+        <NivelSocioEconomico porcentajeMercado="0.1" valor="MUY_ALTO"/>
+        <Ocupacion porcentajeMercado="0.20" valor="ESTUDIANTE"/>
+        <Ocupacion porcentajeMercado="0.20" valor="EMPLEADO"/>
+        <Ocupacion porcentajeMercado="0.20" valor="DESEMPLEADO"/>
+        <Ocupacion porcentajeMercado="0.20" valor="INDEPENDIENTE"/>
+        <Ocupacion porcentajeMercado="0.20" valor="HOGAR"/>
+        <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+        <Escolaridad porcentajeMercado="0.2" valor="PRIMARIA"/>
+        <Escolaridad porcentajeMercado="0.2" valor="BACHILLER"/>
+        <Escolaridad porcentajeMercado="0.2" valor="PROFESIONAL"/>
+        <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+        <Escolaridad porcentajeMercado="0.1" valor="MAESTRIA"/>
+        <Escolaridad porcentajeMercado="0.1" valor="DOCTORADO"/>            
+    </MercadoObjetivo>
+    <NivelEconomico>
+        <Rango nivelSocioeconomico="MUY_BAJO"   minimoDinero="10000"    maximoDinero="300000"   minimoEndeudamiento="0.0" maximoEndeudamiento="0.1" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.1"/>
+        <Rango nivelSocioeconomico="BAJO"       minimoDinero="50000"    maximoDinero="1000000"  minimoEndeudamiento="0.0" maximoEndeudamiento="0.2" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.1"/>    
+        <Rango nivelSocioeconomico="BAJO_MEDIO" minimoDinero="100000"   maximoDinero="3000000"  minimoEndeudamiento="0.0" maximoEndeudamiento="0.3" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.1"/>    
+        <Rango nivelSocioeconomico="MEDIO"      minimoDinero="100000"   maximoDinero="5000000"  minimoEndeudamiento="0.0" maximoEndeudamiento="0.4" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.1"/>    
+        <Rango nivelSocioeconomico="MEDIO_ALTO" minimoDinero="300000"   maximoDinero="10000000" minimoEndeudamiento="0.0" maximoEndeudamiento="0.5" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.1"/>    
+        <Rango nivelSocioeconomico="ALTO"       minimoDinero="500000"   maximoDinero="20000000" minimoEndeudamiento="0.0" maximoEndeudamiento="0.7" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.2"/>    
+        <Rango nivelSocioeconomico="MUY_ALTO"   minimoDinero="500000"   maximoDinero="50000000" minimoEndeudamiento="0.0" maximoEndeudamiento="1" minimoPresupuestoGasto="0.0" maximoPresupuestoGasto="0.3"/>    
+    </NivelEconomico>
+</Demografia>
+<Comercios>
+    <Comercio categoria="Mercado" tipo="ANCLA" nombre="Falabella" unidades="2" vitrinas="1" locales="2" items="21000" minValor="900" avgValor="20000" maxValor="4000000" minTiempo="5" avgTiempo="20" maxTiempo="60" minVentas="10" avgVentas="20" maxVentas="30">
+        <MercadoObjetivo>
+            <RangoEdad porcentajeMercado="13" desde="0" hasta="90"/>
+            <Genero porcentajeMercado="0.5" valor="MASCULINO"/>
+            <Genero porcentajeMercado="0.4" valor="FEMENINO"/>
+            <Genero porcentajeMercado="0.1" valor="LGBT"/>
+            <NivelSocioEconomico porcentajeMercado="0.1" valor="MUY_BAJO"/>
+            <NivelSocioEconomico porcentajeMercado="0.1" valor="BAJO"/>
+            <NivelSocioEconomico porcentajeMercado="0.2" valor="BAJO_MEDIO"/>
+            <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO"/>
+            <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO_ALTO"/>
+            <NivelSocioEconomico porcentajeMercado="0.1" valor="ALTO"/>
+            <NivelSocioEconomico porcentajeMercado="0.1" valor="MUY_ALTO"/>
+            <Ocupacion porcentajeMercado="0.20" valor="HOGAR"/>
+            <Ocupacion porcentajeMercado="0.20" valor="ESTUDIANTE"/>
+            <Ocupacion porcentajeMercado="0.20" valor="EMPLEADO"/>
+            <Ocupacion porcentajeMercado="0.20" valor="DESEMPLEADO"/>
+            <Ocupacion porcentajeMercado="0.20" valor="INDEPENDIENTE"/>
+            <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+            <Escolaridad porcentajeMercado="0.2" valor="PRIMARIA"/>
+            <Escolaridad porcentajeMercado="0.2" valor="BACHILLER"/>
+            <Escolaridad porcentajeMercado="0.2" valor="PROFESIONAL"/>
+            <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+            <Escolaridad porcentajeMercado="0.1" valor="MAESTRIA"/>
+            <Escolaridad porcentajeMercado="0.1" valor="DOCTORADO"/>            
+        </MercadoObjetivo>
+        <Productos> 
+            <Producto nombre="PS4" precio="1299000" cantidad="10" unidad="UND">
+                <MercadoObjetivo>
+                    <RangoEdad porcentajeMercado="0.2" desde="15" hasta="18"/>
+                    <RangoEdad porcentajeMercado="0.6" desde="19" hasta="30"/>
+                    <RangoEdad porcentajeMercado="0.2" desde="30" hasta="40"/>
+                    <Genero porcentajeMercado="0.5" valor="MASCULINO"/>
+                    <Genero porcentajeMercado="0.4" valor="FEMENINO"/>
+                    <Genero porcentajeMercado="0.1" valor="LGBT"/>
+                    <NivelSocioEconomico porcentajeMercado="0.0" valor="MUY_BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.03" valor="BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.05" valor="BAJO_MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.12" valor="MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO_ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="MUY_ALTO"/>
+                    <Ocupacion porcentajeMercado="0.1" valor="HOGAR"/>
+                    <Ocupacion porcentajeMercado="0.3" valor="ESTUDIANTE"/>
+                    <Ocupacion porcentajeMercado="0.25" valor="EMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.1" valor="DESEMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.25" valor="INDEPENDIENTE"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="PRIMARIA"/>
+                    <Escolaridad porcentajeMercado="0.3" valor="BACHILLER"/>
+                    <Escolaridad porcentajeMercado="0.3" valor="PROFESIONAL"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+                    <Escolaridad porcentajeMercado="0.05" valor="MAESTRIA"/>
+                    <Escolaridad porcentajeMercado="0.05" valor="DOCTORADO"/>            
+                </MercadoObjetivo>
+            </Producto>
+            <Producto nombre="IPHONE 7" precio="2399000" cantidad="50" unidad="UND" marca="Sony">
+                <MercadoObjetivo>
+                    <RangoEdad porcentajeMercado="0.2" desde="15" hasta="18"/>
+                    <RangoEdad porcentajeMercado="0.5" desde="19" hasta="30"/>
+                    <RangoEdad porcentajeMercado="0.2" desde="31" hasta="40"/>
+                    <RangoEdad porcentajeMercado="0.1" desde="41" hasta="70"/>
+                    <Genero porcentajeMercado="0.5" valor="MASCULINO"/>
+                    <Genero porcentajeMercado="0.4" valor="FEMENINO"/>
+                    <Genero porcentajeMercado="0.1" valor="LGBT"/>
+                    <NivelSocioEconomico porcentajeMercado="0.0" valor="MUY_BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.0" valor="BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.05" valor="BAJO_MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.12" valor="MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO_ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.33" valor="MUY_ALTO"/>
+                    <Ocupacion porcentajeMercado="0.1" valor="HOGAR"/>
+                    <Ocupacion porcentajeMercado="0.3" valor="ESTUDIANTE"/>
+                    <Ocupacion porcentajeMercado="0.25" valor="EMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.1" valor="DESEMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.25" valor="INDEPENDIENTE"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="PRIMARIA"/>
+                    <Escolaridad porcentajeMercado="0.3" valor="BACHILLER"/>
+                    <Escolaridad porcentajeMercado="0.3" valor="PROFESIONAL"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+                    <Escolaridad porcentajeMercado="0.05" valor="MAESTRIA"/>
+                    <Escolaridad porcentajeMercado="0.05" valor="DOCTORADO"/>            
+                </MercadoObjetivo>
+            </Producto>
+            <Producto nombre="producto 2" precio="4000" cantidad="1" unidad="UND" marca="Sony"/>
+            <Producto nombre="producto 3" precio="6000" cantidad="1" unidad="UND" marca="Sony"/>
+        </Productos>
+    </Comercio>
+    
+</Comercios>
+<Categoria id="0" nombre="root">
+    <Categoria id="1" nombre="Celulares y Tablets">
+        <Categoria id="1.1" nombre="Smartphones">
+            <Categoria id="1.1.1" nombre="Gama Baja">
+                <MercadoObjetivo>
+                    <RangoEdad porcentajeMercado="0.2" desde="15" hasta="18"/>
+                    <RangoEdad porcentajeMercado="0.5" desde="19" hasta="30"/>
+                    <RangoEdad porcentajeMercado="0.2" desde="31" hasta="40"/>
+                    <RangoEdad porcentajeMercado="0.1" desde="41" hasta="70"/>
+                    <Genero porcentajeMercado="0.5" valor="MASCULINO"/>
+                    <Genero porcentajeMercado="0.4" valor="FEMENINO"/>
+                    <Genero porcentajeMercado="0.1" valor="LGBT"/>
+                    <NivelSocioEconomico porcentajeMercado="0.2" valor="MUY_BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="BAJO_MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.1" valor="MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.05" valor="MEDIO_ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.03" valor="ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.02" valor="MUY_ALTO"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="HOGAR"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="ESTUDIANTE"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="EMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="DESEMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="INDEPENDIENTE"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+                    <Escolaridad porcentajeMercado="0.2" valor="PRIMARIA"/>
+                    <Escolaridad porcentajeMercado="0.2" valor="BACHILLER"/>
+                    <Escolaridad porcentajeMercado="0.2" valor="PROFESIONAL"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="MAESTRIA"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="DOCTORADO"/>
+                </MercadoObjetivo>
+                <Producto nombre="SAMSUNG KEYSTON" precioMinimoMercado="45000" precioPromedioMercado="50000" precioMaximoMercado="60000" marca="SAMSUNG"/>
+                <Producto nombre="SAMSUNG KEYSTON 2" precioMinimoMercado="50000" precioPromedioMercado="55000" precioMaximoMercado="70000" marca="SAMSUNG"/>
+                <Producto nombre="IPHONE 2" precioMinimoMercado="120000" precioPromedioMercado="140000" precioMaximoMercado="160000" marca="APPLE"/>
+                <Producto nombre="IPHONE 3" precioMinimoMercado="140000" precioPromedioMercado="160000" precioMaximoMercado="190000" marca="APPLE"/>
+                <Producto nombre="HUAWEI G7300" precioMinimoMercado="70000" precioPromedioMercado="75000" precioMaximoMercado="80000" marca="HUAWEI"/>
+                <Producto nombre="HUAWEI G6620" precioMinimoMercado="59000" precioPromedioMercado="64000" precioMaximoMercado="70000" marca="HUAWEI"/>
+                <Producto nombre="MOTOROLA I205" precioMinimoMercado="39000" precioPromedioMercado="42000" precioMaximoMercado="49000" marca="MOTOROLA"/>
+                <Producto nombre="MOTOROLA U6" precioMinimoMercado="76000" precioPromedioMercado="89000" precioMaximoMercado="99000" marca="MOTOROLA"/>
+                <Producto nombre="LG B220A" precioMinimoMercado="35000" precioPromedioMercado="51000" precioMaximoMercado="59000" marca="LG"/>
+                <Producto nombre="SONY R300" precioMinimoMercado="65000" precioPromedioMercado="73000" precioMaximoMercado="84000" marca="SONY"/>
+            </Categoria>
+            <Categoria id="1.1.2" nombre="Gama Media">
+                <MercadoObjetivo>
+                    <RangoEdad porcentajeMercado="0.2" desde="15" hasta="18"/>
+                    <RangoEdad porcentajeMercado="0.5" desde="19" hasta="30"/>
+                    <RangoEdad porcentajeMercado="0.2" desde="31" hasta="40"/>
+                    <RangoEdad porcentajeMercado="0.1" desde="41" hasta="70"/>
+                    <Genero porcentajeMercado="0.5" valor="MASCULINO"/>
+                    <Genero porcentajeMercado="0.4" valor="FEMENINO"/>
+                    <Genero porcentajeMercado="0.1" valor="LGBT"/>
+                    <NivelSocioEconomico porcentajeMercado="0.2" valor="MUY_BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="BAJO_MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.1" valor="MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.05" valor="MEDIO_ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.03" valor="ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.02" valor="MUY_ALTO"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="HOGAR"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="ESTUDIANTE"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="EMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="DESEMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.20" valor="INDEPENDIENTE"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+                    <Escolaridad porcentajeMercado="0.2" valor="PRIMARIA"/>
+                    <Escolaridad porcentajeMercado="0.2" valor="BACHILLER"/>
+                    <Escolaridad porcentajeMercado="0.2" valor="PROFESIONAL"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="MAESTRIA"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="DOCTORADO"/>
+                </MercadoObjetivo>
+                <Producto nombre="SAMSUNG GALAXY J5" precioMinimoMercado="490000" precioPromedioMercado="510000" precioMaximoMercado="550000" marca="SAMSUNG"/>
+                <Producto nombre="SAMSUNG GALAXY J7" precioMinimoMercado="690000" precioPromedioMercado="740000" precioMaximoMercado="800000" marca="SAMSUNG"/>
+                <Producto nombre="IPHONE 4" precioMinimoMercado="380000" precioPromedioMercado="430000" precioMaximoMercado="450000" marca="APPLE"/>
+                <Producto nombre="IPHONE 5S" precioMinimoMercado="890000" precioPromedioMercado="970000" precioMaximoMercado="1100000" marca="APPLE"/>
+                <Producto nombre="HUAWEI P10 Lite" precioMinimoMercado="930000" precioPromedioMercado="950000" precioMaximoMercado="970000" marca="HUAWEI"/>
+                <Producto nombre="HUAWEI P8 Lite" precioMinimoMercado="500000" precioPromedioMercado="525000" precioMaximoMercado="540000" marca="HUAWEI"/>
+                <Producto nombre="MOTOROLA MOTO G4" precioMinimoMercado="510000" precioPromedioMercado="530000" precioMaximoMercado="590000" marca="MOTOROLA"/>
+                <Producto nombre="MOTOROLA NEXUS 6" precioMinimoMercado="670000" precioPromedioMercado="690000" precioMaximoMercado="710000" marca="MOTOROLA"/>
+                <Producto nombre="LG K10" precioMinimoMercado="460000" precioPromedioMercado="470000" precioMaximoMercado="490000" marca="LG"/>
+                <Producto nombre="SONY XPERIA XA F3113" precioMinimoMercado="590000" precioPromedioMercado="610000" precioMaximoMercado="640000" marca="SONY"/>
+            </Categoria>
+            <Categoria id="1.1.3" nombre="Gama Alta">
+                <MercadoObjetivo>
+                    <RangoEdad porcentajeMercado="0.2" desde="15" hasta="18"/>
+                    <RangoEdad porcentajeMercado="0.5" desde="19" hasta="30"/>
+                    <RangoEdad porcentajeMercado="0.2" desde="31" hasta="40"/>
+                    <RangoEdad porcentajeMercado="0.1" desde="41" hasta="70"/>
+                    <Genero porcentajeMercado="0.5" valor="MASCULINO"/>
+                    <Genero porcentajeMercado="0.4" valor="FEMENINO"/>
+                    <Genero porcentajeMercado="0.1" valor="LGBT"/>
+                    <NivelSocioEconomico porcentajeMercado="0.0" valor="MUY_BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.0" valor="BAJO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.05" valor="BAJO_MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.12" valor="MEDIO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.2" valor="MEDIO_ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.3" valor="ALTO"/>
+                    <NivelSocioEconomico porcentajeMercado="0.33" valor="MUY_ALTO"/>
+                    <Ocupacion porcentajeMercado="0.1" valor="HOGAR"/>
+                    <Ocupacion porcentajeMercado="0.3" valor="ESTUDIANTE"/>
+                    <Ocupacion porcentajeMercado="0.25" valor="EMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.1" valor="DESEMPLEADO"/>
+                    <Ocupacion porcentajeMercado="0.25" valor="INDEPENDIENTE"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="NINGUNA"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="PRIMARIA"/>
+                    <Escolaridad porcentajeMercado="0.3" valor="BACHILLER"/>
+                    <Escolaridad porcentajeMercado="0.3" valor="PROFESIONAL"/>
+                    <Escolaridad porcentajeMercado="0.1" valor="POSTGRADO"/>
+                    <Escolaridad porcentajeMercado="0.05" valor="MAESTRIA"/>
+                    <Escolaridad porcentajeMercado="0.05" valor="DOCTORADO"/>            
+                </MercadoObjetivo>
+                <Producto nombre="SAMSUNG S8" precioMinimoMercado="2680000" precioPromedioMercado="2720000" precioMaximoMercado="2790000" marca="SAMSUNG"/>
+                <Producto nombre="SAMSUNG S8 EDGE" precioMinimoMercado="2890000" precioPromedioMercado="2910000" precioMaximoMercado="2980000" marca="SAMSUNG"/>
+                <Producto nombre="IPHONE 7" precioMinimoMercado="2320000" precioPromedioMercado="2350000" precioMaximoMercado="2390000" marca="APPLE"/>
+                <Producto nombre="IPHONE 7 PLUS" precioMinimoMercado="2710000" precioPromedioMercado="2760000" precioMaximoMercado="2790000" marca="APPLE"/>
+                <Producto nombre="HUAWEI ASCEND P9" precioMinimoMercado="1750000" precioPromedioMercado="1780000" precioMaximoMercado="1820000" marca="HUAWEI"/>
+                <Producto nombre="HUAWEI P10 Plus" precioMinimoMercado="2460000" precioPromedioMercado="2540000" precioMaximoMercado="2590000" marca="HUAWEI"/>
+                <Producto nombre="MOTO Z PLAY" precioMinimoMercado="2630000" precioPromedioMercado="2690000" precioMaximoMercado="2700000" marca="MOTOROLA"/>
+                <Producto nombre="LG ELECTRONICS V20" precioMinimoMercado="2980000" precioPromedioMercado="3040000" precioMaximoMercado="3190000" marca="LG"/>
+                <Producto nombre="SONY XPERIA XZ" precioMinimoMercado="2860000" precioPromedioMercado="2920000" precioMaximoMercado="2950000" marca="SONY"/>
+                <Producto nombre="HTC 10" precioMinimoMercado="3600000" precioPromedioMercado="3650000" precioMaximoMercado="3700000" marca="HTC"/>  
+            </Categoria>
+        </Categoria>
+        <Categoria id="1.2" nombre="Accesorios para Celulares">
+            <Categoria id="1.2.1" nombre="Baterías, Cargadores y Cables">
+                <Producto nombre="CARGADOR SAMSUNG S8" precioMinimoMercado="79000" precioPromedioMercado="84000" precioMaximoMercado="90000" marca="SAMSUNG"/>
+                <Producto nombre="CARGADOR IPHONE 7" precioMinimoMercado="56000" precioPromedioMercado="60000" precioMaximoMercado="67000" marca="APPLE"/>
+            </Categoria>
+            <Categoria id="1.2.2" nombre="Audífonos">
+                <Producto nombre="AUDIFONOS SAMSUNG S8" precioMinimoMercado="85000" precioPromedioMercado="93000" precioMaximoMercado="64000" marca="SAMSUNG"/>
+                <Producto nombre="AUDIFONOS IPHONE 7" precioMinimoMercado="90000" precioPromedioMercado="100000" precioMaximoMercado="110000" marca="APPLE"/>
+            </Categoria>
+            <Categoria id="1.2.3" nombre="Fundas de Celular">
+                <Producto nombre="PROTECTOR SAMSUNG S8" precioMinimoMercado="25000" precioPromedioMercado="30000" precioMaximoMercado="32000" marca="SAMSUNG"/>
+                <Producto nombre="PROTECTOR IPHONE 7" precioMinimoMercado="34000" precioPromedioMercado="46000" precioMaximoMercado="49000" marca="APPLE"/>
+            <Categoria id="1.2.4" nombre="Selfie Stick">
+                <Producto nombre="SELFIE STICK GENERICO" precioMinimoMercado="25000" precioPromedioMercado="30000" precioMaximoMercado="32000" marca="SAMSUNG"/>
+            </Categoria>
+        </Categoria>
+        <Categoria id="1.3" nombre="SmartWatches">
+            <Producto nombre="APPLE WATCH" precioMinimoMercado="1250000" precioPromedioMercado="1350000" precioMaximoMercado="1450000" marca="APPLE"/>
+            <Producto nombre="SAMSUNG GEAR S3" precioMinimoMercado="1090000" precioPromedioMercado="1120000" precioMaximoMercado="1250000" marca="SAMSUNG"/>
+        </Categoria>
+        <Categoria id="1.4" nombre="Tablets y Accesorios">
+            <Categoria id="1.4.1" nombre="Tablets">
+                <Producto nombre="TABLET LENOVO TAB3 7" precioMinimoMercado="250000" precioPromedioMercado="270000" precioMaximoMercado="290000" marca="LENOVO"/>
+                <Producto nombre="IPAD PRO" precioMinimoMercado="2260000" precioPromedioMercado="2340000" precioMaximoMercado="2390000" marca="APPLE"/>
+                <Producto nombre="TABLET AMAZON KINDLE 7" precioMinimoMercado="190000" precioPromedioMercado="210000" precioMaximoMercado="230000" marca="AMAZON"/>
+                <Producto nombre="GALAXY TAB A 7" precioMinimoMercado="190000" precioPromedioMercado="210000" precioMaximoMercado="230000" marca="SAMSUNG"/>
+            </Categoria>
+            <Categoria id="1.4.2" nombre="Accesorios para Tablets">
+                <Producto nombre="BOLSA SUMERGIBLE PARA TABLET" precioMinimoMercado="22000" precioPromedioMercado="25000" precioMaximoMercado="29000" marca="AVANTREE"/>
+                <Producto nombre="TECLADO BLUETOOTH PARA TABLET" precioMinimoMercado="118000" precioPromedioMercado="129000" precioMaximoMercado="140000" marca="LOGITECH"/>
+            </Categoria>
+        </Categoria>
+        <Categoria id="1.5" nombre="GPS">
+            <Producto nombre="GARMIN GPSMAP 64S" precioMinimoMercado="870000" precioPromedioMercado="890000" precioMaximoMercado="920000" marca="GARMIN"/>
+            <Producto nombre="GARMIN ETREX 10 GPS DE MANO" precioMinimoMercado="312000" precioPromedioMercado="330000" precioMaximoMercado="360000" marca="GARMIN"/>
+        </Categoria>
+    </Categoria>
+    <Categoria id="2" nombre="TV Audio y Foto"> 
+        <Categoria id="2.1" nombre="TV y Video"> 
+            <Categoria id="2.1.1" nombre="Televisores"/>
+            <Categoria id="2.1.2" nombre="Teatros en Casa"/>
+            <Categoria id="2.1.3" nombre="Proyectores"/>
+            <Categoria id="2.1.4" nombre="Reproductores de Video"/>
+            <Categoria id="2.1.5" nombre="Accesorios de TV y Video"/>
+        </Categoria> 
+        <Categoria id="2.2" nombre="Audio"> 
+            <Categoria id="2.2.1" nombre="Audifonos"/>
+            <Categoria id="2.2.2" nombre="Docks y Parlantes"/>
+            <Categoria id="2.2.3" nombre="Audio Profesional"/>
+            <Categoria id="2.2.4" nombre="Minicomponentes"/>
+        </Categoria> 
+        <Categoria id="2.3" nombre="Cámaras y Lentes"> 
+            <Categoria id="2.3.1" nombre="Cámaras Reflex"/>
+            <Categoria id="2.3.2" nombre="Cámaras Digitales"/>
+            <Categoria id="2.3.3" nombre="Compactas"/>
+            <Categoria id="2.3.4" nombre="Cámaras Long Zoom"/>
+            <Categoria id="2.3.5" nombre="Drones Kit"/>
+            <Categoria id="2.3.6" nombre="Lentes y Objetivos"/>
+            <Categoria id="2.3.7" nombre="Accesorios Cámaras"/>
+        </Categoria>
+    </Categoria>
+
+    <Categoria id="3" nombre="Computación e Impresoras"> 
+        <Categoria id="3.1" nombre="Computación"> 
+            <Categoria id="3.1.1" nombre="Portátiles"/>
+            <Categoria id="3.1.2" nombre="Todo en Uno"/>
+            <Categoria id="3.1.3" nombre="Monitores"/>
+            <Categoria id="3.1.4" nombre="Mouse Kit"/>
+            <Categoria id="3.1.5" nombre="Componentes de Red"/>
+            <Categoria id="3.1.6" nombre="Accesorios de Computadoras"/>
+            <Categoria id="3.1.7" nombre="Discos Duros"/>
+            <Categoria id="3.1.8" nombre="Memorias USB"/>
+            <Categoria id="3.1.9" nombre="Zona Gamer"/>
+        </Categoria> 
+        <Categoria id="3.2" nombre="Impresoras y Escáneres"> 
+            <Categoria id="3.2.1" nombre="Impresoras"/>
+            <Categoria id="3.2.2" nombre="Escáneres"/>
+            <Categoria id="3.2.3" nombre="Consumibles"/>
+        </Categoria> 
+        <Categoria id="3.3" nombre="Software"/>
+    </Categoria>
+
+    <Categoria id="4" nombre="Entretenimiento"> 
+        <Categoria id="4.1" nombre="Consolas y Videojuegos"> 
+            <Categoria id="4.1.1" nombre="Xbox"/>
+            <Categoria id="4.1.2" nombre="PlayStation"/>
+            <Categoria id="4.1.3" nombre="Nintendo"/>
+            <Categoria id="4.1.4" nombre="Otras Consolas y Videojuegos"/>
+            <Categoria id="4.1.5" nombre="Videojuegos Para Niños y Toda la Familia"/>
+        </Categoria> 
+        <Categoria id="4.2" nombre="Libros"> 
+            <Categoria id="4.2.1" nombre="Literatura y Novelas"/>
+            <Categoria id="4.2.2" nombre="Actividades, Recreación y Estilo de Vida"/>
+            <Categoria id="4.2.3" nombre="Educación">
+                <Categoria id="4.2.3.1" nombre="Educación Básica"/>
+                <Categoria id="4.2.3.2" nombre="Educación Media"/>
+                <Categoria id="4.2.3.3" nombre="Educación Superior"/>
+            </Categoria>
+            <Categoria id="4.2.3" nombre="Libros Infantiles"/>
+        </Categoria>
+        <Categoria id="4.3" nombre="Películas"/>
+        <Categoria id="4.4" nombre="Música"/>
+    </Categoria>
+
+
+    <Categoria id="5" nombre="Hogar"> 
+        <Categoria id="5.1" nombre="Muebles"> 
+            <Categoria id="5.1.1" nombre="Muebles de Habitación"/>
+            <Categoria id="5.1.2" nombre="Muebles de Sala"/>
+            <Categoria id="5.1.3" nombre="Muebles de Estudio"/>
+            <Categoria id="5.1.4" nombre="Muebles de Comedor"/>
+            <Categoria id="5.1.5" nombre="Muebles de Cocina"/>
+            <Categoria id="5.1.5" nombre="Muebles de Jardín y Exteriores"/>
+        </Categoria> 
+        <Categoria id="5.2" nombre="Artículos Decorativos"/> 
+        <Categoria id="5.3" nombre="Artículos de Cocina">
+            <Categoria id="5.3.1" nombre="Ollas y Sartenes"/>
+            <Categoria id="5.3.2" nombre="Accesorios de Cocina"/>
+            <Categoria id="5.3.3" nombre="Utelsilos de Cocina"/>
+            <Categoria id="5.3.4" nombre="Recipientes y Tuppers"/>
+            <Categoria id="5.3.5" nombre="Repostería"/>
+            <Categoria id="5.3.6" nombre="Vajillas"/>
+        </Categoria>
+        <Categoria id="5.3" nombre="Iluminación"/>
+        <Categoria id="5.4" nombre="Automotriz"/>
+        <Categoria id="5.5" nombre="Alcoba">
+            <catrgoria id="5.5.1" nombre="Colchones"/>
+            <catrgoria id="5.5.2" nombre="Base Cama"/>
+            <catrgoria id="5.5.3" nombre="Almohadas"/>
+            <catrgoria id="5.5.4" nombre="Colchonetas"/>
+            <Categoria id="5.5.5" nombre="Textiles y Blancos">
+                <catrgoria id="5.5.5.1" nombre="Ropa de Cama"/>
+            </Categoria>
+        </Categoria>
+        <Categoria id="5.6" nombre="Jardín y Barbacoa">
+            <Categoria id="5.6.1" nombre="Asadores y Parrillas"/>
+            <Categoria id="5.6.1" nombre="Accesorios de Jardín"/>
+        </Categoria>
+        <Categoria id="5.7" nombre="Ferreería"/>
+        <Categoria id="5.8" nombre="KEIA"/>
+        <Categoria id="5.9" nombre="Orden y Limpieza"/>
+    </Categoria>
+    <Categoria id="6" nombre="Electrodomésticos"> 
+        <Categoria id="6.1" nombre="Línea Blanca"> 
+            <Categoria id="6.1.1" nombre="Neveras"/>
+            <Categoria id="6.1.2" nombre="Lavadoras"/>
+            <Categoria id="6.1.3" nombre="Secadoras"/>
+            <Categoria id="6.1.4" nombre="Climatización"/>
+            <Categoria id="6.1.5" nombre="Hornos y Estufas"/>
+            <Categoria id="6.1.6" nombre="Dispensadores de Agua"/>
+            <Categoria id="6.1.7" nombre="Calentadores de Agua"/>
+        </Categoria> 
+        <Categoria id="6.2" nombre="Electrodomésticos para tu Negocio"/> 
+        <Categoria id="6.3" nombre="Pequeños Electrodomésticos"> 
+            <Categoria id="6.3.1" nombre="Máquina de Coser"/>
+            <Categoria id="6.3.2" nombre="Licuadoras"/>
+            <Categoria id="6.3.3" nombre="Aspiradoras"/>
+            <Categoria id="6.3.4" nombre="Microhondas y Hornos"/>
+            <Categoria id="6.3.5" nombre="Cafeteras"/>
+            <Categoria id="6.3.6" nombre="Procesadoras de Alimentos"/>
+            <Categoria id="6.3.7" nombre="Planchas"/>
+            <Categoria id="6.3.8" nombre="Freidoras"/>
+            <Categoria id="6.3.9" nombre="Máquinas de Postres"/>
+            <Categoria id="6.3.10" nombre="Otros Pequeños Electrodomésticos"/>
+        </Categoria>
+        <Categoria id="6.4" nombre="Electrodomésticos Reacondicionados"/>
+    </Categoria>
+    <Categoria id="7" nombre="Moda"> 
+        <Categoria id="7.1" nombre="Ropa Mujer"> 
+            <Categoria id="7.1.1" nombre="Vestidos"/>
+            <Categoria id="7.1.2" nombre="Blusas"/>
+            <Categoria id="7.1.3" nombre="Busos y Sacos"/>
+            <Categoria id="7.1.4" nombre="Chaquetas y Abrigos"/>
+            <Categoria id="7.1.5" nombre="Pantalones"/>
+            <Categoria id="7.1.6" nombre="Jeans"/>
+            <Categoria id="7.1.7" nombre="Leggings"/>
+            <Categoria id="7.1.8" nombre="Faldas"/>
+            <Categoria id="7.1.9" nombre="Ropa Deportiva"/>
+            <Categoria id="7.1.10" nombre="Ropa Interior y Pijamas"/>
+            <Categoria id="7.1.11" nombre="Vestidos de Baño"/>
+        </Categoria> 
+        <Categoria id="7.2" nombre="Zapatos Mujer"> 
+            <Categoria id="7.2.1" nombre="Botas y Botines"/>
+            <Categoria id="7.2.2" nombre="Baletas"/>
+            <Categoria id="7.2.3" nombre="Tacones"/>
+            <Categoria id="7.2.4" nombre="Tenis Casuales"/>
+            <Categoria id="7.2.5" nombre="Sandalias"/>
+            <Categoria id="7.2.6" nombre="Tenis Deportivos"/>
+        </Categoria> 
+        <Categoria id="7.3" nombre="Ropa Hombre"> 
+            <Categoria id="7.3.1" nombre="Camisas"/>
+            <Categoria id="7.3.2" nombre="Camisetas"/>
+            <Categoria id="7.3.3" nombre="Polos"/>
+            <Categoria id="7.3.4" nombre="Chaquetas, Sacos y Abrigos"/>
+            <Categoria id="7.3.5" nombre="Pantalones"/>
+            <Categoria id="7.3.6" nombre="Jeans"/>
+            <Categoria id="7.3.7" nombre="Shorts y Bermudas"/>
+            <Categoria id="7.3.9" nombre="Ropa Deportiva"/>
+            <Categoria id="7.3.10" nombre="Ropa Interior y Pijamas"/>
+            <Categoria id="7.3.11" nombre="Trajes de Baño"/>
+            <Categoria id="7.3.12" nombre="Trajes de Negocios"/>
+        </Categoria> 
+        <Categoria id="7.4" nombre="Zapatos Hombre"> 
+            <Categoria id="7.4.1" nombre="Mocasines"/>
+            <Categoria id="7.4.2" nombre="Botas y Botines"/>
+            <Categoria id="7.4.3" nombre="Tenis Casuales"/>
+            <Categoria id="7.4.4" nombre="Tenis Deportivos"/>
+            <Categoria id="7.4.5" nombre="Zapatos Formales"/>
+        </Categoria>           
+    </Categoria>
+    <Categoria id="8" nombre="Relojes y Accesorios"> 
+        <Categoria id="8.1" nombre="Relojes"> 
+            <Categoria id="8.1.1" nombre="Relojes para Hombre"/>
+            <Categoria id="8.1.2" nombre="Relojes para Mujer"/>
+        </Categoria> 
+        <Categoria id="8.2" nombre="Gafas"> 
+            <Categoria id="8.2.1" nombre="Gafas de Sol Mujer"/>
+            <Categoria id="8.2.2" nombre="Gafas de Sol Hombre"/>
+            <Categoria id="8.2.3" nombre="Gafas Oftalmológicas Mujer"/>
+            <Categoria id="8.2.4" nombre="Gafas Oftalmológicas Hombre"/>
+        </Categoria> 
+        <Categoria id="8.3" nombre="Maletas y Morrales"> 
+            <Categoria id="8.3.1" nombre="Maletas de Viaje"/>
+            <Categoria id="8.3.2" nombre="Morrales"/>
+            <Categoria id="8.3.3" nombre="Maletas Deportivas"/>
+        </Categoria> 
+        <Categoria id="8.4" nombre="Carteras"> 
+            <Categoria id="8.4.1" nombre="Billeteras"/>
+            <Categoria id="8.4.2" nombre="Bolsos y Carteras"/>
+            <Categoria id="8.4.3" nombre="Maletines Hombre"/>
+        </Categoria>
+        <Categoria id="8.5" nombre="Joyería"> 
+            <Categoria id="8.5.1" nombre="Anillos"/>
+            <Categoria id="8.5.2" nombre="Anillos de Compromiso"/>
+            <Categoria id="8.5.3" nombre="Aretes"/>
+            <Categoria id="8.5.4" nombre="Collares"/>
+            <Categoria id="8.5.5" nombre="Pulseras"/>
+        </Categoria>
+        <Categoria id="8.6" nombre="Accesorios Mujer"> 
+            <Categoria id="8.6.1" nombre="Bufandas y Pashminas"/>
+            <Categoria id="8.6.2" nombre="Cinturones"/>
+            <Categoria id="8.6.3" nombre="Sombreros y Gorras"/>
+        </Categoria>
+        <Categoria id="8.7" nombre="Accesorios Hombre"> 
+            <Categoria id="8.7.1" nombre="Conturones"/>
+            <Categoria id="8.7.2" nombre="Corbatas"/>
+            <Categoria id="8.7.3" nombre="Gorras y Sombreros"/>
+        </Categoria>           
+    </Categoria>
+    <Categoria id="9" nombre="Belleza y Cuidado Personal"> 
+        <Categoria id="9.1" nombre="Perfumes y Fragancias"> 
+            <Categoria id="9.1.1" nombre="Perfumes para Mujer"/>
+            <Categoria id="9.1.2" nombre="Perfumes para Hombre"/>
+            <Categoria id="9.1.2" nombre="Splash"/>
+        </Categoria> 
+        <Categoria id="9.2" nombre="Cuidado Barba"> 
+            <Categoria id="9.2.1" nombre="Máquinas de Afeitar"/>
+            <Categoria id="9.2.2" nombre="Afeitadoras desechables y repuestos"/>
+            <Categoria id="9.2.3" nombre="Kits de Peluquería"/>
+            <Categoria id="9.2.4" nombre="Recortadoras de Vello"/>
+        </Categoria> 
+        <Categoria id="9.3" nombre="Maquillaje"> 
+            <Categoria id="9.3.1" nombre="Rostro"/>
+            <Categoria id="9.3.2" nombre="Ojos y Cejas"/>
+            <Categoria id="9.3.3" nombre="Labios"/>
+            <Categoria id="9.3.3" nombre="Manicure"/>
+            <Categoria id="9.3.3" nombre="Brochas y Accesorios"/>
+        </Categoria> 
+        <Categoria id="9.4" nombre="Cuidado de la Piel"/> 
+        <Categoria id="9.5" nombre="Depilación"/> 
+        <Categoria id="9.6" nombre="Cuidado del Cabello"> 
+            <Categoria id="9.6.1" nombre="Planchas"/>
+            <Categoria id="9.6.2" nombre="Rizadores"/>
+            <Categoria id="9.6.3" nombre="Secadores"/>
+            <Categoria id="9.6.4" nombre="Shampoo"/>
+            <Categoria id="9.6.5" nombre="Acondicionador"/>
+            <Categoria id="9.6.6" nombre="Tratamientos"/>
+            <Categoria id="9.6.7" nombre="Fijadores"/>
+            <Categoria id="9.6.8" nombre="Tintes"/>
+            <Categoria id="9.6.9" nombre="Cepillos y Accesorios"/>
+        </Categoria>
+        <Categoria id="9.8" nombre="Cuidado Facial"/>
+    </Categoria>
+    <Categoria id="10" nombre="Salud y Bienestar"> 
+        <Categoria id="10.1" nombre="Salud y Bienestar"> 
+            <Categoria id="10.1.1" nombre="Balanzas"/>
+            <Categoria id="10.1.2" nombre="Vaporizadores"/>
+            <Categoria id="10.1.3" nombre="Humidificadores"/>
+            <Categoria id="10.1.4" nombre="Equipos Médicos y Ortopédicos"/>
+            <Categoria id="10.1.5" nombre="Artículos para Dejar de Roncar"/>
+        </Categoria> 
+        <Categoria id="10.2" nombre="Masaje y Spa"> 
+            <Categoria id="10.2.1" nombre="Masajeadores"/>
+            <Categoria id="10.2.2" nombre="Aceites"/>
+        </Categoria> 
+        <Categoria id="10.3" nombre="Fajas"> 
+            <Categoria id="10.3.1" nombre="Fajas Hombre"/>
+            <Categoria id="10.3.2" nombre="Fajas Mujer"/>
+            <Categoria id="10.3.3" nombre="Fajas Maternidad"/>
+            <Categoria id="10.3.4" nombre="Fajas Térmicas"/>
+            <Categoria id="10.3.5" nombre="Fajas Ortoédicas y Quirúrgicas"/>
+            <Categoria id="10.3.6" nombre="Medias de Compresión"/>
+        </Categoria> 
+        <Categoria id="10.4" nombre="Vitaminas y Complementos"> 
+            <Categoria id="10.4.1" nombre="Vitaminas"/>
+            <Categoria id="10.4.2" nombre="Suplementos"/>
+            <Categoria id="10.4.3" nombre="Suplementos Dietários"/>
+            <Categoria id="10.4.4" nombre="Nutrición Deportiva"/>
+        </Categoria> 
+        <Categoria id="10.5" nombre="Cuidado Personal">
+            <Categoria id="10.5.1" nombre="Cremas Corporales"/>
+            <Categoria id="10.5.2" nombre="Tratamientos"/>
+            <Categoria id="10.5.3" nombre="Desodorantes"/>
+            <Categoria id="10.5.4" nombre="Bloqueadores y Bronceadores"/>
+            <Categoria id="10.5.5" nombre="Artículos de Protección Femenina"/>
+        </Categoria> 
+        <Categoria id="10.6" nombre="Bienestar Sexual"/> 
+    </Categoria>
+    <Categoria id="11" nombre="Juguetes, Niños y Bebés"> 
+        <Categoria id="11.1" nombre="Bebés"> 
+            <Categoria id="11.1.1" nombre="Coches"/>
+            <Categoria id="11.1.2" nombre="Sillas Auto"/>
+            <Categoria id="11.1.3" nombre="Lactancia y Alimentación"/>
+            <Categoria id="11.1.4" nombre="Pañales y Pañaleras"/>
+            <Categoria id="11.1.5" nombre="Corrales"/>
+            <Categoria id="11.1.6" nombre="Baño e Higiene"/>
+            <Categoria id="11.1.7" nombre="Gimnasios y Estimulación"/>
+            <Categoria id="11.1.8" nombre="Monitores y Seguridad"/>
+            <Categoria id="11.1.9" nombre="Ropa para Bebés Niñas"/>
+            <Categoria id="11.1.10" nombre="Ropa para Bebés Niños"/>
+            <Categoria id="11.1.11" nombre="Maternidad"/>
+        </Categoria> 
+        <Categoria id="11.2" nombre="Ropa y Calzado Infantil"> 
+            <Categoria id="11.2.1" nombre="Ropa para Niñas"/>
+            <Categoria id="11.2.2" nombre="Ropa para Niños"/>
+            <Categoria id="11.2.3" nombre="Calzado para Niñas"/>
+            <Categoria id="11.2.4" nombre="Calzado para Niños"/>
+            <Categoria id="11.2.5" nombre="Disfraces Infantiles"/>
+        </Categoria> 
+        <Categoria id="11.3" nombre="Juguetes y Juegos"> 
+            <Categoria id="11.3.1" nombre="Figuras de Acción"/>
+            <Categoria id="11.3.2" nombre="Muñecas y Accesorios"/>
+            <Categoria id="11.3.3" nombre="Radiocontrolados"/>
+            <Categoria id="11.3.4" nombre="Tablets y Electrónicos"/>
+            <Categoria id="11.3.5" nombre="Triciclos, Patines y Montables"/>
+            <Categoria id="11.3.6" nombre="Juegos para Armar"/>
+            <Categoria id="11.3.6" nombre="Arte y Manualidades"/>
+            <Categoria id="11.3.6" nombre="Piscinas y Juegos al Aire Libre"/>
+            <Categoria id="11.3.6" nombre="Juegos de Rol"/>
+        </Categoria> 
+        <Categoria id="11.4" nombre="Juegos de Mesa y Rompecabezas"/>
+        <Categoria id="11.5" nombre="Muebles Infantiles"/>
+        <Categoria id="11.6" nombre="Baby Shower"/>
+    </Categoria>
+    <Categoria id="12" nombre="Deportes"> 
+        <Categoria id="12.1" nombre="Ejercicio y Firness"> 
+            <Categoria id="12.1.1" nombre="Elípticas"/>
+            <Categoria id="12.1.2" nombre="Abdominales"/>
+            <Categoria id="12.1.3" nombre="Equipo Cardiovascular"/>
+            <Categoria id="12.1.4" nombre="Multigimnasio"/>
+            <Categoria id="12.1.5" nombre="Accesorios Deportivos"/>
+            <Categoria id="12.1.6" nombre="Entrenamiento Funcional"/>
+            <Categoria id="12.1.7" nombre="Caminadoras y Trotadoras"/>
+        </Categoria> 
+        <Categoria id="12.2" nombre="Biciletas"> 
+            <Categoria id="12.2.1" nombre="Bicicletas Todoterreno"/>
+            <Categoria id="12.2.2" nombre="Bicicletas Playeras"/>
+            <Categoria id="12.2.3" nombre="Bicicletas Ruta"/>
+            <Categoria id="12.2.4" nombre="Bicicletas Eléctricas"/>
+            <Categoria id="12.2.5" nombre="Bicicletas Plegables"/>
+            <Categoria id="12.2.6" nombre="Bicicletas Para Niños"/>
+            <Categoria id="12.2.7" nombre="Accesorios para Biciletas"/>
+            <Categoria id="12.2.7" nombre="Protección para Ciclismo"/>
+        </Categoria> 
+        <Categoria id="12.3" nombre="Campismo"> 
+            <Categoria id="12.3.1" nombre="Carpas"/>
+            <Categoria id="12.3.2" nombre="Maletas para Camping"/>
+            <Categoria id="12.3.3" nombre="Cocinas y Utelsilios"/>
+            <Categoria id="12.3.4" nombre="Colchones Inflables"/>
+            <Categoria id="12.3.5" nombre="Sleeping Bag"/>
+        </Categoria>
+        <Categoria id="12.4" nombre="Motos"> 
+            <Categoria id="12.4.1" nombre="Cascos para Moto"/>
+            <Categoria id="12.4.2" nombre="Ropa para Moto"/>
+            <Categoria id="12.4.3" nombre="Accesorios para Moto"/>
+        </Categoria>
+        <Categoria id="12.5" nombre="Futbol"> 
+            <Categoria id="12.5.1" nombre="Guayos"/>
+            <Categoria id="12.5.2" nombre="Balones de Fútbol"/>
+            <Categoria id="12.5.3" nombre="Uniformes de Fútbol"/>
+        </Categoria>
+        <Categoria id="12.6" nombre="Tiro y Paintball"> 
+            <Categoria id="12.6.1" nombre="Pistolas Paintball"/>
+            <Categoria id="12.6.2" nombre="Munición Paintball"/>
+            <Categoria id="12.6.3" nombre="Accesorios Paintball"/>
+        </Categoria>
+        <Categoria id="12.7" nombre="Skates y Patines"> 
+            <Categoria id="12.7.1" nombre="Skates"/>
+            <Categoria id="12.7.2" nombre="Patines"/>
+            <Categoria id="12.7.3" nombre="Accesorios Skates"/>
+            <Categoria id="12.7.4" nombre="Accesorios Patines"/>
+        </Categoria>
+        <Categoria id="12.7" nombre="Deportes de Contacto"> 
+            <Categoria id="12.7.1" nombre="Balones de Baloncesto"/>
+            <Categoria id="12.7.2" nombre="Uniformes de Baloncesto"/>
+            <Categoria id="12.7.3" nombre="Balones de Fútbol Americano"/>
+            <Categoria id="12.7.4" nombre="Guantes de Boxeo"/>
+        </Categoria>
+        <Categoria id="12.8" nombre="Natación"> 
+            <Categoria id="12.8.1" nombre="Gafas de Natación"/>
+            <Categoria id="12.8.2" nombre="Gorros de Natación"/>
+            <Categoria id="12.8.3" nombre="Narigueras para Natación"/>
+        </Categoria> 
+    </Categoria>
+    <Categoria id="13" nombre="Mercado"> 
+        <Categoria id="13.1" nombre="Frescos"/>
+        <Categoria id="13.2" nombre="Congelados y Refrigerados"/>
+        <Categoria id="13.3" nombre="Alimentos y Bebidas"/>
+        <Categoria id="13.4" nombre="Licores"/> 
+        <Categoria id="13.7" nombre="Aseo del Hogar"/>
+        <Categoria id="13.8" nombre="Mascotas"/>
+        <Categoria id="13.9" nombre="Libros y Revistas"/>
+        <Categoria id="13.10" nombre="Iluminación y Eléctricos"/>
+    </Categoria>
+</Categoria>
+</Simall>
