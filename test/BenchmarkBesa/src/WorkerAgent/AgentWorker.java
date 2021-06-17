@@ -3,28 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgent;
+package WorkerAgent;
 
-import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.AgentBESA;
-import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
 import BESA.Kernel.Agent.StateBESA;
 import BESA.Kernel.Agent.StructBESA;
-import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import Utils.BenchmarkConfig;
 
 /**
  *
  * @author jairo
  */
-public class AgentMasterCooperative extends AgentMasterBase {
+public class AgentWorker extends AgentBESA {
 
-    BenchmarkConfig config = BenchmarkConfig.getConfig();
-    long startTime;
-
-    public AgentMasterCooperative(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
+    public AgentWorker(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
+    }
+
+    @Override
+    public void setupAgent() {
+    }
+
+    @Override
+    public void shutdownAgent() {
+        ReportBESA.debug("Closing " + this.getAlias());
     }
 }

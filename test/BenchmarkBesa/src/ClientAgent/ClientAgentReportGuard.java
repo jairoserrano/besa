@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgent;
+package ClientAgent;
 
 import Utils.BenchmarkMessage;
 import BESA.Kernel.Agent.Event.EventBESA;
@@ -14,19 +14,19 @@ import BESA.Log.ReportBESA;
  *
  * @author jairo
  */
-public class AgentMasterGuardReport extends GuardBESA {
+public class ClientAgentReportGuard extends GuardBESA {
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
-        ReportBESA.debug("Llegó a  AgentMasterGuardReport");
+        //ReportBESA.debug("Llegó a  ClientAgentReportGuard");
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
         ReportBESA.info(Message.getContent());
 
         //
-        AgentMasterState AgentState = (AgentMasterState) this.agent.getState();
+        ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
         AgentState.TaskDone();
-        //ReportBESA.debug("Faltan " + AgentState.Tasks() + " tareas");
+        ReportBESA.debug("Van " + AgentState.getTaskListDone() + " de " + AgentState.getTotalTasks() + " tareas");
 
     }
 

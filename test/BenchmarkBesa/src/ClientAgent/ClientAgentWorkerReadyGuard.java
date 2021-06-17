@@ -3,40 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgent;
+package ClientAgent;
 
 import BESA.ExceptionBESA;
 import Utils.BenchmarkMessage;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
-import BESA.Kernel.System.AdmBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import BenchmarkAgentWorker.AgentWorkerGuardExecuteTask;
+import WorkerAgent.AgentWorkerTaskExecuteGuard;
 
 /**
  *
  * @author jairo
  */
-public class AgentMasterGuardTask extends GuardBESA {
+public class ClientAgentWorkerReadyGuard extends GuardBESA {
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
-        // 
-        ReportBESA.debug("Llegó a  AgentMasterGuardTask");
+        //ReportBESA.debug("Llegó a ClientAgentWorkerReadyGuard");
+        ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
 
-        //
-        AgentMasterState AgentState = (AgentMasterState) this.agent.getState();
-        //ReportBESA.debug("Faltan " + (AgentState.Tasks()-AgentState.getTaskListID()) + " tareas");
-
         try {
+            String Task = AgentState.getTask();
             EventBESA msj = new EventBESA(
-                    AgentWorkerGuardExecuteTask.class.getName(),
-                    new BenchmarkMessage(AgentState.getTask(), "BenchmarkAgent")
+                    AgentWorkerTaskExecuteGuard.class.getName(),
+                    new BenchmarkMessage(Task,
+                            this.agent.getAlias()
+                    )
             );
-            AgHandlerBESA ah = this.agent.getAdmLocal().getHandlerByAlias(Message.getAgentRef());
+            AgHandlerBESA ah = this.agent.getAdmLocal().
+                    getHandlerByAlias(Message.getAgentRef());
+            ReportBESA.debug("Sent " + Task + " to " + Message.getAgentRef());
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);

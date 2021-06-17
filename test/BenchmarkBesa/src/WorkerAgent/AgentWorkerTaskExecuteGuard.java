@@ -3,27 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgentWorker;
+package WorkerAgent;
 
 import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
-import BESA.Kernel.System.AdmBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import BenchmarkAgent.AgentMasterGuardReport;
-import BenchmarkAgent.AgentMasterGuardTask;
+import ClientAgent.ClientAgentReportGuard;
+import ClientAgent.ClientAgentWorkerReadyGuard;
 import Utils.BenchmarkMessage;
 import com.sun.management.OperatingSystemMXBean;
 import java.lang.management.ManagementFactory;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author jairo
  */
-public class AgentWorkerGuardExecuteTask extends GuardBESA {
+public class AgentWorkerTaskExecuteGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
@@ -33,7 +30,7 @@ public class AgentWorkerGuardExecuteTask extends GuardBESA {
         String KindOfWork = Message.getContent();
 
         if (KindOfWork == null) {
-            ReportBESA.debug("Cerrando agente " + this.agent.getAlias());
+            //ReportBESA.debug("Closing agent " + this.agent.getAlias());
             this.agent.shutdownAgent();
         } else {
 
@@ -90,10 +87,13 @@ public class AgentWorkerGuardExecuteTask extends GuardBESA {
         AgHandlerBESA ah;
         try {
             EventBESA msj = new EventBESA(
-                    AgentMasterGuardReport.class.getName(),
-                    new BenchmarkMessage(results, this.agent.getAlias())
+                    ClientAgentReportGuard.class.getName(),
+                    new BenchmarkMessage(
+                            results,
+                            this.agent.getAlias()
+                    )
             );
-            ah = this.agent.getAdmLocal().getHandlerByAlias("BenchmarkAgent");
+            ah = this.agent.getAdmLocal().getHandlerByAlias("ClientAg");
             ah.sendEvent(msj);
 
         } catch (ExceptionBESA ex) {
@@ -103,10 +103,13 @@ public class AgentWorkerGuardExecuteTask extends GuardBESA {
         // Ask for more jobs to BenchmarkAgent
         try {
             EventBESA msj = new EventBESA(
-                    AgentMasterGuardTask.class.getName(),
-                    new BenchmarkMessage("getTask", this.agent.getAlias())
+                    ClientAgentWorkerReadyGuard.class.getName(),
+                    new BenchmarkMessage(
+                            "getTaskToProcess",
+                            this.agent.getAlias()
+                    )
             );
-            ah = this.agent.getAdmLocal().getHandlerByAlias("BenchmarkAgent");
+            ah = this.agent.getAdmLocal().getHandlerByAlias("ClientAg");
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);

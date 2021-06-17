@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BenchmarkAgent;
+package ClientAgent;
 
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
 import BESA.Kernel.Agent.StateBESA;
@@ -13,9 +13,9 @@ import BESA.Kernel.Agent.StructBESA;
  *
  * @author jairo
  */
-public class AgentMasterSingle extends AgentMasterBase {
+public class ClientAgent extends AgentMasterBase {
 
-    public AgentMasterSingle(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
+    public ClientAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
     }
 }

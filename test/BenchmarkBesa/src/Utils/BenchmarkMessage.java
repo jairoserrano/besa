@@ -16,16 +16,16 @@ public class BenchmarkMessage extends DataBESA {
     private String content;
     private String agentRef;
 
+    public BenchmarkMessage(String content, String agentDest) {
+        this.content = content;
+        this.agentRef = agentDest;
+    }
+
     public String getAgentRef() {
         return agentRef;
     }
 
     public void setAgentRef(String agentDest) {
-        this.agentRef = agentDest;
-    }
-
-    public BenchmarkMessage(String content, String agentDest) {
-        this.content = content;
         this.agentRef = agentDest;
     }
 

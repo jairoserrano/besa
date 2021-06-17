@@ -19,35 +19,43 @@ import java.util.logging.Logger;
  */
 public final class BenchmarkConfig {
 
-    private static BenchmarkConfig instance = null;
     private final ArrayList<BenchmarkExperimentUnit> experiments;
+    private static BenchmarkConfig instance = null;
     private int CurrentExperimentID = 0;
-
-    public int getCurrentExperimentID() {
-        return CurrentExperimentID;
-    }
     private String ContainerID = "";
     private String ConfigFileName = "";
 
+    /**
+     *
+     * @return
+     */
     public static BenchmarkConfig getConfig() {
         return BenchmarkConfig.instance;
     }
 
+    /**
+     *
+     * @param args
+     * @return
+     */
     public static BenchmarkConfig getConfig(String args[]) {
         BenchmarkConfig.instance = new BenchmarkConfig(args);
         return BenchmarkConfig.instance;
     }
 
-    public boolean isMainContainer() {
-        return this.getContainerID().equals("0")
-                || this.getContainerID().equals("100");
-    }
-
+    /**
+     *
+     * @return
+     */
     public String getContainerID() {
         return ContainerID;
     }
 
-    public BenchmarkExperimentUnit getCurrentExperiment() {
+    /**
+     *
+     * @return
+     */
+    public BenchmarkExperimentUnit getNextExperiment() {
         try {
             BenchmarkExperimentUnit CurrentExperiment
                     = experiments.get(this.CurrentExperimentID);
@@ -56,6 +64,14 @@ public final class BenchmarkConfig {
         } catch (IndexOutOfBoundsException ex) {
             return null;
         }
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getCurrentExperimentID() {
+        return CurrentExperimentID;
     }
 
     /**
@@ -76,13 +92,13 @@ public final class BenchmarkConfig {
             System.exit(0);
         }
 
+        // Container ID from Command Line parameters
         try {
-            // Container ID from Command Line parameters
             if (args[1].length() > 0) {
                 ConfigFileName = args[1];
                 try {
                     File rawExperiment = new File(ConfigFileName);
-                    try ( Scanner myReader = new Scanner(rawExperiment)) {
+                    try (Scanner myReader = new Scanner(rawExperiment)) {
                         while (myReader.hasNextLine()) {
                             String data = myReader.nextLine();
                             experiments.add(new BenchmarkExperimentUnit(data));
