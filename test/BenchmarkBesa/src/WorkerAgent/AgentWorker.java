@@ -27,6 +27,6 @@ public class AgentWorker extends AgentBESA {
 
     @Override
     public void shutdownAgent() {
-        ReportBESA.debug("Closing " + this.getAlias());
+        //ReportBESA.debug("Closing " + this.getAlias());
     }
 }

@@ -20,6 +20,8 @@ import ClientAgent.ClientAgentWorkerReadyGuard;
 import Utils.BenchmarkConfig;
 import Utils.BenchmarkExperimentUnit;
 import Utils.BenchmarkMessage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,32 +33,25 @@ public class BenchmarkClient {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         // Create Config Instance
         BenchmarkConfig configExp = BenchmarkConfig.getConfig(args);
-        BenchmarkExperimentUnit CurrentExperimentUnit;
-
+        BenchmarkExperimentUnit ceUnit;
+        ClientAgent ClientAg;
+        // First experiment already ok
+        configExp.setNextExperimentReady();
         // Starting container
         AdmBESA adminBesa = AdmBESA.getInstance("config/Container_MAS_00_00.xml");
         ReportBESA.info("Started " + configExp.getContainerID() + " container");
 
-        // Get First Experiment Unit
-        CurrentExperimentUnit = configExp.getNextExperiment();
-        // BUSCAR COMO ENTREGAR DE A UNO SIN ROMPER EL PARALELISMO
-
-        // Benchmark Agent created
-        ClientAgentState BenchmarkState
-                = new ClientAgentState(
-                        CurrentExperimentUnit,
-                        "MAS_00_01",
-                        "127.0.0.1"
-                );
-        StructBESA StructSender = new StructBESA();
-        StructSender.bindGuard(ClientAgentWorkerReadyGuard.class);
-        StructSender.bindGuard(ClientAgentLaunchExperimentUnitGuard.class);
-        StructSender.bindGuard(ClientAgentReportGuard.class);
-
+        // ClientAg Agent created
         try {
-            ClientAgent ClientAg = new ClientAgent("ClientAg",
+            ClientAgentState BenchmarkState = new ClientAgentState();
+            StructBESA StructSender = new StructBESA();
+            StructSender.bindGuard(ClientAgentWorkerReadyGuard.class);
+            StructSender.bindGuard(ClientAgentLaunchExperimentUnitGuard.class);
+            StructSender.bindGuard(ClientAgentReportGuard.class);
+            ClientAg = new ClientAgent("ClientAg",
                     BenchmarkState,
                     StructSender,
                     0.91
@@ -67,16 +62,48 @@ public class BenchmarkClient {
             ReportBESA.error(ex);
         }
 
-        try {
-            EventBESA msj = new EventBESA(
-                    ClientAgentLaunchExperimentUnitGuard.class.getName(),
-                    new BenchmarkMessage("AgInit", "ClientAg"));
+        // Start experiment by experiment
+        for (int i = 0; i < configExp.getExperimentCount(); i++) {
 
-            AgHandlerBESA ah = adminBesa.getHandlerByAlias("ClientAg");
-            ah.sendEvent(msj);
-            ReportBESA.info("First ClientAgentLaunchExperimentUnitGuard call");
-        } catch (ExceptionBESA ex) {
-            ReportBESA.error(ex);
+            if (configExp.isNextExperimentReady()) {
+
+                ReportBESA.info("Started Experiment: "
+                        + configExp.getCurrentExperimentID()
+                );
+
+                // Get First Experiment Unit
+                ceUnit = configExp.getNextExperiment();
+                ReportBESA.info(ceUnit);
+
+                // Update Agent Status
+                try {
+                    AgHandlerBESA ah = adminBesa.getHandlerByAlias("ClientAg");
+                    ClientAgentState AgentState
+                            = (ClientAgentState) ah.getAg().getState();
+                    AgentState.UpdateAgentState(ceUnit,
+                            configExp.getContainers(ceUnit.getNumberOfContainers()
+                            ),
+                            configExp.getContainers(ceUnit.getNumberOfContainers()
+                            )
+                    );
+                } catch (ExceptionBESA ex) {
+                    ReportBESA.error(ex);
+                }
+
+                // First notification to start simulation
+                try {
+                    EventBESA msj = new EventBESA(
+                            ClientAgentLaunchExperimentUnitGuard.class.getName(),
+                            new BenchmarkMessage("AgInit", "ClientAg"));
+                    AgHandlerBESA ah2 = adminBesa.getHandlerByAlias("ClientAg");
+                    ah2.sendEvent(msj);
+                    //ReportBESA.info("First ClientAgentLaunchExperimentUnitGuard call");
+                } catch (ExceptionBESA ex) {
+                    ReportBESA.error(ex);
+                }
+
+            }
+
         }
 
     }

@@ -19,15 +19,19 @@ import java.util.Collections;
 public final class ClientAgentState extends StateBESA implements Serializable {
 
     public BenchmarkExperimentUnit CurrentExperiment;
-    ArrayList<String> TaskList = new ArrayList<>();
+    ArrayList<String> TaskList;
     private int TaskListID = 0;
     private int TaskListDone = 0;
-    private String WorkerContainerAlias;
-    private String WorkerContainerIP;
+    private ArrayList<String> WorkerContainerAlias;
+    private ArrayList<String> WorkerContainerIP;
 
-    public ClientAgentState(BenchmarkExperimentUnit Experiment, String WorkerContainerAlias, String WorkerContainerIP) {
+    public ClientAgentState() {
         super();
+    }
 
+    public void UpdateAgentState(BenchmarkExperimentUnit Experiment, ArrayList<String> WorkerContainerAlias, ArrayList<String> WorkerContainerIP) {
+
+        this.TaskList = new ArrayList<>();
         this.WorkerContainerAlias = WorkerContainerAlias;
         this.WorkerContainerIP = WorkerContainerIP;
         this.CurrentExperiment = Experiment;
@@ -50,25 +54,21 @@ public final class ClientAgentState extends StateBESA implements Serializable {
             Collections.shuffle(TaskList);
             ReportBESA.info("Shuffle Tasks");
         }
-        
+
         ReportBESA.info("Generated tasks: " + getTotalTasks());
 
     }
+    // @TODO: REVISAR A DONDE SE VA A MOVER
+    public String getCurrentContainerAlias(){
+        return "MAS_00_01";
+    }
 
-    public String getWorkerContainerAlias() {
+    public ArrayList<String> getWorkerContainerAlias() {
         return WorkerContainerAlias;
     }
 
-    public void setWorkerContainerAlias(String WorkerContainerAlias) {
-        this.WorkerContainerAlias = WorkerContainerAlias;
-    }
-
-    public String getWorkerContainerIP() {
+    public ArrayList<String> getWorkerContainerIP() {
         return WorkerContainerIP;
-    }
-
-    public void setWorkerContainerIP(String WorkerContainerIP) {
-        this.WorkerContainerIP = WorkerContainerIP;
     }
 
     public synchronized int getTaskListDone() {
@@ -98,15 +98,6 @@ public final class ClientAgentState extends StateBESA implements Serializable {
             Task = null;
         }
         return Task;
-    }
-
-    /**
-     * Return true or false
-     *
-     * @return boolean true if simulation is running
-     */
-    public synchronized boolean SimulationRunning() {
-        return TaskListID != TaskListDone;
     }
 
 }

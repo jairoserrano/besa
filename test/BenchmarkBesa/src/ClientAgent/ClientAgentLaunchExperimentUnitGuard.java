@@ -30,7 +30,7 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
-        ReportBESA.debug("ClientAgentWorkerReadyGuard");
+        //ReportBESA.debug("ClientAgentWorkerReadyGuard");
         ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
         int agNumber = AgentState.CurrentExperiment.getNumberOfAgents();
         Agents = new ArrayList<>();
@@ -50,24 +50,25 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
                         )
                 );
                 Agents.get(i).start();
-                ReportBESA.debug("Created " + Agents.get(i).getAlias());
             } catch (KernelAgentExceptionBESA ex) {
                 ReportBESA.error(ex);
-            }
+            }            
         }
+        ReportBESA.debug("Created agents: " + agNumber);
 
         // Moving agents to Execute Container
         for (int i = 0; i < agNumber; i++) {
             try {
                 this.agent.getAdmLocal().moveAgent(getAgentName(i),
-                        AgentState.getWorkerContainerAlias(),
+                        AgentState.getCurrentContainerAlias(),
                         0.91
                 );
             } catch (ExceptionBESA ex) {
                 ReportBESA.error(ex);
             }
-            ReportBESA.debug("Agent " + getAgentName(i) + " Relocated");
         }
+        ReportBESA.debug("Agent Relocated: " + agNumber);
+
         // Sending First Unit Task
         for (int i = 0; i < agNumber; i++) {
             try {
@@ -81,7 +82,7 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
                                 Agents.get(i).getAlias()
                         );
                 ah.sendEvent(msj);
-                ReportBESA.debug(Task + " sent to " + Agents.get(i).getAlias());
+                //ReportBESA.debug(Task + " sent to " + Agents.get(i).getAlias());
             } catch (ExceptionBESA ex) {
                 ReportBESA.error(ex);
             }

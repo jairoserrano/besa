@@ -50,11 +50,13 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
                     memory = new byte[1000000];
                     break;
                 case "Medium":
-                    load = 49;
+                    //load = 49;
+                    load = 20;
                     memory = new byte[5000000];
                     break;
                 case "High":
-                    load = 52;
+                    //load = 52;
+                    load = 20;
                     memory = new byte[10000000];
                     break;
                 default:
@@ -120,7 +122,7 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
     /**
      *
      * @param n Number to calculate Fibonacci number
-     * @return fibonacci number
+     * @return Fibonacci number
      */
     double fib(double n) {
         if (n <= 1) {

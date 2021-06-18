@@ -36,7 +36,7 @@ public class ClientAgentWorkerReadyGuard extends GuardBESA {
             );
             AgHandlerBESA ah = this.agent.getAdmLocal().
                     getHandlerByAlias(Message.getAgentRef());
-            ReportBESA.debug("Sent " + Task + " to " + Message.getAgentRef());
+            //ReportBESA.debug("Sent " + Task + " to " + Message.getAgentRef());
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);

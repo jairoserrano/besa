@@ -5,21 +5,24 @@
  */
 package Utils;
 
+import BESA.Log.ReportBESA;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  *
  * @author Jairo Serrano <jaserrano@javeriana.edu.co>
  *
  */
-public final class BenchmarkConfig {
+public final class BenchmarkConfig implements Serializable {
 
     private final ArrayList<BenchmarkExperimentUnit> experiments;
+    private BlockingQueue<Boolean> ReadyQueue;
     private static BenchmarkConfig instance = null;
     private int CurrentExperimentID = 0;
     private String ContainerID = "";
@@ -30,7 +33,7 @@ public final class BenchmarkConfig {
      * @return
      */
     public static BenchmarkConfig getConfig() {
-        return BenchmarkConfig.instance;
+        return instance;
     }
 
     /**
@@ -39,15 +42,42 @@ public final class BenchmarkConfig {
      * @return
      */
     public static BenchmarkConfig getConfig(String args[]) {
-        BenchmarkConfig.instance = new BenchmarkConfig(args);
-        return BenchmarkConfig.instance;
+        if (instance == null) {
+            instance = new BenchmarkConfig(args);
+        }
+        return instance;
     }
 
     /**
      *
      * @return
      */
-    public String getContainerID() {
+    public boolean isNextExperimentReady() {
+        try {
+            Boolean nextReady = ReadyQueue.take();
+            return nextReady;
+        } catch (InterruptedException ex) {
+            ReportBESA.error(ex);
+            return false;
+        }
+    }
+
+    /**
+     *
+     */
+    public void setNextExperimentReady() {
+        try {
+            ReadyQueue.put(true);
+        } catch (InterruptedException ex) {
+            ReportBESA.error(ex);
+        }
+    }
+
+    /**
+     *
+     * @return
+     */
+    public synchronized String getContainerID() {
         return ContainerID;
     }
 
@@ -56,22 +86,42 @@ public final class BenchmarkConfig {
      * @return
      */
     public BenchmarkExperimentUnit getNextExperiment() {
+        BenchmarkExperimentUnit CurrentExperiment;
         try {
-            BenchmarkExperimentUnit CurrentExperiment
-                    = experiments.get(this.CurrentExperimentID);
+            CurrentExperiment = experiments.get(CurrentExperimentID);
             this.CurrentExperimentID++;
-            return CurrentExperiment;
         } catch (IndexOutOfBoundsException ex) {
-            return null;
+            CurrentExperiment = null;
         }
+        return CurrentExperiment;
     }
 
     /**
      *
      * @return
      */
-    public int getCurrentExperimentID() {
+    public synchronized int getExperimentCount() {
+        return experiments.size();
+    }
+
+    /**
+     *
+     * @return
+     */
+    public synchronized int getCurrentExperimentID() {
         return CurrentExperimentID;
+    }
+
+    /**
+     * 
+     * @param Containers
+     * @return 
+     */
+    public ArrayList<String> getContainers(int Containers){
+        
+        ArrayList<String> ServerAlias = new ArrayList<>();        
+        ServerAlias.add("MAS_00_01");        
+        return ServerAlias;
     }
 
     /**
@@ -83,6 +133,7 @@ public final class BenchmarkConfig {
 
         // Arraylist with all experiments
         experiments = new ArrayList<>();
+        ReadyQueue = new LinkedBlockingDeque();
         // Container ID from Command Line parameters
         if (args[0].length() > 0) {
             ContainerID = args[0];
@@ -93,24 +144,20 @@ public final class BenchmarkConfig {
         }
 
         // Container ID from Command Line parameters
-        try {
-            if (args[1].length() > 0) {
-                ConfigFileName = args[1];
-                try {
-                    File rawExperiment = new File(ConfigFileName);
-                    try (Scanner myReader = new Scanner(rawExperiment)) {
-                        while (myReader.hasNextLine()) {
-                            String data = myReader.nextLine();
-                            experiments.add(new BenchmarkExperimentUnit(data));
-                        }
+        if (args[1].length() > 0) {
+            ConfigFileName = args[1];
+            try {
+                File rawExperiment = new File(ConfigFileName);
+                try (Scanner myReader = new Scanner(rawExperiment)) {
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        experiments.add(new BenchmarkExperimentUnit(data));
                     }
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(BenchmarkConfig.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                System.out.println("Master mode Started.");
+            } catch (FileNotFoundException ex) {
+                ReportBESA.error(ex);
             }
-        } catch (Exception ex) {
-            System.out.println("Worker mode Started");
+            System.out.println("Master mode Started.");
         }
     }
 }
