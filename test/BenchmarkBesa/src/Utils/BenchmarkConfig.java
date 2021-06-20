@@ -6,6 +6,7 @@
 package Utils;
 
 import BESA.Log.ReportBESA;
+import io.github.cdimascio.dotenv.Dotenv;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
@@ -117,11 +118,22 @@ public final class BenchmarkConfig implements Serializable {
      * @param Containers
      * @return 
      */
-    public ArrayList<String> getContainers(int Containers){
+    public ArrayList<String> getContainers(int Containers, int AgentsByContainer){
         
-        ArrayList<String> ServerAlias = new ArrayList<>();        
-        ServerAlias.add("MAS_00_01");        
-        return ServerAlias;
+        // @TODO: Sacar a constructor
+        Dotenv dotenv = Dotenv.load();
+        String MAS_NAME = "MAS_00_0";
+        if (dotenv.get("ENV").equals("remote")){
+            MAS_NAME = "MAS_01_0";
+        }        
+        
+        ArrayList<String> ContainersAlias = new ArrayList<>();
+        for (int i = 1; i <= Containers; i++) {
+            for (int j = 1; j <= AgentsByContainer; j++) {
+                ContainersAlias.add(MAS_NAME + i);
+            }
+        }
+        return ContainersAlias;
     }
 
     /**

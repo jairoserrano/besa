@@ -25,14 +25,6 @@ public class BenchmarkServer {
                 );
         ReportBESA.info("Container " + args[0] + " started");
 
-        /*while (true) {
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException ex) {
-                ReportBESA.error(ex);
-            }
-        }*/
-
     }
 
 }

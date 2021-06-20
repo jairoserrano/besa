@@ -13,9 +13,9 @@ import BESA.Kernel.Agent.StructBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
 import Utils.BenchmarkMessage;
-import WorkerAgent.AgentWorker;
-import WorkerAgent.AgentWorkerState;
-import WorkerAgent.AgentWorkerTaskExecuteGuard;
+import ServerAgent.AgentServer;
+import ServerAgent.AgentServerState;
+import ServerAgent.AgentServerTaskExecuteGuard;
 import java.util.ArrayList;
 
 /**
@@ -24,65 +24,80 @@ import java.util.ArrayList;
  */
 public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
 
-    private String AgentName = "AgentWorker_";
-    private ArrayList<AgentWorker> Agents;
+    private ArrayList<AgentServer> Agents;
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
-        //ReportBESA.debug("ClientAgentWorkerReadyGuard");
+        ReportBESA.debug("ClientAgentLaunchExperimentUnitGuard");
         ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
-        int agNumber = AgentState.CurrentExperiment.getNumberOfAgents();
+        int agTotal = AgentState.CurrentExperiment.getNumberOfAgents();
+        int agClientExp = AgentState.getExperimentID();
         Agents = new ArrayList<>();
 
         // Lanzamiento de todos los agentes del contenedor.
-        for (int i = 0; i < agNumber; i++) {
+        for (int i = 0; i < agTotal; i++) {
             try {
-                AgentWorkerState WorkerState = new AgentWorkerState();
-                StructBESA WorkerStruct = new StructBESA();
-                WorkerStruct.bindGuard(AgentWorkerTaskExecuteGuard.class);
-                this.Agents.add(
-                        new AgentWorker(
-                                getAgentName(i),
-                                WorkerState,
-                                WorkerStruct,
-                                0.91
-                        )
+                AgentServerState ServerState = new AgentServerState(
+                        getClientAgentName(agClientExp)
+                );
+                StructBESA ServerStruct = new StructBESA();
+                ServerStruct.bindGuard(AgentServerTaskExecuteGuard.class);
+                this.Agents.add(new AgentServer(
+                        getServerAgentName(i, agClientExp),
+                        ServerState,
+                        ServerStruct,
+                        0.91
+                )
                 );
                 Agents.get(i).start();
+                //this.agent.getAdmLocal().registerAgent(Agents.get(i),
+                //        getAgentName(i),
+                //        getAgentName(i)
+                //);
             } catch (KernelAgentExceptionBESA ex) {
                 ReportBESA.error(ex);
-            }            
+            }
         }
-        ReportBESA.debug("Created agents: " + agNumber);
+        ReportBESA.debug("Created agents: " + agTotal);
+
+        waitAgents(15);
 
         // Moving agents to Execute Container
-        for (int i = 0; i < agNumber; i++) {
+        for (int i = 0; i < agTotal; i++) {
             try {
-                this.agent.getAdmLocal().moveAgent(getAgentName(i),
-                        AgentState.getCurrentContainerAlias(),
+                String ContainerAlias = AgentState.getCurrentContainerAlias();
+                this.agent.getAdmLocal().moveAgent(getServerAgentName(i, agClientExp),
+                        ContainerAlias,
                         0.91
                 );
+                ReportBESA.debug("Moving " + getServerAgentName(i, agClientExp) + " to " + ContainerAlias);
             } catch (ExceptionBESA ex) {
                 ReportBESA.error(ex);
             }
         }
-        ReportBESA.debug("Agent Relocated: " + agNumber);
+        ReportBESA.debug("Agent Relocated: " + agTotal);
+
+        waitAgents(30);
 
         // Sending First Unit Task
-        for (int i = 0; i < agNumber; i++) {
+        for (int i = 0; i < agTotal; i++) {
             try {
+
+                //ReportBESA.debug("Arrive to " + getServerAgentName(i, agClientExp));
                 String Task = AgentState.getTask();
                 EventBESA msj = new EventBESA(
-                        AgentWorkerTaskExecuteGuard.class.getName(),
-                        new BenchmarkMessage(Task, "ClientAg"));
+                        AgentServerTaskExecuteGuard.class.getName(),
+                        new BenchmarkMessage(Task, getClientAgentName(agClientExp)));
 
+                //ReportBESA.debug("Getting to " + getServerAgentName(i, agClientExp));
                 AgHandlerBESA ah
                         = this.agent.getAdmLocal().getHandlerByAlias(
-                                Agents.get(i).getAlias()
+                                getServerAgentName(i, agClientExp)
                         );
                 ah.sendEvent(msj);
-                //ReportBESA.debug(Task + " sent to " + Agents.get(i).getAlias());
+                //ReportBESA.debug(Task + " sent to " + getServerAgentName(i, agClientExp));
+
             } catch (ExceptionBESA ex) {
                 ReportBESA.error(ex);
             }
@@ -90,19 +105,38 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
 
     }
 
-    // Asignar agente pequeño, mediano, con la tarea asignada
     /**
-     * @param index
-     * @return the AgentName
+     *
      */
-    public String getAgentName(int index) {
-        return AgentName + String.valueOf(index);
+    public void waitAgents(int time) {
+        try {
+            for (int i = 1; i < time; i++) {
+                System.out.print(i + " ");
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException ex) {
+            ReportBESA.error(ex);
+        }
+        System.out.println("");
     }
 
     /**
-     * @param AgentName the AgentName to set
+     * @param index
+     * @param exp
+     * @return the AgentName
      */
-    public void setAgentName(String AgentName) {
-        this.AgentName = AgentName;
+    public String getServerAgentName(int index, int exp) {
+        String ServerAgentName = "AgentWorker_E" + String.valueOf(exp) + "_";
+        return ServerAgentName + String.valueOf(index);
     }
+
+    /**
+     * @param exp
+     * @return the AgentName
+     */
+    public String getClientAgentName(int exp) {
+        String ClientAgentName = "ClientAg_E";
+        return ClientAgentName + String.valueOf(exp);
+    }
+
 }

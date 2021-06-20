@@ -11,7 +11,7 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import WorkerAgent.AgentWorkerTaskExecuteGuard;
+import ServerAgent.AgentServerTaskExecuteGuard;
 
 /**
  *
@@ -22,21 +22,21 @@ public class ClientAgentWorkerReadyGuard extends GuardBESA {
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
-        //ReportBESA.debug("Llegó a ClientAgentWorkerReadyGuard");
+        ReportBESA.debug("Llegó a ClientAgentWorkerReadyGuard");
         ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
 
         try {
             String Task = AgentState.getTask();
             EventBESA msj = new EventBESA(
-                    AgentWorkerTaskExecuteGuard.class.getName(),
+                    AgentServerTaskExecuteGuard.class.getName(),
                     new BenchmarkMessage(Task,
                             this.agent.getAlias()
                     )
             );
             AgHandlerBESA ah = this.agent.getAdmLocal().
                     getHandlerByAlias(Message.getAgentRef());
-            //ReportBESA.debug("Sent " + Task + " to " + Message.getAgentRef());
+            ReportBESA.debug("Sent " + Task + " to " + Message.getAgentRef());
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);

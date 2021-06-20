@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package WorkerAgent;
+package ServerAgent;
 
 import BESA.Kernel.Agent.AgentBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
@@ -15,10 +15,11 @@ import BESA.Log.ReportBESA;
  *
  * @author jairo
  */
-public class AgentWorker extends AgentBESA {
+public class AgentServer extends AgentBESA {
 
-    public AgentWorker(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
+    public AgentServer(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
+        ReportBESA.debug("Created " + this.getAlias());
     }
 
     @Override
@@ -27,6 +28,6 @@ public class AgentWorker extends AgentBESA {
 
     @Override
     public void shutdownAgent() {
-        //ReportBESA.debug("Closing " + this.getAlias());
+        ReportBESA.debug("Closing " + this.getAlias());
     }
 }

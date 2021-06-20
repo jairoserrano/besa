@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package WorkerAgent;
+package ServerAgent;
 
 import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
@@ -20,13 +20,14 @@ import java.lang.management.ManagementFactory;
  *
  * @author jairo
  */
-public class AgentWorkerTaskExecuteGuard extends GuardBESA {
+public class AgentServerTaskExecuteGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
 
         //
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
+        AgentServerState ServerAgentState = (AgentServerState) this.agent.getState();
         String KindOfWork = Message.getContent();
 
         if (KindOfWork == null) {
@@ -47,16 +48,17 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
             switch (KindOfWork) {
                 case "Small":
                     load = 40;
+                    //load = 2;
                     memory = new byte[1000000];
                     break;
                 case "Medium":
-                    //load = 49;
-                    load = 20;
+                    load = 49;
+                    //load = 2;
                     memory = new byte[5000000];
                     break;
                 case "High":
-                    //load = 52;
-                    load = 20;
+                    load = 52;
+                    //load = 2;
                     memory = new byte[10000000];
                     break;
                 default:
@@ -70,12 +72,12 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
             String respuesta = this.agent.getAlias() + ","
                     + result + ","
                     + KindOfWork + ","
-                    + ((System.currentTimeMillis() - startTime) / 1000000000) + ","
+                    + (System.currentTimeMillis() - startTime) + ","
                     + operatingSystemMXBean.getProcessCpuLoad() + ","
                     + ((operatingSystemMXBean.getTotalPhysicalMemorySize()
                     - operatingSystemMXBean.getFreePhysicalMemorySize()) / 1000000);
 
-            this.sendResults(respuesta);
+            this.sendResults(respuesta, ServerAgentState.getClientName());
 
             memory = null;
             System.gc();
@@ -83,7 +85,7 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
 
     }
 
-    public void sendResults(String results) {
+    public void sendResults(String results, String clientName) {
 
         // Send results to BenchmarkAgent
         AgHandlerBESA ah;
@@ -95,7 +97,7 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
                             this.agent.getAlias()
                     )
             );
-            ah = this.agent.getAdmLocal().getHandlerByAlias("ClientAg");
+            ah = this.agent.getAdmLocal().getHandlerByAlias(clientName);
             ah.sendEvent(msj);
 
         } catch (ExceptionBESA ex) {
@@ -111,7 +113,7 @@ public class AgentWorkerTaskExecuteGuard extends GuardBESA {
                             this.agent.getAlias()
                     )
             );
-            ah = this.agent.getAdmLocal().getHandlerByAlias("ClientAg");
+            ah = this.agent.getAdmLocal().getHandlerByAlias(clientName);
             ah.sendEvent(msj);
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);

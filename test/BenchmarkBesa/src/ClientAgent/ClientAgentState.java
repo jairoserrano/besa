@@ -11,6 +11,8 @@ import Utils.BenchmarkExperimentUnit;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  *
@@ -19,9 +21,11 @@ import java.util.Collections;
 public final class ClientAgentState extends StateBESA implements Serializable {
 
     public BenchmarkExperimentUnit CurrentExperiment;
-    ArrayList<String> TaskList;
+    private BlockingQueue<String> AvailbleContainers;
+    private ArrayList<String> TaskList;
     private int TaskListID = 0;
     private int TaskListDone = 0;
+    private int ExperimentID;
     private ArrayList<String> WorkerContainerAlias;
     private ArrayList<String> WorkerContainerIP;
 
@@ -29,9 +33,11 @@ public final class ClientAgentState extends StateBESA implements Serializable {
         super();
     }
 
-    public void UpdateAgentState(BenchmarkExperimentUnit Experiment, ArrayList<String> WorkerContainerAlias, ArrayList<String> WorkerContainerIP) {
+    public void UpdateAgentState(BenchmarkExperimentUnit Experiment, int ExperimentID, ArrayList<String> WorkerContainerAlias) {
 
+        this.ExperimentID = ExperimentID;
         this.TaskList = new ArrayList<>();
+        this.AvailbleContainers = new LinkedBlockingDeque(WorkerContainerAlias);
         this.WorkerContainerAlias = WorkerContainerAlias;
         this.WorkerContainerIP = WorkerContainerIP;
         this.CurrentExperiment = Experiment;
@@ -58,19 +64,48 @@ public final class ClientAgentState extends StateBESA implements Serializable {
         ReportBESA.info("Generated tasks: " + getTotalTasks());
 
     }
-    // @TODO: REVISAR A DONDE SE VA A MOVER
-    public String getCurrentContainerAlias(){
-        return "MAS_00_01";
+
+    /**
+     *
+     * @return
+     */
+    public int getExperimentID() {
+        return ExperimentID;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getCurrentContainerAlias() {
+        try {
+            return AvailbleContainers.take();
+        } catch (InterruptedException ex) {
+            ReportBESA.error(ex);
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getWorkerContainerAlias() {
         return WorkerContainerAlias;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getWorkerContainerIP() {
         return WorkerContainerIP;
     }
 
+    /**
+     *
+     * @return
+     */
     public synchronized int getTaskListDone() {
         return TaskListDone;
     }
