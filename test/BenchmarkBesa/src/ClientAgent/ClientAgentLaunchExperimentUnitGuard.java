@@ -10,7 +10,6 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
 import BESA.Kernel.Agent.StructBESA;
-import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
 import Utils.BenchmarkMessage;
 import ServerAgent.AgentServer;
@@ -34,90 +33,61 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
         int agTotal = AgentState.CurrentExperiment.getNumberOfAgents();
         int agClientExp = AgentState.getExperimentID();
         Agents = new ArrayList<>();
+        String ContainerAlias = "";
 
         // Lanzamiento de todos los agentes del contenedor.
         for (int i = 0; i < agTotal; i++) {
             try {
-                AgentServerState ServerState = new AgentServerState(
-                        getClientAgentName(agClientExp)
-                );
+                AgentServerState ServerState
+                        = new AgentServerState(
+                                getClientAgentName(agClientExp)
+                        );
                 StructBESA ServerStruct = new StructBESA();
                 ServerStruct.bindGuard(AgentServerTaskExecuteGuard.class);
-                this.Agents.add(new AgentServer(
-                        getServerAgentName(i, agClientExp),
-                        ServerState,
-                        ServerStruct,
-                        0.91
-                )
+                this.Agents.add(
+                        new AgentServer(
+                                getServerAgentName(i, agClientExp),
+                                ServerState,
+                                ServerStruct,
+                                0.91
+                        )
                 );
                 Agents.get(i).start();
-                //this.agent.getAdmLocal().registerAgent(Agents.get(i),
-                //        getAgentName(i),
-                //        getAgentName(i)
-                //);
+                // Moving agent
+                ContainerAlias = AgentState.getCurrentContainerAlias();
+                this.agent.getAdmLocal().moveAgent(
+                        Agents.get(i).getAlias(),
+                        ContainerAlias,
+                        0.91
+                );
+                ReportBESA.debug("Relocated " + getServerAgentName(i, agClientExp) + " to " + ContainerAlias);
+                
+                String Task = AgentState.getTask();
+
+                this.agent.getAdmLocal().getHandlerByAlias(
+                        getServerAgentName(
+                                i,
+                                agClientExp
+                        )
+                ).sendEvent(
+                        new EventBESA(
+                                AgentServerTaskExecuteGuard.class.getName(),
+                                new BenchmarkMessage(
+                                        Task,
+                                        getClientAgentName(agClientExp)
+                                )
+                        )
+                );
+                ReportBESA.debug(Task + " to " + getServerAgentName(i, agClientExp));
+                
             } catch (KernelAgentExceptionBESA ex) {
+                ReportBESA.error(ex);
+            } catch (ExceptionBESA ex) {
                 ReportBESA.error(ex);
             }
         }
         ReportBESA.debug("Created agents: " + agTotal);
 
-        waitAgents(15);
-
-        // Moving agents to Execute Container
-        for (int i = 0; i < agTotal; i++) {
-            try {
-                String ContainerAlias = AgentState.getCurrentContainerAlias();
-                this.agent.getAdmLocal().moveAgent(getServerAgentName(i, agClientExp),
-                        ContainerAlias,
-                        0.91
-                );
-                ReportBESA.debug("Moving " + getServerAgentName(i, agClientExp) + " to " + ContainerAlias);
-            } catch (ExceptionBESA ex) {
-                ReportBESA.error(ex);
-            }
-        }
-        ReportBESA.debug("Agent Relocated: " + agTotal);
-
-        waitAgents(30);
-
-        // Sending First Unit Task
-        for (int i = 0; i < agTotal; i++) {
-            try {
-
-                //ReportBESA.debug("Arrive to " + getServerAgentName(i, agClientExp));
-                String Task = AgentState.getTask();
-                EventBESA msj = new EventBESA(
-                        AgentServerTaskExecuteGuard.class.getName(),
-                        new BenchmarkMessage(Task, getClientAgentName(agClientExp)));
-
-                //ReportBESA.debug("Getting to " + getServerAgentName(i, agClientExp));
-                AgHandlerBESA ah
-                        = this.agent.getAdmLocal().getHandlerByAlias(
-                                getServerAgentName(i, agClientExp)
-                        );
-                ah.sendEvent(msj);
-                //ReportBESA.debug(Task + " sent to " + getServerAgentName(i, agClientExp));
-
-            } catch (ExceptionBESA ex) {
-                ReportBESA.error(ex);
-            }
-        }
-
-    }
-
-    /**
-     *
-     */
-    public void waitAgents(int time) {
-        try {
-            for (int i = 1; i < time; i++) {
-                System.out.print(i + " ");
-                Thread.sleep(1000);
-            }
-        } catch (InterruptedException ex) {
-            ReportBESA.error(ex);
-        }
-        System.out.println("");
     }
 
     /**
@@ -126,7 +96,7 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
      * @return the AgentName
      */
     public String getServerAgentName(int index, int exp) {
-        String ServerAgentName = "AgentWorker_E" + String.valueOf(exp) + "_";
+        String ServerAgentName = "ServerAg_E" + String.valueOf(exp) + "_";
         return ServerAgentName + String.valueOf(index);
     }
 
@@ -139,4 +109,19 @@ public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
         return ClientAgentName + String.valueOf(exp);
     }
 
+    /**
+     *
+     * @param time
+     */
+    public void waitAgents(int time) {
+        try {
+            for (int i = 1; i < time; i++) {
+                System.out.print(i + " ");
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException ex) {
+            ReportBESA.error(ex);
+        }
+        System.out.println("");
+    }
 }

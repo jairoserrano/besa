@@ -23,8 +23,9 @@ public final class ClientAgentState extends StateBESA implements Serializable {
     public BenchmarkExperimentUnit CurrentExperiment;
     private BlockingQueue<String> AvailbleContainers;
     private ArrayList<String> TaskList;
-    private int TaskListID = 0;
-    private int TaskListDone = 0;
+    private int TaskListID;
+    private int TaskListDone;
+    private int AgentCountDone;
     private int ExperimentID;
     private ArrayList<String> WorkerContainerAlias;
     private ArrayList<String> WorkerContainerIP;
@@ -33,15 +34,16 @@ public final class ClientAgentState extends StateBESA implements Serializable {
         super();
     }
 
-    public void UpdateAgentState(BenchmarkExperimentUnit Experiment, int ExperimentID, ArrayList<String> WorkerContainerAlias) {
+    public void UpdateAgentState(BenchmarkExperimentUnit Experiment, ArrayList<String> WorkerContainerAlias) {
 
-        this.ExperimentID = ExperimentID;
+        this.ExperimentID = Experiment.getExperimentID();
         this.TaskList = new ArrayList<>();
         this.AvailbleContainers = new LinkedBlockingDeque(WorkerContainerAlias);
         this.WorkerContainerAlias = WorkerContainerAlias;
         this.WorkerContainerIP = WorkerContainerIP;
         this.CurrentExperiment = Experiment;
         this.TaskListDone = 0;
+        this.AgentCountDone = 0;
         this.TaskListID = 0;
 
         for (int i = 0; i < Experiment.getSmallLoads(); i++) {
@@ -106,10 +108,28 @@ public final class ClientAgentState extends StateBESA implements Serializable {
      *
      * @return
      */
+    public synchronized int getAgentCountDone() {
+        return AgentCountDone;
+    }
+
+    /**
+     *
+     */
+    public synchronized void AgentDone() {
+        AgentCountDone++;
+    }
+
+    /**
+     *
+     * @return
+     */
     public synchronized int getTaskListDone() {
         return TaskListDone;
     }
 
+    /**
+     *
+     */
     public synchronized void TaskDone() {
         TaskListDone++;
     }
@@ -130,7 +150,7 @@ public final class ClientAgentState extends StateBESA implements Serializable {
             TaskListID++;
             //ReportBESA.info("Tareas por enviar " + (this.getTotalTasks() - this.getTaskListDone()));
         } catch (Exception ex) {
-            Task = null;
+            Task = "None";
         }
         return Task;
     }

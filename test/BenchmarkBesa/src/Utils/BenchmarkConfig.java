@@ -55,7 +55,9 @@ public final class BenchmarkConfig implements Serializable {
      */
     public boolean isNextExperimentReady() {
         try {
+            ReportBESA.info("Esperando para lanzar");
             Boolean nextReady = ReadyQueue.take();
+            ReportBESA.info("Listo para lanzar");
             return nextReady;
         } catch (InterruptedException ex) {
             ReportBESA.error(ex);
@@ -69,6 +71,7 @@ public final class BenchmarkConfig implements Serializable {
     public void setNextExperimentReady() {
         try {
             ReadyQueue.put(true);
+            ReportBESA.info("setNextExperimentReady");
         } catch (InterruptedException ex) {
             ReportBESA.error(ex);
         }
@@ -125,7 +128,7 @@ public final class BenchmarkConfig implements Serializable {
         String MAS_NAME = "MAS_00_0";
         if (dotenv.get("ENV").equals("remote")){
             MAS_NAME = "MAS_01_0";
-        }        
+        }
         
         ArrayList<String> ContainersAlias = new ArrayList<>();
         for (int i = 1; i <= Containers; i++) {

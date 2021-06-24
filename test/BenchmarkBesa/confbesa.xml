@@ -2,28 +2,28 @@
 <config>
     <!-- REMOTO -->
     <container alias="MAS_01_00" password = "0.91" ipaddress= "10.195.20.22">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <container alias="MAS_01_01" password = "0.91" ipaddress= "10.195.20.34">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <container alias="MAS_01_02" password = "0.91" ipaddress= "10.195.20.42">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <!-- LOCAL -->
     <container alias="MAS_00_00" password = "0.91" ipaddress= "127.0.0.1">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <container alias="MAS_00_01" password = "0.91" ipaddress= "127.0.0.1">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <container alias="MAS_00_02" password = "0.91" ipaddress= "127.0.0.1">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <container alias="MAS_00_03" password = "0.91" ipaddress= "127.0.0.1">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
     <container alias="MAS_00_04" password = "0.91" ipaddress= "127.0.0.1">
-        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "5000"/>
+        <environment seneventattemps = "10" sendeventtimeout = "1" rmitimeout = "1000"/>
     </container>
 </config>

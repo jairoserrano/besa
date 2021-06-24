@@ -11,6 +11,7 @@ package Utils;
  */
 public class BenchmarkExperimentUnit {
 
+    private final int ExperimentID;
     private final int NumberOfAgents;
     private final int NumberOfContainers;
     private final int SmallLoads;
@@ -21,6 +22,10 @@ public class BenchmarkExperimentUnit {
     private final boolean BalancerOn;
     private final boolean BackupOn;
     private final int BackupTime;
+
+    public int getExperimentID() {
+        return ExperimentID;
+    }
 
     public int getNumberOfAgents() {
         return NumberOfAgents;
@@ -89,17 +94,18 @@ public class BenchmarkExperimentUnit {
 
         String[] config = data.split(",");
 
-        this.NumberOfContainers = Integer.parseInt(config[0]);
-        this.NumberOfAgents = Integer.parseInt(config[1]);
-        this.SmallLoads = Integer.parseInt(config[2]);
-        this.MediumLoads = Integer.parseInt(config[3]);
-        this.HighLoads = Integer.parseInt(config[4]);
-        this.OrderOn = "1".equals(config[5]);
-        this.CooperationOn = "1".equals(config[6]);
-        this.BalancerOn = "1".equals(config[7]);
-        if (Integer.parseInt(config[8]) > 0) {
+        this.ExperimentID = Integer.parseInt(config[0]);
+        this.NumberOfContainers = Integer.parseInt(config[1]);
+        this.NumberOfAgents = Integer.parseInt(config[2]);
+        this.SmallLoads = Integer.parseInt(config[3]);
+        this.MediumLoads = Integer.parseInt(config[4]);
+        this.HighLoads = Integer.parseInt(config[5]);
+        this.OrderOn = "1".equals(config[6]);
+        this.CooperationOn = "1".equals(config[7]);
+        this.BalancerOn = "1".equals(config[8]);
+        if (Integer.parseInt(config[9]) > 0) {
             this.BackupOn = true;
-            this.BackupTime = Integer.parseInt(config[8]);
+            this.BackupTime = Integer.parseInt(config[9]);
         } else {
             this.BackupOn = false;
             this.BackupTime = 0;

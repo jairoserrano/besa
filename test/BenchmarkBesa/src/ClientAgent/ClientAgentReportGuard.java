@@ -5,9 +5,11 @@
  */
 package ClientAgent;
 
+import BESA.ExceptionBESA;
 import Utils.BenchmarkMessage;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
+import BESA.Kernel.System.AdmBESA;
 import BESA.Log.ReportBESA;
 import Utils.BenchmarkConfig;
 import java.io.BufferedWriter;
@@ -23,23 +25,18 @@ public class ClientAgentReportGuard extends GuardBESA {
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
+        ReportBESA.debug("Arrive to " + this.agent.getAlias());
         BenchmarkConfig configExp = BenchmarkConfig.getConfig();
-        ReportBESA.debug("Llegó a  ClientAgentReportGuard");
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
-        //ReportBESA.info(Message.getContent());
 
         // Capture the state of Agent
         ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
+
         // Increment the taskdone number
+        ReportBESA.info("Incrementa tareas completadas");
         AgentState.TaskDone();
 
-        //ReportBESA.debug("Done " + AgentState.getTaskListDone() + " of " + AgentState.getTotalTasks() + " tasks.");
-        if (AgentState.getTaskListDone() == AgentState.getTotalTasks()) {
-            ReportBESA.debug("Making ready another experiment.");
-            configExp.setNextExperimentReady();
-            //this.agent.shutdownAgent();
-        }
-
+        // Write results to Logfile
         try {
             FileWriter fw = new FileWriter("ReporteBesa.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -48,6 +45,20 @@ public class ClientAgentReportGuard extends GuardBESA {
             bw.close();
         } catch (IOException ex) {
             ReportBESA.error(ex);
+        }
+
+        ReportBESA.debug("Done " + AgentState.getTaskListDone() + " of " + AgentState.getTotalTasks() + " Tasks.");
+        // Check if task are done and active next Experiment
+        if (AgentState.getTaskListDone() == AgentState.getTotalTasks()) {
+            configExp.setNextExperimentReady();
+        }
+
+        ReportBESA.debug("Done " + AgentState.getAgentCountDone() + " of " + AgentState.CurrentExperiment.getNumberOfAgents() + " agents.");
+        // Check if Experiment are Done
+        if (AgentState.getAgentCountDone() == AgentState.CurrentExperiment.getNumberOfAgents()) {
+            if (AgentState.getTaskListDone() == AgentState.getTotalTasks()) {
+                //this.agent.shutdownAgent();
+            }
         }
 
     }
