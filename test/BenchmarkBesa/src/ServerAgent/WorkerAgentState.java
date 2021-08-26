@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author jairo
  */
-public class AgentServerState extends StateBESA implements Serializable {
+public class WorkerAgentState extends StateBESA implements Serializable {
     
     private String ClientName;
 
@@ -24,7 +24,7 @@ public class AgentServerState extends StateBESA implements Serializable {
         this.ClientName = ClientName;
     }
 
-    public AgentServerState(String ClientName) {
+    public WorkerAgentState(String ClientName) {
         super();
         setClientName(ClientName);
     }

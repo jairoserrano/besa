@@ -11,10 +11,13 @@ import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
 import BESA.Kernel.Agent.StructBESA;
 import BESA.Log.ReportBESA;
+import ControlAgent.ControlAgentLaunchGuard;
 import Utils.BenchmarkMessage;
-import ServerAgent.AgentServer;
-import ServerAgent.AgentServerState;
-import ServerAgent.AgentServerTaskExecuteGuard;
+import ServerAgent.WorkerAgent;
+import ServerAgent.WorkerAgentState;
+import ServerAgent.WorkerAgentTaskExecuteGuard;
+import Utils.BenchmarkExperimentUnit;
+import Utils.ExperimentUnitMessage;
 import java.util.ArrayList;
 
 /**
@@ -23,70 +26,94 @@ import java.util.ArrayList;
  */
 public class ClientAgentLaunchExperimentUnitGuard extends GuardBESA {
 
-    private ArrayList<AgentServer> Agents;
+    private ArrayList<WorkerAgent> Agents;
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
         ReportBESA.debug("ClientAgentLaunchExperimentUnitGuard");
-        ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
-        int agTotal = AgentState.CurrentExperiment.getNumberOfAgents();
-        int agClientExp = AgentState.getExperimentID();
-        Agents = new ArrayList<>();
-        String ContainerAlias = "";
+        ExperimentUnitMessage Message = (ExperimentUnitMessage) event.getData();
+        BenchmarkExperimentUnit ceUnit = Message.getExperiment();
 
-        // Lanzamiento de todos los agentes del contenedor.
-        for (int i = 0; i < agTotal; i++) {
-            try {
-                AgentServerState ServerState
-                        = new AgentServerState(
-                                getClientAgentName(agClientExp)
-                        );
-                StructBESA ServerStruct = new StructBESA();
-                ServerStruct.bindGuard(AgentServerTaskExecuteGuard.class);
-                this.Agents.add(
-                        new AgentServer(
-                                getServerAgentName(i, agClientExp),
-                                ServerState,
-                                ServerStruct,
-                                0.91
-                        )
-                );
-                Agents.get(i).start();
-                // Moving agent
-                ContainerAlias = AgentState.getCurrentContainerAlias();
-                this.agent.getAdmLocal().moveAgent(
-                        Agents.get(i).getAlias(),
-                        ContainerAlias,
-                        0.91
-                );
-                ReportBESA.debug("Relocated " + getServerAgentName(i, agClientExp) + " to " + ContainerAlias);
-                
-                String Task = AgentState.getTask();
+        if (ceUnit == null) {
 
+           try {
                 this.agent.getAdmLocal().getHandlerByAlias(
-                        getServerAgentName(
-                                i,
-                                agClientExp
-                        )
+                        "ControlAgent"
                 ).sendEvent(
                         new EventBESA(
-                                AgentServerTaskExecuteGuard.class.getName(),
-                                new BenchmarkMessage(
-                                        Task,
-                                        getClientAgentName(agClientExp)
+                                ControlAgentLaunchGuard.class.getName(),
+                                new ExperimentUnitMessage(
+                                        null,
+                                        Message.getAgentRef()
                                 )
                         )
                 );
-                ReportBESA.debug(Task + " to " + getServerAgentName(i, agClientExp));
-                
-            } catch (KernelAgentExceptionBESA ex) {
-                ReportBESA.error(ex);
+                ReportBESA.info("Cerrando simulación");
             } catch (ExceptionBESA ex) {
                 ReportBESA.error(ex);
             }
+
+        } else {
+
+            // Lanzamiento de todos los agentes del contenedor.
+            ClientAgentState AgentState = (ClientAgentState) this.agent.getState();
+            int agTotal = AgentState.CurrentExperiment.getNumberOfAgents();
+            int agClientExp = AgentState.getExperimentID();
+            Agents = new ArrayList<>();
+            String ContainerAlias = "";
+
+            for (int i = 0; i < agTotal; i++) {
+                try {
+                    WorkerAgentState ServerState
+                            = new WorkerAgentState(
+                                    getClientAgentName(agClientExp)
+                            );
+                    StructBESA ServerStruct = new StructBESA();
+                    ServerStruct.bindGuard(WorkerAgentTaskExecuteGuard.class);
+                    this.Agents.add(new WorkerAgent(
+                                    getServerAgentName(i, agClientExp),
+                                    ServerState,
+                                    ServerStruct,
+                                    0.91
+                            )
+                    );
+                    Agents.get(i).start();
+                    // Moving agent
+                    ContainerAlias = AgentState.getCurrentContainerAlias();
+                    this.agent.getAdmLocal().moveAgent(
+                            Agents.get(i).getAlias(),
+                            ContainerAlias,
+                            0.91
+                    );
+                    ReportBESA.debug("Relocated " + getServerAgentName(i, agClientExp) + " to " + ContainerAlias);
+
+                    String Task = AgentState.getTask();
+
+                    this.agent.getAdmLocal().getHandlerByAlias(
+                            getServerAgentName(
+                                    i,
+                                    agClientExp
+                            )
+                    ).sendEvent(new EventBESA(
+                                    WorkerAgentTaskExecuteGuard.class.getName(),
+                                    new BenchmarkMessage(
+                                            Task,
+                                            getClientAgentName(agClientExp)
+                                    )
+                            )
+                    );
+                    
+                    ReportBESA.debug(Task + " to " + getServerAgentName(i, agClientExp));
+                    AgentState.reduceRemainTasksNumber();
+                } catch (KernelAgentExceptionBESA ex) {
+                    //ReportBESA.error(ex);
+                } catch (ExceptionBESA ex) {
+                    //ReportBESA.error(ex);
+                }
+            }
+            ReportBESA.debug("Created agents: " + agTotal);
         }
-        ReportBESA.debug("Created agents: " + agTotal);
 
     }
 

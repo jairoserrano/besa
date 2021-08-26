@@ -12,7 +12,7 @@ import BESA.Log.ReportBESA;
  *
  * @author jairo
  */
-public class BenchmarkServer {
+public class WorkerMain {
 
     /**
      * @param args the command line arguments

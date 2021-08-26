@@ -17,7 +17,6 @@ public class BenchmarkExperimentUnit {
     private final int SmallLoads;
     private final int MediumLoads;
     private final int HighLoads;
-    private final boolean OrderOn;
     private final boolean CooperationOn;
     private final boolean BalancerOn;
     private final boolean BackupOn;
@@ -45,10 +44,6 @@ public class BenchmarkExperimentUnit {
 
     public int getHighLoads() {
         return HighLoads;
-    }
-
-    public boolean isOrderOn() {
-        return OrderOn;
     }
 
     public boolean isCooperationOn() {
@@ -83,7 +78,6 @@ public class BenchmarkExperimentUnit {
                 + ", SmallLoads=" + SmallLoads
                 + ", MediumLoads=" + MediumLoads
                 + ", HighLoads=" + HighLoads
-                + ", OrderOn=" + OrderOn
                 + ", CooperationOn=" + CooperationOn
                 + ", BalancerOn=" + BalancerOn
                 + ", BackupOn=" + BackupOn
@@ -100,12 +94,11 @@ public class BenchmarkExperimentUnit {
         this.SmallLoads = Integer.parseInt(config[3]);
         this.MediumLoads = Integer.parseInt(config[4]);
         this.HighLoads = Integer.parseInt(config[5]);
-        this.OrderOn = "1".equals(config[6]);
-        this.CooperationOn = "1".equals(config[7]);
-        this.BalancerOn = "1".equals(config[8]);
-        if (Integer.parseInt(config[9]) > 0) {
+        this.CooperationOn = "1".equals(config[6]);
+        this.BalancerOn = "1".equals(config[7]);
+        if (Integer.parseInt(config[8]) > 0) {
             this.BackupOn = true;
-            this.BackupTime = Integer.parseInt(config[9]);
+            this.BackupTime = Integer.parseInt(config[8]);
         } else {
             this.BackupOn = false;
             this.BackupTime = 0;

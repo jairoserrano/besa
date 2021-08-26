@@ -8,29 +8,30 @@ package ServerAgent;
 import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
-import BESA.Kernel.System.AdmBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
 import ClientAgent.ClientAgentReportGuard;
 import ClientAgent.ClientAgentServerReadyGuard;
 import Utils.BenchmarkMessage;
-import com.sun.management.OperatingSystemMXBean;
+import java.lang.management.OperatingSystemMXBean;
 import java.lang.management.ManagementFactory;
 
 /**
  *
  * @author jairo
  */
-public class AgentServerTaskExecuteGuard extends GuardBESA {
+public class WorkerAgentTaskExecuteGuard extends GuardBESA {
 
     @Override
     public void funcExecGuard(EventBESA event) {
 
         //
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
-        AgentServerState ServerAgentState = (AgentServerState) this.agent.getState();
+        WorkerAgentState ServerAgentState = (WorkerAgentState) this.agent.getState();
         String KindOfWork = Message.getContent();
 
+        //if (KindOfWork.equals("KILL")) System.exit(1);
+        
         long startTime = System.currentTimeMillis();
         OperatingSystemMXBean operatingSystemMXBean
                 = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
@@ -68,9 +69,9 @@ public class AgentServerTaskExecuteGuard extends GuardBESA {
                 + result + ","
                 + KindOfWork + ","
                 + (System.currentTimeMillis() - startTime) + ","
-                + operatingSystemMXBean.getProcessCpuLoad() + ","
-                + ((operatingSystemMXBean.getTotalMemorySize()
-                - operatingSystemMXBean.getFreeMemorySize()) / 1000000);
+                + operatingSystemMXBean.getSystemLoadAverage();// + ","
+                //+ ((operatingSystemMXBean.get.getTotalMemorySize()
+                //- operatingSystemMXBean..getFreeMemorySize()) / 1000000);
 
         this.sendResults(respuesta, ServerAgentState.getClientName());
 
@@ -103,6 +104,7 @@ public class AgentServerTaskExecuteGuard extends GuardBESA {
         }
 
         // Ask for more jobs to BenchmarkAgent
+        // TODO: REVISAR
         try {
             this.agent.getAdmLocal().getHandlerByAlias(
                     clientName
@@ -110,7 +112,7 @@ public class AgentServerTaskExecuteGuard extends GuardBESA {
                     new EventBESA(
                             ClientAgentServerReadyGuard.class.getName(),
                             new BenchmarkMessage(
-                                    "getTaskToProcess",
+                                    "Next",
                                     this.agent.getAlias()
                             )
                     )

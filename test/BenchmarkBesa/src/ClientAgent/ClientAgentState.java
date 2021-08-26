@@ -27,6 +27,7 @@ public final class ClientAgentState extends StateBESA implements Serializable {
     private int TaskListDone;
     private int AgentCountDone;
     private int ExperimentID;
+    private int RemainTasksNumber;
     private ArrayList<String> WorkerContainerAlias;
     private ArrayList<String> WorkerContainerIP;
 
@@ -37,10 +38,10 @@ public final class ClientAgentState extends StateBESA implements Serializable {
     public void UpdateAgentState(BenchmarkExperimentUnit Experiment, ArrayList<String> WorkerContainerAlias) {
 
         this.ExperimentID = Experiment.getExperimentID();
+        this.RemainTasksNumber = Experiment.getNumberOfTotalTasks();
         this.TaskList = new ArrayList<>();
         this.AvailbleContainers = new LinkedBlockingDeque(WorkerContainerAlias);
         this.WorkerContainerAlias = WorkerContainerAlias;
-        this.WorkerContainerIP = WorkerContainerIP;
         this.CurrentExperiment = Experiment;
         this.TaskListDone = 0;
         this.AgentCountDone = 0;
@@ -56,13 +57,8 @@ public final class ClientAgentState extends StateBESA implements Serializable {
             this.TaskList.add("High");
         }
 
-        if (Experiment.isOrderOn()) {
-            ReportBESA.info("inOrder Tasks");
-        } else {
-            Collections.shuffle(TaskList);
-            ReportBESA.info("Shuffle Tasks");
-        }
-
+        Collections.shuffle(TaskList);
+        ReportBESA.info("Shuffle Tasks");
         ReportBESA.info("Generated tasks: " + getTotalTasks());
 
     }
@@ -121,6 +117,20 @@ public final class ClientAgentState extends StateBESA implements Serializable {
 
     /**
      *
+     */
+    public synchronized void reduceRemainTasksNumber() {
+        RemainTasksNumber--;
+    }
+
+    /**
+     *
+     */
+    public synchronized int getRemainTasksNumber() {
+        return RemainTasksNumber;
+    }
+
+    /**
+     *
      * @return
      */
     public synchronized int getTaskListDone() {
@@ -153,6 +163,8 @@ public final class ClientAgentState extends StateBESA implements Serializable {
             Task = "None";
         }
         return Task;
+        
+
     }
 
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ServerAgent;
+package ControlAgent;
 
 import BESA.Kernel.Agent.AgentBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
@@ -15,9 +15,9 @@ import BESA.Log.ReportBESA;
  *
  * @author jairo
  */
-public class AgentServer extends AgentBESA {
+public class ControlAgent extends AgentBESA {
 
-    public AgentServer(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
+    public ControlAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
         ReportBESA.debug("Created " + this.getAlias());
     }
