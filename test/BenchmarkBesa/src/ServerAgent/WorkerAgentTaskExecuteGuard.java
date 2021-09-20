@@ -117,6 +117,7 @@ public class WorkerAgentTaskExecuteGuard extends GuardBESA {
                             )
                     )
             );
+            ReportBESA.info("Tarea completada en " + this.agent.getAlias());
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);
         }

@@ -18,6 +18,7 @@ public class ExperimentUnitMessage extends DataBESA {
 
     public ExperimentUnitMessage(BenchmarkExperimentUnit experiment, String agentDest) {
         setExperiment(experiment);
+        setAgentRef(agentDest);
     }
 
     public BenchmarkExperimentUnit getExperiment() {
