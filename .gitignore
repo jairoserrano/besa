@@ -20,3 +20,8 @@ nb-configuration.xml
 /test/FibonacciAgentLocal (copy)/nbproject/private/
 /test/FibonacciAgentRemote/nbproject/private/
 /test/LoadBenchAgentRemote/nbproject/private/
+/test/LoadGeneratorAgents/target/
+/test/SimallGraphicsBDIFuzzyEmotional/nbproject/private/
+/test/Simall/nbproject/private/
+/test/JavaApplication1/nbproject/private/
+/test/BenchmarkBesa/nbproject/private/

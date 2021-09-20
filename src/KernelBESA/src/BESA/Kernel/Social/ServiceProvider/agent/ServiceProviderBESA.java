@@ -15,8 +15,6 @@ import BESA.Kernel.Agent.StructBESA;
 import BESA.Log.ReportBESA;
 import java.util.ArrayList;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This class represents
