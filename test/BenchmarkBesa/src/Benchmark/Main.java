@@ -11,7 +11,11 @@ import BESA.Kernel.Agent.KernelAgentExceptionBESA;
 import BESA.Kernel.Agent.StructBESA;
 import BESA.Kernel.System.AdmBESA;
 import BESA.Log.ReportBESA;
-import ControlAgent.*;
+import MainAgent.MainAgent;
+import MainAgent.MainAgentLaunchExperimentUnitGuard;
+import MainAgent.MainAgentReportGuard;
+import MainAgent.MainAgentServerReadyGuard;
+import MainAgent.MainAgentState;
 import Utils.BenchmarkConfig;
 import Utils.BenchmarkExperimentUnit;
 import Utils.ExperimentUnitMessage;
@@ -20,7 +24,7 @@ import Utils.ExperimentUnitMessage;
  *
  * @author jairo
  */
-public class ClientMain {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -29,47 +33,67 @@ public class ClientMain {
 
         // Create Config Instance
         BenchmarkConfig configExp = BenchmarkConfig.getConfig(args);
-        BenchmarkExperimentUnit ceUnit = configExp.getNextExperiment();
+        BenchmarkExperimentUnit experiment = configExp.getExperiment();
+        MainAgent MainAg = null;
 
         // Starting container
         AdmBESA adminBesa = AdmBESA.getInstance(
-                "config/Container_MAS_00_00.xml"
+                "config/Container_" + args[0] + ".xml"
         );
         ReportBESA.info("Started " + configExp.getContainerID() + " container");
 
-        // Starting Control Agent
+        ReportBESA.info("Started Experiment: " + experiment.getExperimentID());
+
+        // MainAg Agent created
         try {
-            ControlAgentState ControlAgentState = new ControlAgentState();
+            MainAgentState BenchmarkState = new MainAgentState();
             StructBESA StructSender = new StructBESA();
-            StructSender.bindGuard(ControlAgentLaunchGuard.class);
-            ControlAgent ControlAgent = new ControlAgent(
-                    "ControlAgent",
-                    ControlAgentState,
+            StructSender.bindGuard(MainAgentServerReadyGuard.class);
+            StructSender.bindGuard(MainAgentLaunchExperimentUnitGuard.class);
+            StructSender.bindGuard(MainAgentReportGuard.class);
+            MainAg = new MainAgent("MainAg",
+                    BenchmarkState,
                     StructSender,
                     0.91
             );
-            ControlAgent.start();
-            ReportBESA.info("ControlAgent created");
+            MainAg.start();
+            ReportBESA.info(
+                    "\n\n*******************************\n"
+                    + "MainAg created\n"
+                    + "*******************************\n"
+            );
         } catch (KernelAgentExceptionBESA ex) {
             ReportBESA.error(ex);
         }
 
+        // Update Agent Status
+        MainAgentState AgentState = (MainAgentState) MainAg.getState();
+        AgentState.UpdateAgentState(
+                experiment,
+                configExp.getContainers(
+                        experiment.getNumberOfContainers(),
+                        experiment.getAgentsByContainer()
+                )
+        );
+
         // First notification to start simulation
         try {
-            adminBesa.getHandlerByAlias("ControlAgent").sendEvent(
+            adminBesa.getHandlerByAlias("MainAg"
+            ).sendEvent(
                     new EventBESA(
-                            ControlAgentLaunchGuard.class.getName(),
+                            MainAgentLaunchExperimentUnitGuard.class.getName(),
                             new ExperimentUnitMessage(
-                                    ceUnit,
-                                    "ControlAgent"
+                                    experiment,
+                                    "MainAg"
                             )
-                    )
+                    ));
+            ReportBESA.info(
+                    "First MainAgentLaunchExperimentUnitGuard call from "
+                    + MainAg.getAlias()
             );
-            ReportBESA.info("First ControlAgent call");
         } catch (ExceptionBESA ex) {
             ReportBESA.error(ex);
         }
 
     }
-
 }

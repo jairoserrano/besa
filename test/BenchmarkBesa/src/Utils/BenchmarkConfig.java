@@ -5,15 +5,9 @@
  */
 package Utils;
 
-import BESA.Log.ReportBESA;
 import io.github.cdimascio.dotenv.Dotenv;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  *
@@ -22,12 +16,10 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public final class BenchmarkConfig implements Serializable {
 
-    private final ArrayList<BenchmarkExperimentUnit> experiments;
-    private BlockingQueue<Boolean> ReadyQueue;
+    private BenchmarkExperimentUnit experiment;
     private static BenchmarkConfig instance = null;
     private int CurrentExperimentID = 0;
     private String ContainerID = "";
-    private String ConfigFileName = "";
 
     /**
      *
@@ -53,59 +45,8 @@ public final class BenchmarkConfig implements Serializable {
      *
      * @return
      */
-    public boolean isNextExperimentReady() {
-        try {
-            ReportBESA.info("Esperando para lanzar");
-            Boolean nextReady = ReadyQueue.take();
-            ReportBESA.info("Listo para lanzar");
-            return nextReady;
-        } catch (InterruptedException ex) {
-            ReportBESA.error(ex);
-            return false;
-        }
-    }
-
-    /**
-     *
-     */
-    public void setNextExperimentReady() {
-        try {
-            ReadyQueue.put(true);
-            ReportBESA.info("setNextExperimentReady");
-        } catch (InterruptedException ex) {
-            ReportBESA.error(ex);
-        }
-    }
-
-    /**
-     *
-     * @return
-     */
     public synchronized String getContainerID() {
         return ContainerID;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public BenchmarkExperimentUnit getNextExperiment() {
-        BenchmarkExperimentUnit CurrentExperiment;
-        try {
-            CurrentExperiment = experiments.get(CurrentExperimentID);
-            this.CurrentExperimentID++;
-        } catch (IndexOutOfBoundsException ex) {
-            CurrentExperiment = null;
-        }
-        return CurrentExperiment;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public synchronized int getExperimentCount() {
-        return experiments.size();
     }
 
     /**
@@ -146,33 +87,30 @@ public final class BenchmarkConfig implements Serializable {
      */
     private BenchmarkConfig(String args[]) {
 
-        // Arraylist with all experiments
-        experiments = new ArrayList<>();
-        ReadyQueue = new LinkedBlockingDeque();
         // Container ID from Command Line parameters
         if (args[0].length() > 0) {
             ContainerID = args[0];
+            this.setExperiment(new BenchmarkExperimentUnit(args[1]));
         } else {
-            ContainerID = "";
+            ContainerID = null;
+            experiment = null;
             System.out.println("Falta el primer parametros del contenedorID.");
             System.exit(0);
         }
+        
+    }
 
-        // Container ID from Command Line parameters
-        if (args[1].length() > 0) {
-            ConfigFileName = args[1];
-            try {
-                File rawExperiment = new File(ConfigFileName);
-                try (Scanner myReader = new Scanner(rawExperiment)) {
-                    while (myReader.hasNextLine()) {
-                        String data = myReader.nextLine();
-                        experiments.add(new BenchmarkExperimentUnit(data));
-                    }
-                }
-            } catch (FileNotFoundException ex) {
-                ReportBESA.error(ex);
-            }
-            System.out.println("Master mode Started.");
-        }
+    /**
+     * @return the experiment
+     */
+    public BenchmarkExperimentUnit getExperiment() {
+        return experiment;
+    }
+
+    /**
+     * @param experiment the experiment to set
+     */
+    public void setExperiment(BenchmarkExperimentUnit experiment) {
+        this.experiment = experiment;
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ClientAgent;
+package MainAgent;
 
 import BESA.ExceptionBESA;
 import Utils.BenchmarkMessage;
@@ -11,42 +11,29 @@ import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import ControlAgent.ControlAgentLaunchGuard;
-import ServerAgent.WorkerAgentTaskExecuteGuard;
+import WorkerAgent.WorkerAgentTaskExecuteGuard;
 import Utils.BenchmarkConfig;
-import Utils.ExperimentUnitMessage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author jairo
  */
-public class ClientAgentServerReadyGuard extends GuardBESA {
+public class MainAgentServerReadyGuard extends GuardBESA {
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
 
         ReportBESA.debug("Arrive to " + this.agent.getAlias());
         BenchmarkConfig configExp = BenchmarkConfig.getConfig();
-        ClientAgentState LocalAgentState = (ClientAgentState) this.agent.getState();
+        MainAgentState LocalAgentState = (MainAgentState) this.agent.getState();
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
 
         String Task = LocalAgentState.getTask();
 
         if (Task.equals("None")) {
-            // TODO: Incluir en lista para eliminar
-            /*try {
-                this.agent.getAdmLocal().killAgent(
-                        this.agent.getAdmLocal().getHandlerByAlias(
-                                Message.getAgentRef()
-                        ).getAgId(),
-                        0.91
-                );
-                ReportBESA.info("cerrado agente " + Message.getAgentRef());
-                LocalAgentState.AgentDone();
-            } catch (ExceptionBESA ex) {
-                //ReportBESA.error(ex);
-                LocalAgentState.AgentDone();
-            }*/
+            //TODO
         } else {
             // Send Message with Task
             try {
@@ -67,32 +54,32 @@ public class ClientAgentServerReadyGuard extends GuardBESA {
             }
         }
 
+        ReportBESA.debug("---------");
         ReportBESA.debug("Done " + LocalAgentState.getTaskListDone() + " of " + LocalAgentState.getTotalTasks() + " Tasks.");
-        ReportBESA.debug("Done " + LocalAgentState.getAgentCountDone() + " of " + LocalAgentState.CurrentExperiment.getNumberOfAgents() + " agents.");
-        ReportBESA.debug("Remain " + LocalAgentState.getRemainTasksNumber() + " tasks.");
+        ReportBESA.debug("Total " + LocalAgentState.getRemainTasksNumber() + " tasks.\n");
 
-        // Check if Experiment are Done
-        //if (LocalAgentState.getAgentCountDone() == LocalAgentState.CurrentExperiment.getNumberOfAgents()) {
-        if (LocalAgentState.getRemainTasksNumber() == 0) {
-            ReportBESA.debug("Finish tasks");
-            //System.exit(0);
-        } else {
-            try {
-                this.agent.getAdmLocal().getHandlerByAlias(
-                        "ControlAgent"
-                ).sendEvent(
-                        new EventBESA(
-                                ControlAgentLaunchGuard.class.getName(),
-                                new ExperimentUnitMessage(
-                                        configExp.getNextExperiment(),
-                                        Message.getAgentRef()
-                                )
-                        )
-                );
-                ReportBESA.info("ClientAgentLaunchExperimentUnitGuard call");
-            } catch (ExceptionBESA ex) {
-                ReportBESA.error(ex);
+        if (LocalAgentState.getTaskListDone() == LocalAgentState.getTotalTasks()) {
+            Task = "KILL";
+            ReportBESA.debug("Cantidad de agentes: " + LocalAgentState.getAgentsNumber());
+            for (int i = 0; i < LocalAgentState.getAgentsNumber(); i++) {
+                try {
+                    EventBESA msj = new EventBESA(
+                            WorkerAgentTaskExecuteGuard.class.getName(),
+                            new BenchmarkMessage(
+                                    Task,
+                                    "WorkerAg_" + String.valueOf(i)
+                            )
+                    );
+                    AgHandlerBESA ah = this.agent.getAdmLocal().
+                            getHandlerByAlias("WorkerAg_" + String.valueOf(i));
+                    ReportBESA.debug("Terminando WorkerAg_" + String.valueOf(i));
+                    ah.sendEvent(msj);
+                } catch (ExceptionBESA ex) {
+                    ReportBESA.info("Ya había terminado");
+                }
             }
+            ReportBESA.debug("REPORTE: experimento " + LocalAgentState.getExperimentID() + ", " + LocalAgentState.getEndTime() + "ms");
+            System.exit(0);
         }
 
     }

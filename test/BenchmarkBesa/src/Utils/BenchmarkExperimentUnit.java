@@ -12,7 +12,7 @@ package Utils;
 public class BenchmarkExperimentUnit {
 
     private final int ExperimentID;
-    private final int NumberOfAgents;
+    private int NumberOfAgents;
     private final int NumberOfContainers;
     private final int SmallLoads;
     private final int MediumLoads;
@@ -103,6 +103,11 @@ public class BenchmarkExperimentUnit {
             this.BackupOn = false;
             this.BackupTime = 0;
         }
+        
+        // TODO: CHECK
+        //if (this.NumberOfAgents < this.getNumberOfTotalTasks()){
+        //    this.NumberOfAgents = this.getNumberOfTotalTasks();
+        //}
 
     }
 

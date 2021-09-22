@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ServerAgent;
+package WorkerAgent;
 
 import BESA.ExceptionBESA;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
 import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
-import ClientAgent.ClientAgentReportGuard;
-import ClientAgent.ClientAgentServerReadyGuard;
+import MainAgent.MainAgentReportGuard;
+import MainAgent.MainAgentServerReadyGuard;
 import Utils.BenchmarkMessage;
 import java.lang.management.OperatingSystemMXBean;
 import java.lang.management.ManagementFactory;
@@ -27,10 +27,12 @@ public class WorkerAgentTaskExecuteGuard extends GuardBESA {
 
         //
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
-        WorkerAgentState ServerAgentState = (WorkerAgentState) this.agent.getState();
+        WorkerAgentState WorkerAgentState = (WorkerAgentState) this.agent.getState();
         String KindOfWork = Message.getContent();
 
-        //if (KindOfWork.equals("KILL")) System.exit(1);
+        if (KindOfWork.equals("KILL")){
+            System.exit(0);
+        }
         
         long startTime = System.currentTimeMillis();
         OperatingSystemMXBean operatingSystemMXBean
@@ -73,7 +75,7 @@ public class WorkerAgentTaskExecuteGuard extends GuardBESA {
                 //+ ((operatingSystemMXBean.get.getTotalMemorySize()
                 //- operatingSystemMXBean..getFreeMemorySize()) / 1000000);
 
-        this.sendResults(respuesta, ServerAgentState.getClientName());
+        this.sendResults(respuesta, WorkerAgentState.getClientName());
 
         memory = null;
 
@@ -90,7 +92,7 @@ public class WorkerAgentTaskExecuteGuard extends GuardBESA {
         AgHandlerBESA ah;
         try {
             EventBESA msj = new EventBESA(
-                    ClientAgentReportGuard.class.getName(),
+                    MainAgentReportGuard.class.getName(),
                     new BenchmarkMessage(
                             results,
                             this.agent.getAlias()
@@ -108,9 +110,8 @@ public class WorkerAgentTaskExecuteGuard extends GuardBESA {
         try {
             this.agent.getAdmLocal().getHandlerByAlias(
                     clientName
-            ).sendEvent(
-                    new EventBESA(
-                            ClientAgentServerReadyGuard.class.getName(),
+            ).sendEvent(new EventBESA(
+                            MainAgentServerReadyGuard.class.getName(),
                             new BenchmarkMessage(
                                     "Next",
                                     this.agent.getAlias()

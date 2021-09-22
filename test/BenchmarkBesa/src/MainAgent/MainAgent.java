@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ClientAgent;
+package MainAgent;
 
 import BESA.Kernel.Agent.AgentBESA;
 import BESA.Kernel.Agent.KernelAgentExceptionBESA;
@@ -15,11 +15,11 @@ import BESA.Log.ReportBESA;
  *
  * @author jairo
  */
-public class ClientAgent extends AgentBESA {
+public class MainAgent extends AgentBESA {
 
     private long startTime;
 
-    public ClientAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
+    public MainAgent(String alias, StateBESA state, StructBESA structAgent, double passwd) throws KernelAgentExceptionBESA {
         super(alias, state, structAgent, passwd);
         startTime = System.currentTimeMillis();
     }

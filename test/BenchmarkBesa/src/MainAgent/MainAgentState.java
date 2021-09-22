@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ClientAgent;
+package MainAgent;
 
 import BESA.Kernel.Agent.StateBESA;
 import BESA.Log.ReportBESA;
@@ -13,31 +13,55 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
  * @author jairo
  */
-public final class ClientAgentState extends StateBESA implements Serializable {
+public final class MainAgentState extends StateBESA implements Serializable {
 
     public BenchmarkExperimentUnit CurrentExperiment;
     private BlockingQueue<String> AvailbleContainers;
     private ArrayList<String> TaskList;
     private int TaskListID;
     private int TaskListDone;
+    private int ContainersNumber;
+    private int AgentsNumber;
+    private long initTime;
+    private long endTime;
+
+    public long getEndTime() {
+        //long timeMillis = System.currentTimeMillis();
+        return ( (System.nanoTime() - initTime) / 1000000 );
+    }
+
+    public int getAgentsNumber() {
+        return AgentsNumber;
+    }
+
+    public int getContainersNumber() {
+        return ContainersNumber;
+    }
+
     private int AgentCountDone;
     private int ExperimentID;
     private int RemainTasksNumber;
     private ArrayList<String> WorkerContainerAlias;
     private ArrayList<String> WorkerContainerIP;
 
-    public ClientAgentState() {
+    public MainAgentState() {
         super();
+        //long timeMillis = System.currentTimeMillis();
+        initTime = System.nanoTime();
+        //TimeUnit.MILLISECONDS.toSeconds(timeMillis);
     }
 
     public void UpdateAgentState(BenchmarkExperimentUnit Experiment, ArrayList<String> WorkerContainerAlias) {
 
         this.ExperimentID = Experiment.getExperimentID();
+        this.ContainersNumber = Experiment.getNumberOfContainers();
+        this.AgentsNumber = Experiment.getNumberOfAgents();
         this.RemainTasksNumber = Experiment.getNumberOfTotalTasks();
         this.TaskList = new ArrayList<>();
         this.AvailbleContainers = new LinkedBlockingDeque(WorkerContainerAlias);
@@ -158,7 +182,7 @@ public final class ClientAgentState extends StateBESA implements Serializable {
         try {
             Task = TaskList.get(TaskListID);
             TaskListID++;
-            //ReportBESA.info("Tareas por enviar " + (this.getTotalTasks() - this.getTaskListDone()));
+            ReportBESA.info("Tareas por enviar " + (this.getTotalTasks() - this.getTaskListDone()));
         } catch (Exception ex) {
             Task = "None";
         }

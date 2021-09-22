@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ClientAgent;
+package MainAgent;
 
+import BESA.ExceptionBESA;
 import Utils.BenchmarkMessage;
 import BESA.Kernel.Agent.Event.EventBESA;
 import BESA.Kernel.Agent.GuardBESA;
+import BESA.Kernel.System.Directory.AgHandlerBESA;
 import BESA.Log.ReportBESA;
+import WorkerAgent.WorkerAgentTaskExecuteGuard;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +20,7 @@ import java.io.IOException;
  *
  * @author jairo
  */
-public class ClientAgentReportGuard extends GuardBESA {
+public class MainAgentReportGuard extends GuardBESA {
 
     @Override
     public synchronized void funcExecGuard(EventBESA event) {
@@ -26,7 +29,7 @@ public class ClientAgentReportGuard extends GuardBESA {
         BenchmarkMessage Message = (BenchmarkMessage) event.getData();
 
         // Capture the state of Agent
-        ClientAgentState LocalAgentState = (ClientAgentState) this.agent.getState();
+        MainAgentState LocalAgentState = (MainAgentState) this.agent.getState();
 
         // Increment the taskdone number
         ReportBESA.info("Incrementa tareas completadas");
