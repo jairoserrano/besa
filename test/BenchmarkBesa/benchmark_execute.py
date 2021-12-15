@@ -72,16 +72,28 @@ filename = sys.argv[1]
 experiment_run_name = sys.argv[3]
 
 
-def clean():
+def check_and_clean(output=""):
 
     global besa
     global server_exec
 
-    for b in besa:
-        b.kill()
-    for se in server_exec:
-        se.terminate()
-    sp = subprocess.Popen(["killall", "-KILL", "java"], shell=False, stdout=subprocess.PIPE)
+    errors = ["Exception", "REPORT:", "BESA.Kernel.System.SystemExceptionBESA:",
+              "java.lang.OutOfMemoryError:", "java.lang.IndexOutOfBoundsException:", "java.lang.NullPointerException:"]
+
+    output = str(output)
+
+    print(output)
+
+    check = any(ele in output for ele in errors)
+    if check:
+        print("Terminó " + command_client)
+        for b in besa:
+            b.kill()
+        for se in server_exec:
+            se.terminate()
+        sp = subprocess.Popen(["killall", "-KILL", "java"],
+                              shell=False, stdout=subprocess.PIPE)
+    return check
 
 
 def print_header(header):
@@ -94,6 +106,7 @@ def print_header(header):
 def launch_main(server_id, parametros):
 
     global server_exec
+    global errors
 
     print("Lanzando experimento", "ssh",
           server[server_id], command_client + server_id + ' ' + parametros)
@@ -109,46 +122,42 @@ def launch_main(server_id, parametros):
                       datetime.today().strftime('%Y%m%d%H%M%S') + "-" + server_id + ".txt", 'wb')
 
     server_exec[server_id] = subprocess.Popen(["ssh", server[server_id], command_client +
-                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE)
+                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     while True:
         output = server_exec[server_id].stdout.readline()
         if server_exec[server_id].poll() is not None:
             break
         if output:
-            file2write.write(output)
-            print(output.strip())
-            if "REPORT:" in str(output) or "BESA.Kernel.System.SystemExceptionBESA:" in str(output) or "java.lang.OutOfMemoryError:" in str(output) or "java.lang.IndexOutOfBoundsException:" in str(output) or "java.lang.NullPointerException" in str(output):
-                print("Fallo encontrado en " + command_client)
-                file2write.close()
-                clean()
+            # print(output.strip())
+            if check_and_clean(output):
+                file2write.write(output)
 
     rc = server_exec[server_id].poll()
     file2write.close()
     print("Finaliza ", server[server_id],
           command_client + server_id + ' ' + parametros)
-    clean()
+    check_and_clean()
 
 
 def launch_worker(server_id, parametros):
 
     global server_exec
+    global errors
 
     print("Lanzando experimento", "ssh",
           server[server_id], command_worker + server_id + ' ' + parametros)
 
     server_exec[server_id] = subprocess.Popen(["ssh", server[server_id], command_worker +
-                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE)
+                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     while True:
         output = server_exec[server_id].stdout.readline()
         if server_exec[server_id].poll() is not None:
             break
         if output:
-            print(output.strip())
-            if "error" in str(output) or "BESA.Kernel.System.SystemExceptionBESA:" in str(output) or "java.lang.OutOfMemoryError:" in str(output) or "java.lang.IndexOutOfBoundsException:" in str(output) or "java.lang.NullPointerException" in str(output):
-                print("Fallo encontrado en " + command_client)
-                clean()
+            # print(output.strip())
+            check_and_clean(output)
 
     rc = server_exec[server_id].poll()
 
