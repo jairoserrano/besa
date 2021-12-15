@@ -45,18 +45,18 @@ public class WorkerAgentTaskExecuteGuard extends GuardBESA {
         //
         switch (KindOfWork) {
             case "Small":
-                //load = 40;
-                load = 2;
+                load = 40;
+                //load = 2;
                 memory = new byte[1000000];
                 break;
             case "Medium":
-                //load = 49;
-                load = 2;
+                load = 44;
+                //load = 2;
                 memory = new byte[5000000];
                 break;
             case "High":
-                //load = 52;
-                load = 2;
+                load = 47;
+                //load = 2;
                 memory = new byte[10000000];
                 break;
             default:

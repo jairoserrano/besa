@@ -78,7 +78,7 @@ public class MainAgentServerReadyGuard extends GuardBESA {
                     ReportBESA.info("Ya había terminado");
                 }
             }
-            ReportBESA.debug("REPORTE: experimento " + LocalAgentState.getExperimentID() + ", " + LocalAgentState.getEndTime() + "ms");
+            ReportBESA.debug("REPORT: " + LocalAgentState.getEndTime());
             System.exit(0);
         }
 

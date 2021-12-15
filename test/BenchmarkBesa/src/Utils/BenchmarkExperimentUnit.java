@@ -11,6 +11,7 @@ package Utils;
  */
 public class BenchmarkExperimentUnit {
 
+    private final String ExperimentRaw;
     private final int ExperimentID;
     private int NumberOfAgents;
     private final int NumberOfContainers;
@@ -22,6 +23,10 @@ public class BenchmarkExperimentUnit {
     private final boolean BackupOn;
     private final int BackupTime;
 
+    public String getExperimentRaw() {
+        return ExperimentRaw;
+    }    
+    
     public int getExperimentID() {
         return ExperimentID;
     }
@@ -85,6 +90,8 @@ public class BenchmarkExperimentUnit {
     }
 
     public BenchmarkExperimentUnit(String data) {
+        
+        this.ExperimentRaw = data;
 
         String[] config = data.split(",");
 
@@ -104,11 +111,8 @@ public class BenchmarkExperimentUnit {
             this.BackupTime = 0;
         }
         
-        // TODO: CHECK
-        //if (this.NumberOfAgents < this.getNumberOfTotalTasks()){
-        //    this.NumberOfAgents = this.getNumberOfTotalTasks();
-        //}
-
+        System.out.print(this);
+        
     }
 
 }

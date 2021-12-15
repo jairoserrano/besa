@@ -139,3 +139,7 @@ Clusterizado: false;111;5325533
 Clusterizado: false;59;3306309
 Clusterizado: false;134;5320098
 Clusterizado: false;142;4233765
+Clusterizado: false;0;0
+Clusterizado: false;0;0
+Clusterizado: false;0;0
+Clusterizado: false;0;0

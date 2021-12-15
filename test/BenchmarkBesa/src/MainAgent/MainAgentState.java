@@ -31,9 +31,9 @@ public final class MainAgentState extends StateBESA implements Serializable {
     private long initTime;
     private long endTime;
 
-    public long getEndTime() {
+    public String getEndTime() {
         //long timeMillis = System.currentTimeMillis();
-        return ( (System.nanoTime() - initTime) / 1000000 );
+        return ( CurrentExperiment.getExperimentRaw() + "," + (System.nanoTime() - initTime) / 1000000 );
     }
 
     public int getAgentsNumber() {
