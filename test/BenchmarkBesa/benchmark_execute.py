@@ -11,7 +11,7 @@ print(sys.argv)
 
 besa = []
 server_exec = {}
-
+results_folder = ""
 
 class KThread(threading.Thread):
     """A subclass of threading.Thread, with a kill() method."""
@@ -87,12 +87,14 @@ def check_and_clean(output=""):
     check = any(ele in output for ele in errors)
     if check:
         print("Terminó " + command_client)
+        sp = subprocess.Popen(["killall", "-KILL", "java"],
+                              shell=False, stdout=subprocess.PIPE)
         for b in besa:
             b.kill()
         for se in server_exec:
             se.terminate()
-        sp = subprocess.Popen(["killall", "-KILL", "java"],
-                              shell=False, stdout=subprocess.PIPE)
+        #sp = subprocess.Popen(["killall", "-KILL", "java"],
+        #                      shell=False, stdout=subprocess.PIPE)
     return check
 
 
@@ -106,6 +108,7 @@ def print_header(header):
 def launch_main(server_id, parametros):
 
     global server_exec
+    global results_folder
     global errors
 
     print("Lanzando experimento", "ssh",
@@ -122,7 +125,7 @@ def launch_main(server_id, parametros):
                       datetime.today().strftime('%Y%m%d%H%M%S') + "-" + server_id + ".txt", 'wb')
 
     server_exec[server_id] = subprocess.Popen(["ssh", server[server_id], command_client +
-                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
     while True:
         output = server_exec[server_id].stdout.readline()
@@ -130,8 +133,9 @@ def launch_main(server_id, parametros):
             break
         if output:
             # print(output.strip())
+            file2write.write(output)
             if check_and_clean(output):
-                file2write.write(output)
+                file2write.close()
 
     rc = server_exec[server_id].poll()
     file2write.close()
@@ -149,7 +153,7 @@ def launch_worker(server_id, parametros):
           server[server_id], command_worker + server_id + ' ' + parametros)
 
     server_exec[server_id] = subprocess.Popen(["ssh", server[server_id], command_worker +
-                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                                               server_id + ' ' + parametros], shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
     while True:
         output = server_exec[server_id].stdout.readline()

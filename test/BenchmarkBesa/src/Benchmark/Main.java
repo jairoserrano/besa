@@ -76,6 +76,10 @@ public class Main {
                 )
         );
 
+        if (experiment.getBackupTime() > 0) {
+            adminBesa.activateCheckpoint();
+        }
+
         // First notification to start simulation
         try {
             adminBesa.getHandlerByAlias("MainAg"
