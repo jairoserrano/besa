@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Simall clusterizado="true" anclasEnEntrada="true" anchoUnidad="100" anchoSeparador="20" cantidadVertices="5" cantidadPasillosInteriores="2" cantidadClientes="100">
+    <Servicios>
+        <Entrada nombre="Entrada" unidades="4" locales="2"/>
+        <Sanitario nombre="Sanitario" unidades="5" locales="2" minTiempo="5" avgTiempo="20" maxTiempo="60"/>
+        <PuntoInformacion nombre="PuntoInformacion" unidades="2" locales="2" minTiempo="5" avgTiempo="20" maxTiempo="60"/>
+    </Servicios>
+    
+    <Anclas nombre="Anclas">
+        <Negocio nombre="Falabella" unidades="2" vitrinas="1" locales="2" items="21000" minValor="900" avgValor="20000" maxValor="4000000" minTiempo="5" avgTiempo="20" maxTiempo="60" minVentas="10" avgVentas="20" maxVentas="30"/>
+    </Anclas>
+    
+    <Categorias>
+        <Categoria nombre="Salud">
+            <Negocio nombre="Locatel" unidades="2" vitrinas="1" locales="2" items="21000" minValor="900" avgValor="20000" maxValor="4000000" minTiempo="5" avgTiempo="20" maxTiempo="60" minVentas="10" avgVentas="20" maxVentas="30"/>
+        </Categoria>
+        
+        <Categoria nombre="Calzado">
+            <Negocio nombre="Santorini" unidades="2" vitrinas="1" locales="2" items="21000" minValor="900" avgValor="20000" maxValor="4000000" minTiempo="5" avgTiempo="20" maxTiempo="60" minVentas="10" avgVentas="20" maxVentas="30"/>
+        </Categoria>
+        
+    </Categorias>
+    <SinCategoria>
+        <Negocio nombre="Inkanta" unidades="2" vitrinas="1" locales="2" items="21000" minValor="900" avgValor="20000" maxValor="4000000" minTiempo="5" avgTiempo="20" maxTiempo="60" minVentas="10" avgVentas="20" maxVentas="30"/>
+    </SinCategoria>    
+</Simall>
